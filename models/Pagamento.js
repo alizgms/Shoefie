@@ -12,9 +12,9 @@ model.export = (sequelize,DataType) => {
 
     Pagamento.associate = (models) => {
         //pedidos id
-        Pagamento.hasOne(models.Pagamento,{as:"pagamento", foreignKey:"pedidos_id"});
+        Pagamento.hasOne(models.Pedido,{as:"pagamento", foreignKey:"pedidos_id"});
         //cliente id de pedidos
-        Pagamento.hasOne(models.Pagamento,{as:"clienteid", foreignKey:"pedidos_clientes_id"});
+        Pagamento.hasOne(models.Pedido,{as:"clienteid", foreignKey:"pedidos_clientes_id"});
     }
 
     return Pagamento;

@@ -11,7 +11,7 @@ model.export = (sequelize,DataType) => {
 
     Pedido.associate = (models) => {
         //link com Clientes
-        Pedido.belongsTo(models.Cliente,{as:"endereco", foreignKey:"clientes_id"});
+        Pedido.belongsTo(models.Cliente,{as:"pedido", foreignKey:"clientes_id"});
         //pagamentos id
         Pedido.hasOne(models.Pagamento,{as:"pagamento", foreignKey:"pedidos_id"});
         //cliente id de pagamentos
