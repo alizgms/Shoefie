@@ -19,13 +19,13 @@ model.exports = (sequelize,DataType) => {
         //produtos id
         Pedido.belongsToMany(models.Produto,{
             as:"produto",
-            through:"Pedido_Produto",
+            through:"pedidos_produtos",
             foreignKey:"pedidos_id",
             otherKey:"produtos_id",
             timestamp: false
         });
 
-        Pedido.hasMany(models.Pedido_Produto,{as:"qtdproduto"});
+        Pedido.hasMany(models.Pedido_Produto,{as:"pedidos_produtos", foreignKey:"pedidos_id"});
     }
 
     return Pedido;
