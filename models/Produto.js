@@ -21,7 +21,10 @@ module.exports = (sequelize, DataType) => {
       timestamp: false,
     });
 
-    Produto.hasMany(models.Pedido_Produto, { as: 'qtdproduto' });
+    Produto.hasMany(models.Pedido_Produto, {
+      as: 'produtos_pedidos',
+      foreignKey: 'produtos_id',
+    });
   };
 
   return Produto;
