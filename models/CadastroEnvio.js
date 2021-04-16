@@ -4,8 +4,8 @@ module.exports = (sequelize, DataType) => {
     {
       nome: DataType.STRING,
       endereco: DataType.STRING,
-      cpf: DataType.DECIMAL,
-      cep: DataType.DECIMAL,
+      cpf: DataType.STRING,
+      cep: DataType.STRING,
       estado: DataType.STRING,
       cidade: DataType.STRING,
     },

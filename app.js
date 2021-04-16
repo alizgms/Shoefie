@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var clientesController = require('./routes/clientesRoutes');
+var cadastroEnvioController = require('./routes/cadastroEnvioRoutes');
 
 var app = express();
 
@@ -19,8 +20,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Rotas
 app.use('/', indexRouter);
 app.use('/clientes', clientesController);
+app.use('/cadastro', cadastroEnvioController);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

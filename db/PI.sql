@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `cadastroenvios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cadastroenvios` (
-  `idcadastroEnvios` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
   `endereco` varchar(45) NOT NULL,
   `cpf` varchar(45) NOT NULL,
@@ -31,10 +31,10 @@ CREATE TABLE `cadastroenvios` (
   `estado` varchar(45) NOT NULL,
   `cidade` varchar(45) NOT NULL,
   `clientes_id` int NOT NULL,
-  PRIMARY KEY (`idcadastroEnvios`,`clientes_id`),
+  PRIMARY KEY (`id`,`clientes_id`),
   KEY `fk_cadastroEnvios_clientes1_idx` (`clientes_id`),
   CONSTRAINT `fk_cadastroEnvios_clientes1` FOREIGN KEY (`clientes_id`) REFERENCES `clientes` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `cadastroenvios` (
 
 LOCK TABLES `cadastroenvios` WRITE;
 /*!40000 ALTER TABLE `cadastroenvios` DISABLE KEYS */;
+INSERT INTO `cadastroenvios` VALUES (1,'Herbert Paes','rua ninguem perguntou','123-456-789-10','50879-60','Pernambuco','Recife',3);
 /*!40000 ALTER TABLE `cadastroenvios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +60,7 @@ CREATE TABLE `clientes` (
   `email` varchar(45) NOT NULL,
   `senha` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +69,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'José','jose@email.com','jose1234');
+INSERT INTO `clientes` VALUES (1,'José','jose@email.com','jose1234'),(2,'Marina','marina@gmail.com','marina1234'),(3,'Herbert','herbert@gmail.com','herbert1234');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-16 17:05:28
+-- Dump completed on 2021-04-16 20:39:46
