@@ -7,7 +7,7 @@ module.exports = (sequelize, DataType) => {
     },
     {
       tableName: 'pedidos',
-      timestamp: false,
+      timestamps: false,
     }
   );
 
@@ -34,11 +34,6 @@ module.exports = (sequelize, DataType) => {
       foreignKey: 'pedidos_id',
       otherKey: 'produtos_id',
       timestamp: false,
-    });
-
-    Pedido.hasMany(models.Pedido_Produto, {
-      as: 'pedidos_produtos',
-      foreignKey: 'pedidos_id',
     });
   };
 

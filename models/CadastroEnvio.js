@@ -11,14 +11,14 @@ module.exports = (sequelize, DataType) => {
     },
     {
       tableName: 'cadastroenvios',
-      timestamp: false,
+      timestamps: false,
     }
   );
 
   CadastroEnvio.associate = (models) => {
     //link com Clientes
     CadastroEnvio.belongsTo(models.Cliente, {
-      as: 'endereco',
+      as: 'logradouro',
       foreignKey: 'clientes_id',
     });
   };

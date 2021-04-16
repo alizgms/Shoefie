@@ -8,7 +8,7 @@ module.exports = (sequelize, DataType) => {
     },
     {
       tableName: 'pagamentos',
-      timestamp: false,
+      timestamps: false,
     }
   );
 
