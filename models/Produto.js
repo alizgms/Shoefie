@@ -7,7 +7,7 @@ module.exports = (sequelize, DataType) => {
     },
     {
       tableName: 'produtos',
-      timestamp: false,
+      timestamps: false,
     }
   );
 
@@ -15,15 +15,10 @@ module.exports = (sequelize, DataType) => {
     //pedido id
     Produto.belongsToMany(models.Pedido, {
       as: 'produto',
-      through: 'Pedido_Produto',
+      through: 'pedidos_produtos',
       foreignKey: 'produtos_id',
       otherKey: 'pedidos_id',
       timestamp: false,
-    });
-
-    Produto.hasMany(models.Pedido_Produto, {
-      as: 'produtos_pedidos',
-      foreignKey: 'produtos_id',
     });
   };
 

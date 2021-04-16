@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataType) => {
-  const Endereco = sequelize.define(
-    'Endereco',
+  const CadastroEnvio = sequelize.define(
+    'CadastroEnvio',
     {
       nome: DataType.STRING,
       endereco: DataType.STRING,
@@ -15,13 +15,13 @@ module.exports = (sequelize, DataType) => {
     }
   );
 
-  Endereco.associate = (models) => {
+  CadastroEnvio.associate = (models) => {
     //link com Clientes
-    Endereco.belongsTo(models.Cliente, {
+    CadastroEnvio.belongsTo(models.Cliente, {
       as: 'endereco',
       foreignKey: 'clientes_id',
     });
   };
 
-  return Endereco;
+  return CadastroEnvio;
 };

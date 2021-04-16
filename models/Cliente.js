@@ -8,14 +8,14 @@ module.exports = (sequelize, DataType) => {
     },
     {
       tableName: 'clientes',
-      timestamp: false,
+      timestamps: false,
     }
   );
 
   Cliente.associate = (models) => {
     //link com CadastroEnvios
-    Cliente.hasMany(models.Endereco, {
-      as: 'endereco',
+    Cliente.hasMany(models.CadastroEnvio, {
+      as: 'logradouro',
       foreignKey: 'clientes_id',
     });
     //link com Pedidos
