@@ -1,4 +1,4 @@
-model.export = (sequelize,DataType) => {
+model.exports = (sequelize,DataType) => {
     const Pedido = sequelize.define(
         "Pedido", {
             valor: DataType.DECIMAL,
@@ -19,11 +19,13 @@ model.export = (sequelize,DataType) => {
         //produtos id
         Pedido.belongsToMany(models.Produto,{
             as:"produto",
-            through:"pedidos_produtos",
+            through:"Pedido_Produto",
             foreignKey:"pedidos_id",
             otherKey:"produtos_id",
             timestamp: false
-        })
+        });
+
+        Pedido.hasMany(models.Pedido_Produto,{as:"qtdproduto"});
     }
 
     return Pedido;

@@ -1,6 +1,4 @@
-const { HasMany } = require("sequelize/types");
-
-model.export = (sequelize,DataType) => {
+model.exports = (sequelize,DataType) => {
     const Cliente = sequelize.define(
         'Cliente', {
             nome: DataType.STRING,

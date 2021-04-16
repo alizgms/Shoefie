@@ -1,4 +1,4 @@
-model.export = (sequelize,DataType) => {
+model.exports = (sequelize,DataType) => {
     const Produto = sequelize.define(
         'Produto', {
             nome: DataType.STRING,
@@ -11,13 +11,15 @@ model.export = (sequelize,DataType) => {
 
     Produto.associate = (models) => {
         //pedido id
-        Produto.belongsToMany(models.Produto,{
+        Produto.belongsToMany(models.Pedido,{
             as:"produto",
-            through:"pedidos_produtos",
+            through:"Pedido_Produto",
             foreignKey:"produtos_id",
             otherKey:"pedidos_id",
             timestamp: false
-        })
+        });
+
+        Produto.hasMany(models.Pedido_Produto,{as:"qtdproduto"});
     }
 
     return Produto;

@@ -1,4 +1,4 @@
-model.export = (sequelize,DataType) => {
+model.exports = (sequelize,DataType) => {
     const Endereco = sequelize.define(
         'Endereco', {
             nome: DataType.STRING,

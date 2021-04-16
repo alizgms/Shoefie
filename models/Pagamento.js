@@ -1,4 +1,4 @@
-model.export = (sequelize,DataType) => {
+model.exports = (sequelize,DataType) => {
     const Pagamento = sequelize.define(
         'Pagamento', {
             codigoBoleto: DataType.INTEGER,
