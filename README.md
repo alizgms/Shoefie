@@ -2,7 +2,7 @@
 Projeto Integrador proposto pela Digital House, onde escolhemos implementar um e-commerce de sapatos! 
 Desenvolvido por Anna Alice Guimarães, Adriana Rafael, Augusto Parizio, Herbert Paes, Petter Marcelo e Rodrigo Toniolo.
 
-Informações de Contato:
+Informações de Contato:  
 Alice: https://www.linkedin.com/in/alizgms/  
 Adriana: https://www.linkedin.com/in/adriana-silva-0369141b4/  
 Augusto: https://www.linkedin.com/in/augusto-parizio-a1b7b21a3/  
