@@ -1,5 +1,5 @@
 # Shoefie - Grupo 09
-Projeto Integrador proposto pela Digital House, onde escolhemos implementar um e-commerce de sapatos! 
+Projeto Integrador proposto pela Digital House, onde escolhemos implementar um e-commerce de sapatos!  
 Desenvolvido por Anna Alice Guimarães, Adriana Rafael, Augusto Parizio, Herbert Paes, Petter Marcelo e Rodrigo Toniolo.
 
 Informações de Contato:  
