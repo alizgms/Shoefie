@@ -3,12 +3,12 @@ Projeto Integrador proposto pela Digital House, onde escolhemos implementar um e
 Desenvolvido por Anna Alice Guimarães, Adriana Rafael, Augusto Parizio, Herbert Paes, Petter Marcelo e Rodrigo Toniolo.
 
 Informações de Contato:
-Alice: https://www.linkedin.com/in/alizgms/
-Adriana: https://www.linkedin.com/in/adriana-silva-0369141b4/
-Augusto: https://www.linkedin.com/in/augusto-parizio-a1b7b21a3/
-Herbert: https://www.linkedin.com/in/herbert-paes/
-Petter: https://www.linkedin.com/in/petter-kuo/
-Rodrigo: https://www.linkedin.com/in/rodrigoatoniolo/
+Alice: https://www.linkedin.com/in/alizgms/  
+Adriana: https://www.linkedin.com/in/adriana-silva-0369141b4/  
+Augusto: https://www.linkedin.com/in/augusto-parizio-a1b7b21a3/  
+Herbert: https://www.linkedin.com/in/herbert-paes/  
+Petter: https://www.linkedin.com/in/petter-kuo/  
+Rodrigo: https://www.linkedin.com/in/rodrigoatoniolo/  
 
 <code>
   <img height="60" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" alt="css">
