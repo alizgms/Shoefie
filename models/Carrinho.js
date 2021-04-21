@@ -21,12 +21,14 @@ module.exports = (sequelize, DataTypes) => {
   );
   Carrinho.associate = (models) => {
     Carrinho.belongsTo(models.Pedido, {
-      as: 'carrinhoPedido',
+      as: 'pedidos',
+      through: 'carrinhos',
       foreignKey: 'pedidos_id',
     });
 
     Carrinho.belongsTo(models.Produto, {
-      as: 'carrinhoProduto',
+      as: 'produtos',
+      through: 'carrinhos',
       foreignKey: 'produtos_id',
     });
   };
