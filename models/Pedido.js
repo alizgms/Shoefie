@@ -21,11 +21,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'login_id',
     });
     //produtos id
-    Pedido.belongsToMany(models.ItemPedido, {
+    Pedido.belongsToMany(models.Produto, {
       as: 'produtos',
       through: 'itens_pedidos',
-      foreignKey: 'pedidos_id',
-      timestamps: false,
+      foreignKey: 'produtos_id',
     });
   };
 

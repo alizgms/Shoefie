@@ -1,5 +1,6 @@
 const express = require('express');
 const cadastrosController = require('../controllers/cadastrosController');
+
 const router = express.Router();
 
 router.get('/', cadastrosController.index);
