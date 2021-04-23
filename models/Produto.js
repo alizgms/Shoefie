@@ -1,11 +1,11 @@
-module.exports = (sequelize, DataType) => {
+module.exports = (sequelize, DataTypes) => {
   const Produto = sequelize.define(
     'Produto',
     {
-      nome: DataType.STRING,
-      preco: DataType.DECIMAL,
-      qtdEstoque: DataType.INTEGER,
-      imagem: DataType.STRING,
+      nome: DataTypes.STRING,
+      preco: DataTypes.DECIMAL,
+      qtdEstoque: DataTypes.INTEGER,
+      imagem: DataTypes.STRING,
     },
     {
       tableName: 'produtos',
@@ -19,11 +19,13 @@ module.exports = (sequelize, DataType) => {
       as: 'pedidos',
       through: 'itens_pedidos',
       foreignKey: 'produtos_id',
-      otherKey: 'pedidos_id',
       timestamp: false,
     });
     //link 1:n categoria
-    Produto.hasMany(models.Categoria, {as: 'categoria', foreignKey: 'produtos_id'});
+    Produto.hasMany(models.Categoria, {
+      as: 'categoria',
+      foreignKey: 'produtos_id',
+    });
   };
 
   return Produto;

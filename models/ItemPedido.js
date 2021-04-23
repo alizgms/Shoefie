@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   ItemPedido.associate = (models) => {
-    
     ItemPedido.belongsTo(models.Pedido, {
       as: 'pedidos',
       through: 'itens_pedidos',
