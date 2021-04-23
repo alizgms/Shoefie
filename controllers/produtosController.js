@@ -2,9 +2,7 @@ const { Produto } = require('../models');
 
 const produtosController = {
   index: async (request, response) => {
-    const produtos = await Produto.findAll({
-      attributes: { exclude: ['produtos_id'] },
-    });
+    const produtos = await Produto.findAll();
 
     return response.json(produtos);
   },

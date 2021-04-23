@@ -10,7 +10,6 @@ var pedidosRoutes = require('./routes/pedidosRoutes');
 var itensPedidosRoutes = require('./routes/itensPedidosRoutes');
 var produtosRoutes = require('./routes/produtosRoutes');
 var cadastrosRoutes = require('./routes/cadastrosRoutes');
-var categoriasRoutes = require('./routes/categoriasRoutes');
 
 var app = express();
 
@@ -30,7 +29,6 @@ app.use('/pedidos', pedidosRoutes);
 app.use('/itens', itensPedidosRoutes);
 app.use('/produtos', produtosRoutes);
 app.use('/cadastros', cadastrosRoutes);
-app.use('/categorias', categoriasRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -4,7 +4,9 @@ const pedidosController = {
   index: async (request, response) => {
     // const { id } = request.params;
 
-    const pedido = await Pedido.findAll();
+    const pedido = await Pedido.findAll({
+      attributes: { exclude: ['produtos_id', 'login_id'] },
+    });
 
     return response.status(200).json(pedido);
   },
