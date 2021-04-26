@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 module.exports = (sequelize, DataType) => {
     const Categoria = sequelize.define(
       'Categoria',
@@ -12,33 +11,15 @@ module.exports = (sequelize, DataType) => {
     );
   
     Categoria.associate = (models) => {
-      //link com Pedidos
-      Categoria.hasMany(models.Produto, { as: 'categoria', foreignKey: 'produtos_id' });
+      //m:n produtos enviando fk
+      Categoria.belongsToMany(models.Produto, {
+        as: 'produtos',
+        through: 'produtos_categorias',
+        foreignKey: 'categorias_id',
+        otherKey: 'produtos_id',
+        timestamps: false,
+      });
     };
   
     return Categoria;
   };
-=======
-module.exports = (sequelize, DataTypes) => {
-  const Categoria = sequelize.define(
-    'Categoria',
-    {
-      nome: DataTypes.STRING,
-    },
-    {
-      tableName: 'categorias',
-      timestamps: false,
-    }
-  );
-
-  Categoria.associate = (models) => {
-    //link com Pedidos
-    Categoria.hasMany(models.Produto, {
-      as: 'categoria',
-      foreignKey: 'produtos_id',
-    });
-  };
-
-  return Categoria;
-};
->>>>>>> 415f314f8d83f379e303872cfdd40c67f3d87bb2

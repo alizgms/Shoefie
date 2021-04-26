@@ -1,13 +1,12 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataType) => {
   const Pedido = sequelize.define(
     'Pedido',
     {
-      valor: DataTypes.DECIMAL,
-      statusPedido: DataTypes.TINYINT,
-      codigoBoleto: DataTypes.STRING,
-      statusBoleto: DataTypes.TINYINT,
-      dataVencimento: DataTypes.DATE,
-      login_id: DataTypes.INTEGER,
+      valor: DataType.DECIMAL,
+      statusPedido: DataType.STRING,
+      codigoBoleto: DataType.INTEGER,
+      statusBoleto: DataType.STRING,
+      dataVencimento: DataType.DATE,
     },
     {
       tableName: 'pedidos',
@@ -16,15 +15,15 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Pedido.associate = (models) => {
-    // link com Clientes
-    Pedido.belongsTo(models.Login, {
-      as: 'pedido',
-      foreignKey: 'login_id',
+    // n:1 usuario recebendo fk
+    Pedido.belongsTo(models.Usuario, {
+      as: 'usuarios',
+      foreignKey: 'usuarios_id',
     });
-    // produtos id
+    // n:m produto enviando fk
     Pedido.belongsToMany(models.Produto, {
       as: 'produtos',
-      through: 'itens_pedidos',
+      through: 'produtos_pedidos',
       foreignKey: 'pedidos_id',
       otherKey: 'produtos_id',
       timestamps: false,
