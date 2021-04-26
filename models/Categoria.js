@@ -12,7 +12,7 @@ module.exports = (sequelize, DataType) => {
   
     Categoria.associate = (models) => {
       //link com Pedidos
-      Categoria.hasMany(models.Pedido, { as: 'categoria', foreignKey: 'produtos_id' });
+      Categoria.hasMany(models.Produto, { as: 'categoria', foreignKey: 'produtos_id' });
     };
   
     return Categoria;
