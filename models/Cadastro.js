@@ -1,25 +1,25 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataType) => {
   const Cadastro = sequelize.define(
     'Cadastro',
     {
-      nome: DataTypes.STRING,
-      cpf: DataTypes.STRING,
-      uf: DataTypes.STRING,
-      cidade: DataTypes.STRING,
-      endereco: DataTypes.STRING,
-      cep: DataTypes.STRING,
+      nome: DataType.STRING,
+      cpf: DataType.DECIMAL,
+      cep: DataType.DECIMAL,
+      uf: DataType.STRING,
+      cidade: DataType.STRING,
+      endereco: DataType.STRING,
     },
     {
-      tableName: 'cadastro',
+      tableName: 'cadastros',
       timestamps: false,
     }
   );
 
   Cadastro.associate = (models) => {
-    //link com Cliente
-    Cadastro.hasOne(models.Login, {
-      as: 'cadastro',
-      foreignKey: 'login_id',
+    //1:1 com usuario recebendo fk
+    Cadastro.belongsTo(models.Usuario, {
+      as: 'cadastros',
+      foreignKey: 'usuarios_id',
     });
   };
 

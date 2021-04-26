@@ -1,11 +1,11 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataType) => {
   const Produto = sequelize.define(
     'Produto',
     {
-      nome: DataTypes.STRING,
-      preco: DataTypes.DECIMAL,
-      qtdEstoque: DataTypes.INTEGER,
-      imagem: DataTypes.STRING,
+      nome: DataType.STRING,
+      preco: DataType.DECIMAL,
+      qtdEstoque: DataType.INTEGER,
+      imagem: DataType.STRING,
     },
     {
       tableName: 'produtos',
@@ -14,12 +14,20 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Produto.associate = (models) => {
-    //pedido id
+    //m:n com pedidos enviando fk
     Produto.belongsToMany(models.Pedido, {
       as: 'pedidos',
-      through: 'itens_pedidos',
+      through: 'produtos_pedidos',
       foreignKey: 'produtos_id',
       otherKey: 'pedidos_id',
+      timestamps: false,
+    });
+    //n:m com categoria enviando fk
+    Produto.belongsToMany(models.Categoria, {
+      as: 'categorias',
+      through: 'produtos_categorias',
+      foreignKey: 'produtos_id',
+      otherKey: 'categorias_id',
       timestamps: false,
     });
   };

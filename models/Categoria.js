@@ -1,22 +1,25 @@
-module.exports = (sequelize, DataTypes) => {
-  const Categoria = sequelize.define(
-    'Categoria',
-    {
-      nome: DataTypes.STRING,
-    },
-    {
-      tableName: 'categorias',
-      timestamps: false,
-    }
-  );
-
-  Categoria.associate = (models) => {
-    //link com Pedidos
-    Categoria.hasMany(models.Produto, {
-      as: 'categoria',
-      foreignKey: 'produtos_id',
-    });
+module.exports = (sequelize, DataType) => {
+    const Categoria = sequelize.define(
+      'Categoria',
+      {
+        nome: DataType.STRING,
+      },
+      {
+        tableName: 'categorias',
+        timestamps: false,
+      }
+    );
+  
+    Categoria.associate = (models) => {
+      //m:n produtos enviando fk
+      Categoria.belongsToMany(models.Produto, {
+        as: 'produtos',
+        through: 'produtos_categorias',
+        foreignKey: 'categorias_id',
+        otherKey: 'produtos_id',
+        timestamps: false,
+      });
+    };
+  
+    return Categoria;
   };
-
-  return Categoria;
-};
