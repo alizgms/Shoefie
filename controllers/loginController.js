@@ -2,14 +2,12 @@ const { Login } = require('../models');
 
 const loginController = {
   index: async (request, response) => {
-    const login = await Login.findAll({
-      attributes: { exclude: ['login_id'] },
-    });
+    const login = await Login.findAll();
 
     return response.json(login);
   },
 
-  create: async (request, response) => {
+  store: async (request, response) => {
     const { nome, email, senha } = request.body;
 
     const login = await Login.create({

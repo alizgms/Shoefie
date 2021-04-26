@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       codigoBoleto: DataTypes.STRING,
       statusBoleto: DataTypes.TINYINT,
       dataVencimento: DataTypes.DATE,
+      login_id: DataTypes.INTEGER,
     },
     {
       tableName: 'pedidos',
@@ -15,16 +16,17 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Pedido.associate = (models) => {
-    //link com Clientes
+    // link com Clientes
     Pedido.belongsTo(models.Login, {
       as: 'pedido',
       foreignKey: 'login_id',
     });
-    //produtos id
-    Pedido.belongsToMany(models.ItemPedido, {
+    // produtos id
+    Pedido.belongsToMany(models.Produto, {
       as: 'produtos',
       through: 'itens_pedidos',
       foreignKey: 'pedidos_id',
+      otherKey: 'produtos_id',
       timestamps: false,
     });
   };

@@ -1,10 +1,11 @@
-module.exports = (sequelize, DataType) => {
+module.exports = (sequelize, DataTypes) => {
   const Login = sequelize.define(
     'Login',
     {
-      nome: DataType.STRING,
-      email: DataType.STRING,
-      senha: DataType.STRING,
+      nome: DataTypes.STRING,
+      email: DataTypes.STRING,
+      senha: DataTypes.STRING,
+      isLogged: DataTypes.BOOLEAN,
     },
     {
       tableName: 'login',

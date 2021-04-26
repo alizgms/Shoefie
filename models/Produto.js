@@ -19,12 +19,8 @@ module.exports = (sequelize, DataTypes) => {
       as: 'pedidos',
       through: 'itens_pedidos',
       foreignKey: 'produtos_id',
-      timestamp: false,
-    });
-    //link 1:n categoria
-    Produto.hasMany(models.Categoria, {
-      as: 'categoria',
-      foreignKey: 'produtos_id',
+      otherKey: 'pedidos_id',
+      timestamps: false,
     });
   };
 

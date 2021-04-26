@@ -22,13 +22,11 @@ module.exports = (sequelize, DataTypes) => {
   ItemPedido.associate = (models) => {
     ItemPedido.belongsTo(models.Pedido, {
       as: 'pedidos',
-      through: 'itens_pedidos',
       foreignKey: 'pedidos_id',
     });
 
     ItemPedido.belongsTo(models.Produto, {
       as: 'produtos',
-      through: 'itens_pedidos',
       foreignKey: 'produtos_id',
     });
   };
