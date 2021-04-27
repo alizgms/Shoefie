@@ -3,6 +3,7 @@
   --branco: #ffffff;
   --amarelo: #f5ba25;
   --hover: #696969;
+  --cinza: #E5E5E5;
 }
 
 * {
@@ -19,7 +20,8 @@ button {
 header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .logo {
@@ -87,6 +89,7 @@ footer {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .botao-comprar {
@@ -99,10 +102,38 @@ footer {
   color: var(--hover);
 }
 
-/*
+.redes-sociais {
+  display: flex;
+}
+
 .redes-sociais img {
   width: 24px;
-  flex-direction: column;
-  display: flex;
   padding-bottom: 10px;
-} */
+  margin: 5px;
+} 
+
+#pesquisar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#pesquisar input {
+  border: none;
+  width: 350px;
+  height: 40px;
+  background-color: var(--cinza);
+  font-size: 12px;
+}
+
+#pesquisar img {
+  width: 24px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+fieldset {
+  border: 1px solid var(--cinza);
+  background-color: var(--cinza);
+}
