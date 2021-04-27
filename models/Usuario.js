@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs');
 module.exports = (sequelize, DataType) => {
   const Usuario = sequelize.define(
     'Usuario',
@@ -12,6 +13,11 @@ module.exports = (sequelize, DataType) => {
       timestamps: false,
     }
   );
+
+  Usuario.addHook('beforeCreate', (usuario) => {
+    const salt = bcrypt.genSaltSync();
+    usuario.senha = bcrypt.hashSync(usuario.senha, salt);
+  });
 
   Usuario.associate = (models) => {
     //1:n com pedido enviando fk

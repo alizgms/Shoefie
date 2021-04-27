@@ -3,6 +3,6 @@ const cadastrosController = require('../controllers/cadastrosController');
 const router = express.Router();
 
 router.get('/', cadastrosController.index);
-router.post('/', cadastrosController.create);
+router.post('/', cadastrosController.store);
 
 module.exports = router;

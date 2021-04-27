@@ -7,14 +7,12 @@ const categoriasController = {
     return response.status(200).json(categoria);
   },
 
-  create: async (request, response) => {
+  store: async (request, response) => {
     const { nome } = request.body;
 
-    const categoria = {
-      nome,
-    };
+    await Categoria.create({ nome });
 
-    return response.status(201).json(categoria);
+    return response.status(201).json(nome);
   },
 };
 
