@@ -12,10 +12,14 @@
   box-sizing: border-box;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   display: flex;
   justify-content: space-between;
-  margin: 5px 70px;
+  margin-bottom: 10px;
 }
 
 .logo {
@@ -62,9 +66,43 @@ section nav a:hover {
   background-color: var(--preto);
   border: 3px solid var(--preto);
   color: var(--branco);
-  /*icone de seta sumiu*/
+  justify-content: flex-end;
 }
 
-.carousel-item {
-  width: 1100px; /*Centralizar itens*/
+.frase {
+  margin-right: 10px;
 }
+
+footer {
+  text-align: center;
+}
+
+#carouselExampleControls {
+  width: 1100px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.botao-comprar {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.botao-comprar:hover {
+  color: var(--hover);
+}
+
+/*
+.redes-sociais img {
+  width: 24px;
+  flex-direction: column;
+  display: flex;
+  padding-bottom: 10px;
+} */
