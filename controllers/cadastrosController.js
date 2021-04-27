@@ -2,25 +2,27 @@ const { Cadastro } = require('../models');
 
 const cadastrosController = {
   index: async (request, response) => {
-    const cadastros = await Cadastro.findAll();
+    const cadastro = await Cadastro.findAll();
 
-    return response.json(cadastros);
+    return response.status(200).json(cadastro);
   },
 
-  create: async (request, response) => {
-    const { nome, cpf, cep, uf, cidade, endereco, login_id } = request.body;
+  store: async (request, response) => {
+    const { nome, cpf, cep, uf, cidade, endereco, usuarios_id } = request.body;
 
-    const cadastro = await Cadastro.create({
+    const cadastro = {
       nome,
       cpf,
       cep,
       uf,
       cidade,
       endereco,
-      login_id,
-    });
+      usuarios_id,
+    };
 
-    return response.json(cadastro);
+    await Cadastro.create(cadastro);
+
+    return response.status(201).json(cadastro);
   },
 };
 

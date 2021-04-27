@@ -1,35 +1,25 @@
 const { Pedido } = require('../models');
+const { v4: uuid } = require('uuid');
 
 const pedidosController = {
   index: async (request, response) => {
-    // const { id } = request.params;
-
     const pedido = await Pedido.findAll();
 
     return response.status(200).json(pedido);
   },
 
-  // show: async (request, response) => {
-  //   const { id } = request.params;
+  store: async (request, response) => {
+    const { statusPedido, dataVencimento, usuarios_id } = request.body;
 
-  //   const pedido = await Pedido.findAll({
-  //     where: {
-  //       id,
-  //     },
-  //   });
-
-  //   return response.status(200).json(pedido);
-  // },
-
-  create: async (request, response) => {
-    const { statusPedido, login_id } = request.body;
-
-    const createPedido = await Pedido.create({
+    const pedidos = {
       statusPedido,
-      login_id,
-    });
+      codigoBoleto: uuid(),
+      dataVencimento,
+      usuarios_id,
+    };
 
-    response.status(201).json(createPedido);
+    await Pedido.create(pedidos);
+    return response.status(201).json(pedidos);
   },
 };
 

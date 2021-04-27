@@ -1,6 +1,6 @@
-const { sequelize, ProdutoPedido } = require('./models');
+const { sequelize, Cadastro } = require('./models');
 
-ProdutoPedido.findAll().then((data) => {
+Cadastro.findAll().then((data) => {
   console.log(data.map((u) => u.toJSON()));
   sequelize.close();
 });

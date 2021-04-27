@@ -4,19 +4,21 @@ const produtosController = {
   index: async (request, response) => {
     const produtos = await Produto.findAll();
 
-    return response.json(produtos);
+    return response.status(200).json(produtos);
   },
 
-  create: async (request, response) => {
+  store: async (request, response) => {
     const { nome, preco, qtdEstoque } = request.body;
 
-    const produtos = await Produto.create({
+    const produto = {
       nome,
       preco,
       qtdEstoque,
-    });
+    };
 
-    return response.status(201).json(produtos);
+    await Produto.create(produto);
+
+    return response.status(201).json(produto);
   },
 };
 
