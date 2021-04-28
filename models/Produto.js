@@ -5,6 +5,7 @@ module.exports = (sequelize, DataType) => {
       nome: DataType.STRING,
       preco: DataType.DECIMAL,
       qtdEstoque: DataType.INTEGER,
+      imagem: DataType.STRING,
     },
     {
       tableName: 'produtos',
@@ -13,13 +14,21 @@ module.exports = (sequelize, DataType) => {
   );
 
   Produto.associate = (models) => {
-    //pedido id
+    //m:n com pedidos enviando fk
     Produto.belongsToMany(models.Pedido, {
-      as: 'carrinho',
-      through: 'carrinhos',
+      as: 'pedidos',
+      through: 'produtos_pedidos',
       foreignKey: 'produtos_id',
       otherKey: 'pedidos_id',
-      timestamp: false,
+      timestamps: false,
+    });
+    //n:m com categoria enviando fk
+    Produto.belongsToMany(models.Categoria, {
+      as: 'categorias',
+      through: 'produtos_categorias',
+      foreignKey: 'produtos_id',
+      otherKey: 'categorias_id',
+      timestamps: false,
     });
   };
 

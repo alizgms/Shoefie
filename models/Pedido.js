@@ -3,9 +3,9 @@ module.exports = (sequelize, DataType) => {
     'Pedido',
     {
       valor: DataType.DECIMAL,
-      statusPedido: DataType.TINYINT,
-      codigoBoleto: DataType.STRING,
-      statusBoleto: DataType.TINYINT,
+      statusPedido: DataType.STRING,
+      codigoBoleto: DataType.INTEGER,
+      statusBoleto: DataType.STRING,
       dataVencimento: DataType.DATE,
     },
     {
@@ -15,16 +15,17 @@ module.exports = (sequelize, DataType) => {
   );
 
   Pedido.associate = (models) => {
-    //link com Clientes
-    Pedido.belongsTo(models.Cliente, {
-      as: 'pedido',
-      foreignKey: 'clientes_id',
+    // n:1 usuario recebendo fk
+    Pedido.belongsTo(models.Usuario, {
+      as: 'usuarios',
+      foreignKey: 'usuarios_id',
     });
-    //produtos id
-    Pedido.belongsToMany(models.Carrinho, {
+    // n:m produto enviando fk
+    Pedido.belongsToMany(models.Produto, {
       as: 'produtos',
-      through: 'carrinhos',
+      through: 'produtos_pedidos',
       foreignKey: 'pedidos_id',
+      otherKey: 'produtos_id',
       timestamps: false,
     });
   };
