@@ -12,64 +12,58 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/public/stylesheets/cadastro.css">
+    <link rel="stylesheet" href="/public/stylesheets/shared/header-button.css">
     <title>Registre-se</title>
 </head>
-<body> 
-     <div class="container">
-    <header>
-   
-    <button class="bt-menu"><img src="/public/media/icons/menu.svg" alt="botao do menu"></button>
-       
-        <div class="logo">SHOEFIE</div>
-     
-            <button class="bt-user"><img src="/public/media/icons/user.svg" alt="botao do menu"></button>
-            
-               
 
-        <div class="tem-conta">
-            <div class="frase">
-                Já tem uma conta ? 
-            </div>
-            <div>
-                <button class="login">Faça login</button>
-          
-    </header>
-    <main> 
-        <div class="bannerCadastro">
-            <img src="/public/media/ilustracao/Call waiting.svg" alt=" imagemCadastro">
+<body>
 
-            <form class="dados">
-                <div>
-                <h3>Falta pouco para você compra conosco!</h3>
-            </div>
-                <label class=" quebra">Nome</label>
-                <input type="text"nome= "nome">
+    <div class="container">
 
-                <label class=" quebra">Telefone</label>
-              <input type="tel" nome="Telefone" placeholder=" (00) 9 0000-0000 ">   
-               
-                <label class=" quebra">Email</label>
-                 <input type="email" name="email" id="email" >
-               
-                 <label class=" quebra">Senha</label>
-                <input type="password" name="senha" id="senha" min="6" max="12"> 
-                
-                <label class=" quebra">Confirme sua senha</label>
-                <input type="password" name="confimaSenha" id="confimaSenha"> 
-                <div class="bt-cadastro">
-                <buttonc type="submit">Cadastrar</button>
+        <header>
+            <div class="logo">SHOEFIE</div>
+            <div class="nao-tem-conta">
+                <div class="frase">
+                    Não tem uma conta?
                 </div>
-            </form>
-        </div> 
-   
-      <div class="redes-sociais">
-        <img src="/public/media/icons/facebook.svg" alt="facebook">
-        <img src="/public/media/icons/instagram.svg" alt=" instagram">
-       <img src="/public/media/icons/twitter.svg" alt="twitter"></a>
-        </div>
-  </div>
-        <footer> SHOEFIE © todos os direitos reservados</footer>  
+                <div>
+                    <button class="cadastrar">Cadastre-se</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="bannerCadastro">
+                <img src="/public/media/ilustracao/Call waiting.svg" alt=" imagemCadastro">
+            </div>
+
+            <div class="formulario">
+                <form class="dados">
+                    <div>
+                        <h3>Falta pouco para você compra conosco!</h3>
+                    </div>
+                    <label class="field">Nome</label>
+                    <input type="text" nome="nome">
+
+                    <label class="field">Telefone</label>
+                    <input type="tel" nome="Telefone" placeholder=" (xx) 9 xxxx-xxxx ">
+
+                    <label class="field">Email</label>
+                    <input type="email" name="email" id="email">
+
+                    <label class="field">Senha</label>
+                    <input type="password" name="senha" id="senha" min="6" max="12">
+
+                    <label class="field">Confirme sua senha</label>
+                    <input type="password" name="confimaSenha" id="confimaSenha">
+                    <div class="bt-cadastro">
+                        <button class="botao-enviar" type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+    <footer> SHOEFIE © todos os direitos reservados</footer>
     </main>
-    </body>
+</body>
 
 </html>

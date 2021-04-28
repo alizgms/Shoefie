@@ -1,118 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/public/stylesheets/finalizarPagamento.css" />
-    <link rel="stylesheet" href="/public/stylesheets/home.css" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/public/stylesheets/finalizarPagamento.css" />
+  <link rel="stylesheet" href="/public/stylesheets/shared/header-icons.css" />
 
 
-    <script src="../public/scripts/shoppingCart.js" defer></script>
+  <script src="../public/scripts/shoppingCart.js" defer></script>
 
-    <title>SHOEFIE</title>
-  </head>
+  <title>SHOEFIE</title>
+</head>
 
-  <body>
-      <div class="container">
-        <header>
-          <div class="logo">SHOEFIE</div>
-          <div class="icons">
-            <img src="../public/media/icons/truck.svg" alt="Acompanhar envio" />
-            <img src="../public/media/icons/user.svg" alt="Perfil" />
-            <img
-            src="../public/media/icons/shopping-bag.svg"
-            alt="Carrinho de compras"
-            />
-            <img src="../public/media/icons/log-out.svg" alt="Logout" />
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">SHOEFIE</div>
+      <div class="icons">
+        <img src="../public/media/icons/truck.svg" alt="Acompanhar envio" />
+        <img src="../public/media/icons/user.svg" alt="Perfil" />
+        <img src="../public/media/icons/shopping-bag.svg" alt="Carrinho de compras" />
+        <img src="../public/media/icons/log-out.svg" alt="Logout" />
+      </div>
+    </header>
+
+    <div class="basket">
+      <p class="resumo">Resumo do envio</p>
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price">Preço</li>
+          <li class="quantity">Quantidade</li>
+          <li class="subtotal">Subtotal</li>
+        </ul>
+      </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="../public/media/masculinos/nike.png" alt="Placholder Image 2" class="product-frame">
           </div>
-        </header>
-        
-        <div class="basket">
-          <p class="resumo">Resumo do envio</p>
-          <div class="basket-labels">
-            <ul>
-              <li class="item item-heading">Item</li>
-              <li class="price">Preço</li>
-              <li class="quantity">Quantidade</li>
-              <li class="subtotal">Subtotal</li>
-            </ul>
+          <div class="product-details">
+            <p><strong>Nike Shox</strong></p>
+            <p>Product Code - 232321939</p>
           </div>
-          <div class="basket-product">
-            <div class="item">
-              <div class="product-image">
-                <img src="../public/media/masculinos/nike.png" alt="Placholder Image 2" class="product-frame">
-              </div>
-              <div class="product-details">
-                <p><strong>Nike Shox</strong></p>
-                <p>Product Code - 232321939</p>
-              </div>
-            </div>
-            <div class="price">250.00</div>
-            <div class="quantity">
-              <p class="quantity-field">4</p>
-            </div>
-            <div class="subtotal">1000</div>
-            <div class="remove">
-              <button>Remover</button>
-            </div>
+        </div>
+        <div class="price">250.00</div>
+        <div class="quantity">
+          <p class="quantity-field">4</p>
+        </div>
+        <div class="subtotal">1000</div>
+        <div class="remove">
+          <button>Remover</button>
+        </div>
+      </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="../public/media/femininos/13 - Pazanni.jpg" alt="Placholder Image 2" class="product-frame">
           </div>
-          <div class="basket-product">
-            <div class="item">
-              <div class="product-image">
-                <img src="../public/media/femininos/13 - Pazanni.jpg" alt="Placholder Image 2" class="product-frame">
-              </div>
-              <div class="product-details">
-                <p><strong>Navy, Size 10</strong></p>
-                <p>Product Code - 232321939</p>
-              </div>
-            </div>
-            <div class="price">150</div>
-              <div class="quantity">
-                <p class="quantity-field">1</p>
-              </div>
-              <div class="subtotal">150</div>
-              <div class="remove">
-                <button>Remover</button>
-              </div>
-            </div>
+          <div class="product-details">
+            <p><strong>Navy, Size 10</strong></p>
+            <p>Product Code - 232321939</p>
           </div>
-          <aside>
-            <p>Finalize seu pagamento</p>
-            <div class="summary">
-              <div class="summary-total-items"><span class="total-items"></span> Valor das compras</div>
-              <div class="summary-subtotal">
-                <div class="subtotal-title">Subtotal</div>
-                <div class="subtotal-value final-value" id="basket-subtotal">1150.00</div>
-              </div>
-              <div class="summary-total">
-                <div class="total-title">Total</div>
-                <div class="total-value final-value" id="basket-total">1150.00</div>
-              </div>
-              <div class="summary-checkout">
-                <button class="checkout-cta">Gerar boleto</button>
-              </div>
-            </div>
-          </aside>
-        </main>
-      </body>
+        </div>
+        <div class="price">150</div>
+        <div class="quantity">
+          <p class="quantity-field">1</p>
+        </div>
+        <div class="subtotal">150</div>
+        <div class="remove">
+          <button>Remover</button>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <p>Finalize seu pagamento</p>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> Valor das compras</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Subtotal</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">1150.00</div>
+        </div>
+        <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">1150.00</div>
+        </div>
+        <div class="summary-checkout">
+          <button class="checkout-cta">Gerar boleto</button>
+        </div>
+      </div>
+    </aside>
+    </main>
+</body>
 
-    <!-- <footer>shoefie © todos os direitos reservados</footer> -->
-  </body>
+<!-- <footer>shoefie © todos os direitos reservados</footer> -->
+</body>
+
 </html>
