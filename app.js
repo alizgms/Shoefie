@@ -11,6 +11,7 @@ var usuariosRoutes = require('./routes/usuariosRoutes');
 var cadastrosRoutes = require('./routes/cadastrosRoutes');
 var categoriasRoutes = require('./routes/categoriasRoutes');
 var produtosPedidosRoutes = require('./routes/produtosPedidosRoutes');
+var produtoCategoriaRoutes = require('./routes/produtoCategoriaRoutes');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/produtos', produtosRoutes);
 app.use('/usuarios', usuariosRoutes);
 app.use('/cadastros', cadastrosRoutes);
 app.use('/produtosPedidos', produtosPedidosRoutes);
+app.use('/produtosCategorias', produtoCategoriaRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
