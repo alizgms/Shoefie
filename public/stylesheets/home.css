@@ -3,7 +3,7 @@
   --branco: #ffffff;
   --amarelo: #f5ba25;
   --hover: #696969;
-  --cinza: #E5E5E5;
+  --cinza: #e5e5e5;
 }
 
 * {
@@ -17,38 +17,37 @@ button {
   cursor: pointer;
 }
 
-header {
+#pesquisar {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-
-.logo {
-  font-family: "Bebas Neue";
-  font-size: 55px;
-  font-weight: 500;
-  letter-spacing: 3px;
-}
-
-.cadastrar {
-  padding: 6px 20px;
-  border-radius: 5px;
-  background-color: var(--branco);
-  border: 3px solid var(--preto);
-  color: var(--preto);
-}
-
-body {
-  font-family: "Montserrat";
-  background-color: var(--branco);
-  color: var(--preto);
-}
-
-.nao-tem-conta {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  /*justify-content: space-between; NÃO FUNCIONAAAAAA  */
+  margin: 0 auto;
+}
+
+#pesquisar input {
+  border: none;
+  width: 300px;
+  height: 35px;
+  background-color: var(--cinza);
+  font-size: 12px;
+}
+
+#pesquisar img {
+  width: 24px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+fieldset {
+  border: 1px solid var(--cinza);
+  background-color: var(--cinza);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 section nav a {
@@ -62,6 +61,12 @@ section nav a:hover {
   color: var(--hover);
 }
 
+body {
+  font-family: "Montserrat";
+  background-color: var(--branco);
+  color: var(--preto);
+}
+
 .comprar {
   padding: 6px 20px;
   border-radius: 5px;
@@ -71,25 +76,10 @@ section nav a:hover {
   justify-content: flex-end;
 }
 
-.frase {
-  margin-right: 10px;
-}
-
-footer {
-  text-align: center;
-}
-
 #carouselExampleControls {
   width: 1100px;
   height: 500px;
   margin: 0 auto;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-  margin-top: 20px;
 }
 
 .botao-comprar {
@@ -110,30 +100,4 @@ footer {
   width: 24px;
   padding-bottom: 10px;
   margin: 5px;
-} 
-
-#pesquisar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-#pesquisar input {
-  border: none;
-  width: 350px;
-  height: 40px;
-  background-color: var(--cinza);
-  font-size: 12px;
-}
-
-#pesquisar img {
-  width: 24px;
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-fieldset {
-  border: 1px solid var(--cinza);
-  background-color: var(--cinza);
-}
+}  
