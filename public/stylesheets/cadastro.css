@@ -1,6 +1,152 @@
+
 * {
     margin: 0;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+  }
+  body {
+    font-family: "Montserrat";
+     
+  }
+  
+  button {
+    cursor: pointer;
+    padding: 6px 30px;
+    border-radius: 5px;
+    
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 10px 15px; 
+    padding: 10px 15px; 
+
+  }
+  
+  .logo {
+    font-family: "Bebas Neue";
+    font-size: 55px;
+    font-weight: 500;
+    letter-spacing: 3px; 
+    margin: 0px 70px;
+  }  
+
+  .tem-conta {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;  
+    margin: 0px 70px;
+    
+  }  
+  .frase{
+    padding: 20px 25px;
+
+
+  }
+  .bt-user, .bt-menu {
+   flex-direction: row;
+    background-color: white;
+    border: white;
+    padding: 5px 8px;  
+    margin: 15px 30px ;
+ 
+     }
+
+.bannerCadastro {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-position: center;
+   background-size: cover;
+   width: 500px;
+   margin-left: 70PX;
+
+   }
+
+.dados{  
+ display: flex;  
+ justify-content: space-between;
+ flex-direction: column;
+
+ width: 70%;
+ margin:0px 60%;
+ 
+  }
+
+h3{ 
+  text-align:left;
+   font-size: 30px;
+   width: 400px;
+   margin-bottom: 25px ;
+ 
 }
+  labe{
+       text-align:flex-start;
+       font-size: 50px;
+       margin-top: 10px;
+          }
+
+input{
+
+   background-color: rgb(218, 218, 224);
+   border:solid 1px rgb(218, 218, 224)  ;
+   padding: 8px;
+   min-width: 100%;
+   margin-bottom: 10px;
+  
+}
+input:hover{
+  background-color: rgb(182, 220, 233);
+}
+ .cadastro {
+    display: flex;
+    align-self: center;
+       /* cor do botão*/
+    background-color: rgb(17, 16, 16);
+    font-size: 25px;
+    color: white ;
+    border-radius: 5px;
+    margin-top:20px ; 
+    padding: 10px 15px;
+    
+     }
+
+.redes-sociais{
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+
+}
+.redes-sociais img {
+    width: 24px;
+    padding-bottom: 10px;
+    margin: 0px  5%;
+    margin-top: 10px;
+  
+  
+  } 
+
+footer{
+      text-align: center;
+       margin-bottom: 15px ;
+}
+
+@media (max-width: 742px){
+  .tem-conta,.bannerCadastro, .redes-sociais
+  { display: none; }
+}
+@media (max-width: 741px){
+  .dados { justify-self: center;
+
+  }
+}
+@media (min-width: 741px){
+  .bt-menu, .bt-user { 
+        display: none;
+  }
+}
+
