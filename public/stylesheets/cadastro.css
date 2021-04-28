@@ -1,21 +1,30 @@
+:root {
+  --preto: #000000;
+  --branco: #ffffff;
+  --amarelo: #f5ba25;
+  --hover: #696969;
+  --cinza: #e5e5e5;
+}
+
 * {
   margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-}
-body {
   font-family: "Montserrat";
 }
 
-.banner {
+main {
+  display: flex;
+}
+
+.bannerCadastro {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-position: center;
   background-size: cover;
   width: 500px;
-  margin-left: 70px;
 }
 
 .dados {
@@ -32,61 +41,34 @@ h3 {
   width: 400px;
   margin-bottom: 25px;
 }
-labe {
+
+label {
   text-align: flex-start;
-  font-size: 50px;
+  font-size: 20px;
   margin-top: 10px;
 }
 
 input {
-  background-color: rgb(218, 218, 224);
-  border: solid 1px rgb(218, 218, 224);
+  background-color: var(--cinza);
+  border: solid 1px var(--cinza);
   padding: 8px;
   min-width: 100%;
   margin-bottom: 10px;
 }
-input:hover {
-  background-color: rgb(182, 220, 233);
-}
-.cadastro {
-  display: flex;
-  align-self: center;
-  /* cor do botão*/
-  background-color: rgb(17, 16, 16);
-  font-size: 25px;
-  color: white;
+
+button.botao-enviar{
+  cursor: pointer;
+  padding: 8px 30px;
   border-radius: 5px;
-  margin-top: 20px;
-  padding: 10px 15px;
+  border: 3px solid var(--preto);
+  background-color: var(--preto);
+  color: var(--branco);
 }
 
-.redes-sociais {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.redes-sociais img {
-  width: 24px;
-  padding-bottom: 10px;
-  margin: 0px 5%;
-  margin-top: 10px;
+div .bannerCadastro {
+  width: 50%;
 }
 
-@media (max-width: 742px) {
-  .tem-conta,
-  .bannerCadastro,
-  .redes-sociais {
-    display: none;
-  }
-}
-@media (max-width: 741px) {
-  .dados {
-    justify-self: center;
-  }
-}
-@media (min-width: 741px) {
-  .bt-menu,
-  .bt-user {
-    display: none;
-  }
+div .formulario {
+  width: 50%;
 }
