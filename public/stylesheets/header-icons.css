@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  
+  .logo {
+    font-family: "Bebas Neue";
+    font-size: 55px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: black;
+  }
+  
+  .icons img {
+padding: 10px;
+  } 
+  
+  footer {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
