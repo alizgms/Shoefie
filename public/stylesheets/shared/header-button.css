@@ -9,12 +9,6 @@ header {
   height: 80px;
 }
 
-button {
-  font-size: 16px;
-  width: 145px;
-  height: 40px;
-}
-
 .logo {
   font-family: "Bebas Neue";
   font-size: 55px;
@@ -30,6 +24,9 @@ button {
   border: 3px solid var(--preto);
   color: var(--preto);
   font-family: "Montserrat";
+  font-size: 16px;
+  width: 145px;
+  height: 40px;
 }
 
 .frase {
