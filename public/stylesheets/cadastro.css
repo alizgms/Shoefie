@@ -3,7 +3,7 @@
   --branco: #ffffff;
   --amarelo: #f5ba25;
   --hover: #696969;
-  --cinza: #e5e5e5;
+  --cinza: #F2EEEE;
 }
 
 * {
@@ -12,6 +12,10 @@
   outline: 0;
   box-sizing: border-box;
   font-family: "Montserrat";
+}
+
+button {
+  cursor: pointer;
 }
 
 main {
@@ -24,39 +28,46 @@ main {
   justify-content: space-between;
   background-position: center;
   background-size: cover;
-  width: 500px;
+}
+
+div .bannerCadastro {
+  width: 50%;
 }
 
 .dados {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 70%;
-  margin: 0px 60%;
+  align-items: center;
 }
 
-h3 {
-  text-align: left;
+div .formulario {
+  width: 50%;
+}
+
+div .formulario {
+  margin: 0 auto;
+  display: inline;
+  justify-content: flex-end;
+}
+
+p {
+  text-align: center;
   font-size: 30px;
   width: 400px;
   margin-bottom: 25px;
-}
-
-label {
-  text-align: flex-start;
-  font-size: 20px;
-  margin-top: 10px;
 }
 
 input {
   background-color: var(--cinza);
   border: solid 1px var(--cinza);
   padding: 8px;
-  min-width: 100%;
   margin-bottom: 10px;
+  width: 350px;
+  height: 45px;
 }
 
-button.botao-enviar{
+button.botao-enviar {
   cursor: pointer;
   padding: 8px 30px;
   border-radius: 5px;
@@ -65,10 +76,6 @@ button.botao-enviar{
   color: var(--branco);
 }
 
-div .bannerCadastro {
-  width: 50%;
-}
-
-div .formulario {
-  width: 50%;
+.bt-cadastro {
+  margin: 0 auto;
 }

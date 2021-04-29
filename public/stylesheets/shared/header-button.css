@@ -3,6 +3,16 @@ header {
   justify-content: space-between;
   margin-bottom: 5px;
   margin-top: 5px;
+  margin-right: 40px;
+  margin-left: 40px;
+  width: 1200px;
+  height: 80px;
+}
+
+button {
+  font-size: 16px;
+  width: 145px;
+  height: 40px;
 }
 
 .logo {
@@ -10,6 +20,7 @@ header {
   font-size: 55px;
   font-weight: 500;
   letter-spacing: 3px;
+  justify-content: center;
 }
 
 .cadastrar {
@@ -18,10 +29,12 @@ header {
   background-color: var(--branco);
   border: 3px solid var(--preto);
   color: var(--preto);
+  font-family: "Montserrat";
 }
 
 .frase {
   margin-right: 10px;
+  font: 16px;
 }
 
 .nao-tem-conta {
