@@ -26,8 +26,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-position: center;
-  background-size: cover;
+  width: 50%;
 }
 
 div .bannerCadastro {
@@ -42,13 +41,10 @@ div .bannerCadastro {
 }
 
 div .formulario {
-  width: 50%;
-}
-
-div .formulario {
   margin: 0 auto;
   display: inline;
   justify-content: flex-end;
+  width: 50%;
 }
 
 p {
@@ -78,4 +74,9 @@ button.botao-enviar {
 
 .bt-cadastro {
   margin: 0 auto;
+}
+
+label.field{ 
+  display: flex;
+  text-align: flex-start;
 }
