@@ -1,0 +1,62 @@
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  margin-top: 40px;
+}
+
+tr td {
+  height: 50px;
+}
+
+tr,
+td {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  transition: 0.2s ease-out;
+  background-color: #555;
+}
+
+.pedidos-header {
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.pedidos-body {
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.numero-pedido {
+  padding-left: 15px;
+}
+
+.button {
+  margin-left: 40px;
+}
+
+td button {
+  border: 0;
+  background-color: black;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  padding: 5px;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 50px;
+  text-align: center;
+}

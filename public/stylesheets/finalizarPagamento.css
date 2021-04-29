@@ -19,6 +19,7 @@ body {
   background-color: #fff;
   color: #666;
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 a {
@@ -122,18 +123,6 @@ label {
   margin-bottom: 0.3125rem;
 }
 
-.promo-code-field:hover,
-.promo-code-field:focus {
-  border: 1px solid #999;
-}
-
-.promo-code-cta {
-  border-radius: 4px;
-  font-size: 0.625rem;
-  margin-left: 0.625rem;
-  padding: 0.6875rem 1.25rem 0.625rem;
-}
-
 .basket-labels {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -225,6 +214,9 @@ li.subtotal:before {
   margin-top: -10px;
 }
 
+ul .quantity {
+  margin-top: 0px;
+}
 .quantity-field {
   text-align: center;
   background-color: #ccc;
@@ -250,7 +242,6 @@ aside p {
   background-color: #eee;
   border: 1px solid #aaa;
   padding: 1rem;
-  position: fixed;
   width: 250px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -263,16 +254,6 @@ aside p {
   text-align: center;
 }
 
-.summary-subtotal,
-.summary-total {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  clear: both;
-  margin: 1rem 0;
-  overflow: hidden;
-  padding: 0.5rem 0;
-}
-
 .subtotal-title,
 .subtotal-value,
 .total-title,
@@ -282,25 +263,6 @@ aside p {
   color: #111;
   float: left;
   width: 50%;
-}
-
-.summary-promo {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.promo-title {
-  float: left;
-  width: 70%;
-}
-
-.promo-value {
-  color: #8b0000;
-  float: left;
-  text-align: right;
-  width: 30%;
 }
 
 .summary-delivery {
@@ -331,12 +293,14 @@ aside p {
   width: 100%;
 }
 
-.summary-delivery-selection {
-  background-color: #ccc;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  display: block;
-  font-size: 0.625rem;
-  height: 34px;
-  width: 100%;
+button .checkout-cta {
+  margin-top: 20xp;
+}
+
+footer {
+  bottom: 0;
+  position: absolute;
+  /* width: 70%; */
+  text-align: center;
+  height: 50px;
 }
