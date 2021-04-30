@@ -26,14 +26,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%;
+  background-position: center;
+  background-size: cover;
 }
 
 div .bannerCadastro {
-  width: 50%;
+ max-width: 100%;
+ 
 }
 
-.dados {
+.formulario {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -41,29 +43,40 @@ div .bannerCadastro {
 }
 
 div .formulario {
+ max-width: 100%;
+ 
+
+}
+
+div .formulario {
   margin: 0 auto;
   display: inline;
   justify-content: flex-end;
-  width: 50%;
 }
 
-p {
-  text-align: center;
+.mensagem {
+  text-align: left;
   font-size: 30px;
   width: 400px;
   margin-bottom: 25px;
 }
 
 input {
+
+  display: flex;
+  justify-content:flex-end;
+  flex-direction: column;
   background-color: var(--cinza);
   border: solid 1px var(--cinza);
   padding: 8px;
   margin-bottom: 10px;
   width: 350px;
   height: 45px;
+  margin-bottom: 15px;
 }
 
-button.botao-enviar {
+.botao-enviar {
+  display: flex;
   cursor: pointer;
   padding: 8px 30px;
   border-radius: 5px;
@@ -72,11 +85,8 @@ button.botao-enviar {
   color: var(--branco);
 }
 
-.bt-cadastro {
-  margin: 0 auto;
+.bt-cadastro{
+  margin: 0% 30%;
+
 }
 
-label.field{ 
-  display: flex;
-  text-align: flex-start;
-}
