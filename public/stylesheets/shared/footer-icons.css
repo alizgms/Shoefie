@@ -3,4 +3,11 @@ footer {
     margin-top: 30px;
     margin-bottom: 20px;
   }
+
+  .redes-sociais img {
+    width: 24px;
+    padding-bottom: 5px;
+    margin: 5px;
+    display: flex;
+  }
   
