@@ -11,14 +11,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/public/stylesheets/cadastro.css">
-    <link rel="stylesheet" href="/public/stylesheets/shared/header-button.css">
-    <title>Registre-se</title>
+    <link rel="stylesheet" href="/stylesheets/cadastro.css">
+    <link rel="stylesheet" href="/stylesheets/shared/header-button.css">
+    <title>Login</title>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="paginaLogin">
 
         <header>
             <div class="logo">SHOEFIE</div>
@@ -33,38 +33,35 @@
         </header>
 
         <main>
-            <div class="bannerCadastro">
-                <img src="/public/media/ilustracao/Waiting.png" alt=" imagemCadastro">
+            <div class="bannerLogin">
+                <img src="/media/ilustracao/Shopping call.svg" alt=" image Login">
             </div>
 
-            <div class="formulario">
-                <form class="dados">
-                    <div>
-                        <p>Falta pouco para você compra conosco!</p>
+               
+                 <div class="formularioLogin"> 
+                <form >
+                    <div class="mensagem">
+                        <p> Bem vindo de volta !</p>
                     </div>
-                    <label class="field">Nome</label>
-                    <input type="text" nome="nome">
-
-                    <label class="field">Telefone</label>
-                    <input type="tel" nome="Telefone">
-
+                   
                     <label class="field">Email</label>
                     <input type="email" name="email" id="email">
 
                     <label class="field">Senha</label>
                     <input type="password" name="senha" id="senha" min="6" max="12">
-
-                    <label class="field">Confirme sua senha</label>
-                    <input type="password" name="confimaSenha" id="confimaSenha">
-                    <div class="bt-cadastro">
-                        <button class="botao-enviar" type="submit">Cadastrar</button>
+                    <label class="field"> Esqueceu sua senha ?</label>
+                    <label class="field"></label>
+                    <div class="bt-login">
+                        <button class="botao-enviar" type="submit">Fazer login</button>
                     </div>
                 </form>
+             
             </div>
-    </div>
-    </main>
+          </div>
+        </main>
+        
+        <footer class="rodape"> SHOEFIE © todos os direitos reservados</footer>
+
 </body>
-
-<footer> SHOEFIE © todos os direitos reservados</footer>
-
+      
 </html>

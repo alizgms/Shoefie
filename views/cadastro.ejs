@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/cadastro.css">
+    <link rel="stylesheet" href="/stylesheets/shared/header-button.css">
+    <title>Registre-se</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="logo">SHOEFIE</div>
+            <div class="nao-tem-conta">
+                <div class="frase">
+                    Já tem uma conta?
+                </div>
+                <a href="/usuarios/login">
+                    <div>
+                        <button class="cadastrar">Faça login</button>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <div class="bannerCadastro">
+                <img src="/media/ilustracao/Waiting.png" alt=" imagemCadastro">
+            </div>
+
+
+            <div class="formulario"> 
+                <form >
+                    <div class="mensagem">
+                        <p>Falta pouco para você compra conosco!</p>
+                    </div>
+                    
+                    <label class="field">Nome</label>
+                    <input type="text" nome="nome">
+
+                    <label class="field">Email</label>
+                    <input type="email" name="email" id="email">
+
+                    <label class="field">Senha</label>
+                    <input type="password" name="senha" id="senha" min="6" max="12">
+
+                    <label class="field">Confirme sua senha</label>
+                    <input type="password" name="confirmaSenha" id="confirmaSenha">
+                    <div class="bt-cadastro">
+                        <button class="botao-enviar" type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+    </main>
+</body>
+
+<footer> SHOEFIE © todos os direitos reservados</footer>
+
+</html>
