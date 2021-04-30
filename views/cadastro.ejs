@@ -11,8 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/public/stylesheets/cadastro.css">
-    <link rel="stylesheet" href="/public/stylesheets/shared/header-button.css">
+    <link rel="stylesheet" href="/stylesheets/cadastro.css">
+    <link rel="stylesheet" href="/stylesheets/shared/header-button.css">
     <title>Registre-se</title>
 </head>
 
@@ -26,19 +26,21 @@
                 <div class="frase">
                     Já tem uma conta?
                 </div>
-                <div>
-                    <button class="cadastrar">Faça login</button>
-                </div>
+                <a href="/usuarios/login">
+                    <div>
+                        <button class="cadastrar">Faça login</button>
+                    </div>
+                </a>
             </div>
         </header>
 
         <main>
             <div class="bannerCadastro">
-                <img src="/public/media/ilustracao/Waiting.png" alt=" imagemCadastro">
+                <img src="/media/ilustracao/Waiting.png" alt=" imagemCadastro">
             </div>
 
 
-                 <div class="formulario"> 
+            <div class="formulario"> 
                 <form >
                     <div class="mensagem">
                         <p>Falta pouco para você compra conosco!</p>
@@ -47,9 +49,6 @@
                     <label class="field">Nome</label>
                     <input type="text" nome="nome">
 
-                    <label class="field">Telefone</label>
-                    <input type="tel" nome="Telefone">
-
                     <label class="field">Email</label>
                     <input type="email" name="email" id="email">
 
@@ -57,7 +56,7 @@
                     <input type="password" name="senha" id="senha" min="6" max="12">
 
                     <label class="field">Confirme sua senha</label>
-                    <input type="password" name="confimaSenha" id="confimaSenha">
+                    <input type="password" name="confirmaSenha" id="confirmaSenha">
                     <div class="bt-cadastro">
                         <button class="botao-enviar" type="submit">Cadastrar</button>
                     </div>
