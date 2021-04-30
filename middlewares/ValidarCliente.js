@@ -8,7 +8,7 @@ module.exports = async (request, response, next) => {
   }
 
   const usuarioExiste = await Usuario.findAll({
-    where: { nome, email, senha },
+    where: { email },
   });
 
   if (usuarioExiste.length) {
