@@ -62,7 +62,7 @@ section nav a:hover {
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   background-color: var(--branco);
   color: var(--preto);
 }
@@ -100,4 +100,9 @@ body {
   width: 24px;
   padding-bottom: 10px;
   margin: 5px;
-}  
+}
+
+.cadastrar:hover {
+  background-color: #69696941;
+  transition: 0.2s ease-out;
+}

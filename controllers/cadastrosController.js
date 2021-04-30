@@ -4,7 +4,7 @@ const cadastrosController = {
   index: async (request, response) => {
     const cadastro = await Cadastro.findAll();
 
-    return response.status(200).json(cadastro);
+    return response.render('cadastro');
   },
 
   store: async (request, response) => {

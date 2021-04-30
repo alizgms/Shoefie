@@ -23,9 +23,9 @@ const usuariosController = {
 
     usuario.senha = undefined;
 
-    return response.status(201).json(usuario);
+    return response.render('login');
   },
-  login: async (request, response) => {
+  auth: async (request, response) => {
     const { email, senha, loginStatus } = request.body;
 
     const usuario = await Usuario.findOne({ where: { email } });
@@ -51,11 +51,18 @@ const usuariosController = {
 
     usuario.senha = undefined;
 
-    return response.status(200).json({
-      status: 1,
-      message: 'Usuário logado com sucesso!',
-      usuario,
+    request.session.usuarioLogado = usuario;
+    return response.redirect('/');
+  },
+  delete: async (request, response) => {
+    const { id } = request.params;
+
+    await Usuario.destroy({
+      where: {
+        id,
+      },
     });
+    return response.status(201).send();
   },
 };
 
