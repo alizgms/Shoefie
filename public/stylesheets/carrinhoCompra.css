@@ -9,6 +9,10 @@ body{
     margin: 0;
 }
 
+button{
+    cursor: pointer;
+}
+
 .container {
     width: 1200px;
     max-width: 100%;
@@ -41,6 +45,11 @@ section nav a:hover{
     margin: 0 10%;
 }
 
+.carrinho{
+    font-family: "Montserrat";
+    font-size: larger;
+}
+
 .box-top{
     display: flex;
     justify-content: space-between;
@@ -54,11 +63,18 @@ section nav a:hover{
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #111;
+    margin-top: 10px;
 }
 
 .qtd-produto{
     display: flex;
     align-items: center;
+}
+.qtd-produto a{
+    text-decoration: none;
+    color: var(--preto);
+    padding: 10px;
+    margin: 0 auto;
 }
 
 .produto-imagem{
@@ -67,18 +83,12 @@ section nav a:hover{
     align-items: center;
 }
 
-.produto-img{
-    width: 60px;
-    border: 1px solid #aaa;
-}
-
 .produto-valor{
     display: flex;
-    align-items: center;
 }
 
 #lixo{
-    width: 10px;
+    width: 15px;
 }
 
 .comprar{
@@ -88,6 +98,12 @@ section nav a:hover{
     border: 3px solid #111;
     color:#fff;
     justify-content: flex-end;
+}
+
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
 }
 
 .button-compra{
