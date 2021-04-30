@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fff;
+    color: #666;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+section nav a{
+    text-decoration: none;
+    color: var(--preto);
+    padding: 10px;
+    margin: 0 auto;
+}
+  
+section nav a:hover{
+    color: var(--hover);
+}
+
+.carrinho-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+.box-top{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #111;
+}
+
+.box-produtos{
+    display: flex;
+    border-top: #111;
+    border-bottom: #111;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #111;
+}
+
+.qtd-produto{
+    display: flex;
+    align-items: center;
+}
+
+.produto-imagem{
+    display: flex;
+    width: 10%;
+    align-items: center;
+}
+
+.produto-img{
+    width: 60px;
+    border: 1px solid #aaa;
+}
+
+.produto-valor{
+    display: flex;
+    align-items: center;
+}
+
+#lixo{
+    width: 10px;
+}
+
+.comprar{
+    padding: 6px 10px;
+    border-radius: 5px;
+    background-color:#111;
+    border: 3px solid #111;
+    color:#fff;
+    justify-content: flex-end;
+}
+
+.button-compra{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+  
+.button-compra:hover {
+    color: var(--hover);
+}
+
+footer{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
