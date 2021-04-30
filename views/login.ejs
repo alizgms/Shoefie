@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/cadastro.css">
+    <link rel="stylesheet" href="/stylesheets/shared/header-button.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="paginaLogin">
+
+        <header>
+            <div class="logo">SHOEFIE</div>
+            <div class="nao-tem-conta">
+                <div class="frase">
+                    Já tem uma conta?
+                </div>
+                <div>
+                    <button class="cadastrar">Faça login</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="bannerLogin">
+                <img src="/media/ilustracao/Shopping call.svg" alt=" image Login">
+            </div>
+
+               
+                 <div class="formularioLogin"> 
+                <form action="/usuarios/auth">
+                    <div class="mensagem">
+                        <p> Bem vindo de volta !</p>
+                    </div>
+                   
+                    <label class="field">Email</label>
+                    <input type="email" name="email" id="email">
+
+                    <label class="field">Senha</label>
+                    <input type="password" name="senha" id="senha" min="6" max="12">
+                    <label class="field"> Esqueceu sua senha ?</label>
+                    <label class="field"></label>
+                    <div class="bt-login">
+                        <button class="botao-enviar" type="submit">Fazer login</button>
+                    </div>
+                </form>
+             
+            </div>
+          </div>
+        </main>
+        
+        <footer class="rodape"> SHOEFIE © todos os direitos reservados</footer>
+
+</body>
+      
+</html>
