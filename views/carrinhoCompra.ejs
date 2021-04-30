@@ -22,7 +22,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/public/stylesheets/carrinhoCompra.css"/>
-    <link rel="stylesheet" href="/public/stylesheets/home.css"/>
+    <link rel="stylesheet" href="/public/stylesheets/shared/header-icons.css"/>
 
     <title>SHOEFIE</title>
 </head>
@@ -31,13 +31,6 @@
     <div class="container">
         <header>
             <div class="logo">SHOEFIE</div>
-
-            <div id="pesquisar">
-                <fieldset>
-                    <img src="/public/media/icons/search.svg" alt="ícone de pesquisar" />
-                    <input type="text" id="barra-de-pesquisa" placeholder="o que você procura?" />
-                </fieldset>
-            </div>
 
             <div class="icons">
                 <img src="../public/media/icons/truck.svg" alt="Acompanhar envio"/>
@@ -53,27 +46,64 @@
 
         <section class="menu">
             <nav>
-                <a href="">Lançamentos</a>
-                <a href="">Ofertas</a>
-                <a href="">Masculino</a>
-                <a href="">Feminino</a>
-                <a href="">Infantil</a>
+                <a href="">LANÇAMENTOS</a>
+                <a href="">OFERTAS</a>
+                <a href="">MASCULINO</a>
+                <a href="">FEMININO</a>
+                <a href="">INFANTIL</a>
             </nav>
         </section>
 
-        <div class="carrinho">
-            <p class="ccompras">Carrinho de compras</p>
-
+        <div class="carrinho-box">
             <div>
-                <ul>
-                    <li>Produto</li>
-                    <li>Quantidade</li>
-                    <li>Preço</li>
-                </ul>
+                <p class="carrinho">Carrinho de compras</p>
+            </div>
+            <div class="box-top">
+                <div>
+                    <p class="produo">Produto</p>
+                </div>
+                <div>
+                    <p class="quantidade">Quantidade</p>
+                </div>
+                <div>
+                    <p class="preco">Preço</p>
+                </div>
+            </div>
+
+            <div class="box-produtos">
+                <div class="produto-imagem">
+                    <div>
+                        <p><strong>Nike Shox</strong></p>
+                    </div>
+                </div>
+
+                <div class="qtd-produto">
+                    <p><a href="">+</a>  1  <a href="">-</a></p> 
+                </div>
+
+                <div class="produto-valor">
+                    <p>R$ 250,00</p>
+                    <div class="lixo">
+                        <a href=""><img src="/public/media/icons/trash.svg" alt="lixo" id="lixo"></a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="total">
+                <p>Subtotal(1 Item): R$ 250,00</p>
+            </div>
+
+            <div class="button-compra">
+                <button class="comprar">CONFIRMAR COMPRA <img src="/public/media/icons/arrow-right.svg"
+                    alt="seta para a direita">
+                </button>
             </div>
         </div>
 
     </div>
 </body>
+
+<footer>shoefie © todos os direitos reservados</footer>
 
 </html>
