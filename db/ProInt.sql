@@ -33,8 +33,8 @@ CREATE TABLE `cadastros` (
   `usuarios_id` varchar(36) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_cadastros_usuarios1_idx` (`usuarios_id`),
-  CONSTRAINT `fk_cadastros_usuarios1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_cadastros_usuarios1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,7 +57,7 @@ CREATE TABLE `categorias` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,6 +66,7 @@ CREATE TABLE `categorias` (
 
 LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
+INSERT INTO `categorias` VALUES (1,'Feminino'),(2,'Masculino');
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,8 +87,8 @@ CREATE TABLE `pedidos` (
   `usuarios_id` varchar(36) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_pedidos_usuarios1_idx` (`usuarios_id`),
-  CONSTRAINT `fk_pedidos_usuarios1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_pedidos_usuarios1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +114,7 @@ CREATE TABLE `produtos` (
   `qtdEstoque` int DEFAULT NULL,
   `imagem` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,6 +123,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
+INSERT INTO `produtos` VALUES (1,'Sapato Lagosta do bolado',1200.00,10,NULL);
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,6 +151,7 @@ CREATE TABLE `produtos_categorias` (
 
 LOCK TABLES `produtos_categorias` WRITE;
 /*!40000 ALTER TABLE `produtos_categorias` DISABLE KEYS */;
+INSERT INTO `produtos_categorias` VALUES (1,1),(1,2);
 /*!40000 ALTER TABLE `produtos_categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -166,8 +169,8 @@ CREATE TABLE `produtos_pedidos` (
   PRIMARY KEY (`produtos_id`,`pedidos_id`),
   KEY `fk_produtos_has_pedidos_pedidos1_idx` (`pedidos_id`),
   KEY `fk_produtos_has_pedidos_produtos1_idx` (`produtos_id`),
-  CONSTRAINT `fk_produtos_has_pedidos_pedidos1` FOREIGN KEY (`pedidos_id`) REFERENCES `pedidos` (`id`),
-  CONSTRAINT `fk_produtos_has_pedidos_produtos1` FOREIGN KEY (`produtos_id`) REFERENCES `produtos` (`id`)
+  CONSTRAINT `fk_produtos_has_pedidos_pedidos1` FOREIGN KEY (`pedidos_id`) REFERENCES `pedidos` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_produtos_has_pedidos_produtos1` FOREIGN KEY (`produtos_id`) REFERENCES `produtos` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -203,7 +206,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES ('4327db5b-4595-477b-846a-52655805e583','Teste 3','teste3@email.com','$2a$10$.Fp1xdg2EIAb1C5oczbpN.cAcephwxwSE04vdqYLERvCz7FxldnhG',1),('4955c387-897f-49be-a9be-ff4d60d620fd','Teste 3','teste3@email.com','$2a$10$m48Wt3yUacp7WlYFSfKFq.oxrB6MyP8o85eXX.Q.jszYWok/rmIcK',NULL),('f6d3bb5b-8e1f-425f-acd1-b334ef9d84a7','Teste 2','teste2@email.com','$2a$10$EwUU3UiVvv0i6PO0iS/pXuzcpmMsRbRhN1D9aBncLSmUMdJfXHRJa',NULL);
+INSERT INTO `usuarios` VALUES ('08bb648d-ab95-4096-81c3-85c5de776873','Teste 1','teste1@email.com','$2a$10$6s1azNAttxSQMd1kyOWE0OZAlwKr7ElscQ79.G7NQi2resAcz8OeS',NULL),('9a356d43-2e11-49ea-b44e-c95f47668bb0','testando4','testando4@email.com','$2a$10$2GaKSxDjPcO0dDSCpQEQJeyImNLK1PtxCA5q08A7TQ/8umH4QX2ju',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -216,4 +219,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-27 11:59:42
+-- Dump completed on 2021-04-29 19:06:34

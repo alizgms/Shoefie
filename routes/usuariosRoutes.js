@@ -4,7 +4,8 @@ const validarUsuario = require('../middlewares/ValidarCliente');
 const router = express.Router();
 
 router.get('/', usuariosController.index);
-router.post('/login', usuariosController.login);
+router.post('/login', usuariosController.auth);
 router.post('/', validarUsuario, usuariosController.store);
+router.delete('/:id', usuariosController.delete);
 
 module.exports = router;
