@@ -4,7 +4,7 @@ const produtosController = {
   index: async (request, response) => {
     const produtos = await Produto.findAll();
 
-    return response.status(200).json(produtos);
+    return response.status(200).render('produtos');
   },
 
   store: async (request, response) => {

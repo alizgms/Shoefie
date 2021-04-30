@@ -6,7 +6,7 @@ const usuariosController = {
   index: async (request, response) => {
     const usuario = await Usuario.findAll();
 
-    return response.status(200).json(usuario);
+    return response.status(200).render('login');
   },
 
   store: async (request, response) => {
