@@ -1,12 +1,9 @@
 header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-right: 40px;
-  margin-left: 40px;
-  width: 1200px;
-  height: 80px;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .logo {
