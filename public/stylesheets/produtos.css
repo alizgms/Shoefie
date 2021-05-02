@@ -1,0 +1,38 @@
+:root {
+  --preto: #000000;
+  --branco: #ffffff;
+  --amarelo: #f5ba25;
+  --hover: #696969;
+  --cinza: #e5e5e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat";
+  background-color: var(--branco);
+  color: var(--preto);
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.titulo-carrossel {
+  font-size: 20px;
+}
+
+.item img {
+  border-radius: 5px;
+}
