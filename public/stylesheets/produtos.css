@@ -20,13 +20,15 @@ body {
   font-size: 14px;
 }
 
-h1 {
+h5 {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .titulo-carrossel {
@@ -35,4 +37,31 @@ h1 {
 
 .item img {
   border-radius: 5px;
+}
+
+p {
+font-size: 12px;
+}
+
+.carrossel {
+  margin: 10px 100px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+
+section nav a {
+  text-decoration: none;
+  color: var(--preto);
+  padding: 10px;
+  margin: 0 auto; /* NÃO ALINHA */
+}
+
+section nav a:hover {
+  color: var(--hover);
 }
