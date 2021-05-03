@@ -11,10 +11,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/cadastro.css">
-    <link rel="stylesheet" href="/stylesheets/shared/header-button.css">
+    <link rel="stylesheet" href="/public/stylesheets/login.css">
+    <link rel="stylesheet" href="/public/stylesheets/shared/header-button.css">
+    <link rel="stylesheet" href="/public/stylesheets/shared/footer.css">
     <link rel="shortcut icon" href="/public/Logo.png">
-    <title>Login</title>
+    <title>Login | SHOEFIE</title>
 </head>
 
 <body>
@@ -35,34 +36,34 @@
 
         <main>
             <div class="bannerLogin">
-                <img src="/media/ilustracao/Shopping call.svg" alt=" image Login">
+                <img src="/public/media/ilustracao/Shopping call.svg" alt="imagem login">
             </div>
-
 
             <div class="formularioLogin">
                 <form action="/usuarios/auth">
                     <div class="mensagem">
-                        <p> Bem vindo de volta !</p>
+                        <p> Bem-vindo de volta!</p>
                     </div>
-
                     <label class="field">Email</label>
-                    <input type="email" name="email" id="email">
+                    <div class="box">
+                        <input type="email" name="email" id="email">
+                    </div>
 
                     <label class="field">Senha</label>
-                    <input type="password" name="senha" id="senha" min="6" max="12">
-                    <label class="field"> Esqueceu sua senha ?</label>
-                    <label class="field"></label>
+                    <div class="box">
+                        <input type="password" name="senha" id="senha" min="6" max="12">
+                    </div>
+
                     <div class="bt-login">
-                        <button class="botao-enviar" type="submit">Entra</button>
+                        <button class="botao-enviar" type="submit">entrar</button>
                     </div>
                 </form>
-
             </div>
     </div>
     </main>
 
-    <footer class="rodape"> SHOEFIE © todos os direitos reservados</footer>
-
 </body>
+
+<footer>SHOEFIE © todos os direitos reservados</footer>
 
 </html>
