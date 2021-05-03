@@ -27,6 +27,7 @@ app.use(
     resave: true,
   })
 );
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -39,7 +40,7 @@ app.use('/categorias', categoriasRoutes);
 app.use('/produtos', produtosRoutes);
 app.use('/usuarios', usuariosRoutes);
 app.use('/cadastros', cadastrosRoutes);
-app.use('/produtosPedidos', produtosPedidosRoutes);
+app.use('/carrinho', produtosPedidosRoutes);
 app.use('/produtosCategorias', produtoCategoriaRoutes);
 
 // catch 404 and forward to error handler

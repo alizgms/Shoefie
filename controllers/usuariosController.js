@@ -4,11 +4,16 @@ const { v4: uuid } = require('uuid');
 
 const usuariosController = {
   index: async (request, response) => {
-    const usuario = await Usuario.findAll();
+    const usuarios = await Usuario.findAll();
 
-    return response.status(200).json(usuario);
+    return response.status(200).send({ usuarios });
   },
-
+  signup: (request, response) => {
+    return response.render('cadastro');
+  },
+  profile: (request, response) => {
+    return response.render('telaUsuario');
+  },
   store: async (request, response) => {
     const { nome, email, senha } = request.body;
 
@@ -21,9 +26,10 @@ const usuariosController = {
 
     await Usuario.create(usuario);
 
-    usuario.senha = undefined;
-
-    return response.redirect('/produtos');
+    // return response.redirect('/produtos');
+    return response.status(201).send({
+      usuario,
+    });
   },
   login: (request, response) => {
     return response.render('login');
@@ -53,11 +59,15 @@ const usuariosController = {
       }
     );
 
-    usuario.senha = undefined;
+    // console.log(token);
 
     request.session.usuarioLogado = usuario;
     return response.redirect('/produtos');
-    // return response.json(usuario);
+    // return response.status(200).send({
+    //   status: 1,
+    //   message: 'Usuário logado com sucesso!',
+    //   usuario,
+    // });
   },
   delete: async (request, response) => {
     const { id } = request.params;
