@@ -88,7 +88,7 @@ CREATE TABLE `pedidos` (
   PRIMARY KEY (`id`),
   KEY `fk_pedidos_usuarios1_idx` (`usuarios_id`),
   CONSTRAINT `fk_pedidos_usuarios1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,6 +97,7 @@ CREATE TABLE `pedidos` (
 
 LOCK TABLES `pedidos` WRITE;
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
+INSERT INTO `pedidos` VALUES (9,NULL,'1',15164732,NULL,'2021-05-03 14:25:38','7ffe8645-ac26-4647-92e4-dd5062d27159');
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,9 +113,9 @@ CREATE TABLE `produtos` (
   `nome` varchar(45) DEFAULT NULL,
   `preco` decimal(9,2) DEFAULT NULL,
   `qtdEstoque` int DEFAULT NULL,
-  `imagem` varchar(45) DEFAULT NULL,
+  `imagem` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,7 +124,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (1,'Sapato Lagosta do bolado',1200.00,10,NULL);
+INSERT INTO `produtos` VALUES (6,'Sapato Amina',200.00,10,'https://i.ibb.co/XXcpR7Y/6-Amina.jpg'),(7,'Sapato Alice',200.00,10,'https://i.ibb.co/1ss8w60/2-Alice.jpg'),(8,'Sapato Budgeron',200.00,10,'https://i.ibb.co/4dQnj1r/8-Budgeron.jpg'),(9,'Sapato Mikail',200.00,10,'https://i.ibb.co/nft37fH/7-Mikail.jpg');
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,7 +142,7 @@ CREATE TABLE `produtos_categorias` (
   KEY `fk_produtos_has_categorias_categorias1_idx` (`categorias_id`),
   KEY `fk_produtos_has_categorias_produtos1_idx` (`produtos_id`),
   CONSTRAINT `fk_produtos_has_categorias_categorias1` FOREIGN KEY (`categorias_id`) REFERENCES `categorias` (`id`),
-  CONSTRAINT `fk_produtos_has_categorias_produtos1` FOREIGN KEY (`produtos_id`) REFERENCES `produtos` (`id`)
+  CONSTRAINT `fk_produtos_has_categorias_produtos1` FOREIGN KEY (`produtos_id`) REFERENCES `produtos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -151,7 +152,6 @@ CREATE TABLE `produtos_categorias` (
 
 LOCK TABLES `produtos_categorias` WRITE;
 /*!40000 ALTER TABLE `produtos_categorias` DISABLE KEYS */;
-INSERT INTO `produtos_categorias` VALUES (1,1),(1,2);
 /*!40000 ALTER TABLE `produtos_categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,7 +206,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES ('08bb648d-ab95-4096-81c3-85c5de776873','Teste 1','teste1@email.com','$2a$10$6s1azNAttxSQMd1kyOWE0OZAlwKr7ElscQ79.G7NQi2resAcz8OeS',NULL),('9a356d43-2e11-49ea-b44e-c95f47668bb0','testando4','testando4@email.com','$2a$10$2GaKSxDjPcO0dDSCpQEQJeyImNLK1PtxCA5q08A7TQ/8umH4QX2ju',NULL);
+INSERT INTO `usuarios` VALUES ('4f791b6f-ddff-4a58-a6a5-bc260198e54d','teste3','teste3@email.com','$2a$10$RKgyVLWuA2NWY910JpLIwuogIA2m5Ic7boJ6my.avQbMUpXiMJEai',1),('7ffe8645-ac26-4647-92e4-dd5062d27159','teste1','teste1@email.com','$2a$10$8xlE/4AhktE.NVLYFf7Rm.hnJTLNnb3HegH5kfncwd9OTxof8kN2a',1),('fbc8c577-50bc-471c-8e4b-897339b0687a','teste2','teste2@email.com','$2a$10$RVtkG1sFpqZAsvNW1bvgQOmYhEFHIChcN6uPkOiT60jGkjuK598pK',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -219,4 +219,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-29 19:06:34
+-- Dump completed on 2021-05-03 14:43:00

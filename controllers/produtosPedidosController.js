@@ -6,11 +6,15 @@ const produtosPedidosController = {
 
     return response.status(200).json(produtosPedidos);
   },
+  carrinho: (request, response) => {
+    return response.render('carrinhoCompra');
+  },
   store: async (request, response) => {
-    const { produtos_id, pedidos_id, qtdProduto } = request.body;
+    const {  pedidos_id, qtdProduto } = request.body;
+    const {id} = request.params;
 
     const produtoPedido = {
-      produtos_id,
+      produtos_id: id,
       pedidos_id,
       qtdProduto,
     };

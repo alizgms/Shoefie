@@ -1,7 +1,6 @@
 const { Usuario } = require('../models');
 const bcrypt = require('bcryptjs');
 const { v4: uuid } = require('uuid');
-const { response } = require('express');
 
 const usuariosController = {
   index: async (request, response) => {
@@ -63,7 +62,7 @@ const usuariosController = {
     // console.log(token);
 
     request.session.usuarioLogado = usuario;
-    return response.render('produtos');
+    return response.redirect('/produtos');
     // return response.status(200).send({
     //   status: 1,
     //   message: 'Usuário logado com sucesso!',
