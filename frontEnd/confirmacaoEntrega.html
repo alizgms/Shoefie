@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/frontEnd/confirmacaoEntrega.css">
+    <link rel="stylesheet" href="/stylesheets/shared/header-button.css">
+    <link rel="shortcut icon" href="/public/Logo.png">
+    <title>Confirmação de Entrega</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="logo">SHOEFIE</div>
+            <div class="nao-tem-conta">
+                <div class="frase">
+                    Já tem uma conta?
+                </div>
+                <a href="/usuarios/login">
+                    <div>
+                        <button class="cadastrar">Faça login</button>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <div class="bannerEntrega">
+                <img src="/frontEnd/img/imagemEntrega.png" alt="imagemEntrega">
+            </div>
+
+
+            <div class="formulario">
+                <form>
+                    <div class="mensagem">
+                        <p>Endereço de Envio</p>
+                        <input type="text" name="nome" id="nome" placeholder="*Primeiro nome ">
+                        <input type="text" name="sobrenome" id="sobrenome" placeholder="*Sobrenome" required>
+                        <input type="text" name="endereco" id="endereco" placeholder="*Endereço">
+                        <input type="text" name="telefone" id="telefone" placeholder="*Telefone">
+                        <input type="text" name="cep" id="cep" placeholder="*CEP/Codigo Postal">
+                        <input type="text" name="estado" id="estado" placeholder="*Estado">
+                        <input type="name" name="cidade" id="cidade" placeholder="*Cidade">
+                        <input type="text" name="cpf" id="cpf" placeholder="*Número do CPF">
+                    <div class="bt-cadastro">
+                        <button class="botao-enviar" type="submit">Proceder para compra </button>
+                    </div>
+                </form>
+            </div>
+    </div>
+    </main>
+</body>
+
+<footer> SHOEFIE © todos os direitos reservados</footer>
+
+</html>
