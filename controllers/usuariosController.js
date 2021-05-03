@@ -6,7 +6,7 @@ const usuariosController = {
   index: async (request, response) => {
     const usuario = await Usuario.findAll();
 
-    return response.status(200).render('login');
+    return response.status(200).json(usuario);
   },
 
   store: async (request, response) => {
@@ -23,14 +23,18 @@ const usuariosController = {
 
     usuario.senha = undefined;
 
+    return response.redirect('/produtos');
+  },
+  login: (request, response) => {
     return response.render('login');
   },
+
   auth: async (request, response) => {
     const { email, senha, loginStatus } = request.body;
 
     const usuario = await Usuario.findOne({ where: { email } });
 
-    if (!bcrypt.compareSync(senha, usuario.senha)) {
+    if (!usuario || !bcrypt.compareSync(senha, usuario.senha)) {
       return response
         .status(400)
         .json({ status: 0, message: 'E-email ou senha incorretos!' });
@@ -40,7 +44,7 @@ const usuariosController = {
 
     await Usuario.update(
       {
-        loginStatus,
+        loginStatus: 1,
       },
       {
         where: {
@@ -52,7 +56,8 @@ const usuariosController = {
     usuario.senha = undefined;
 
     request.session.usuarioLogado = usuario;
-    return response.redirect('/');
+    return response.redirect('/produtos');
+    // return response.json(usuario);
   },
   delete: async (request, response) => {
     const { id } = request.params;

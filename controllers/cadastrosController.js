@@ -4,6 +4,9 @@ const cadastrosController = {
   index: async (request, response) => {
     const cadastro = await Cadastro.findAll();
 
+    return response.json(cadastro);
+  },
+  register: (request, response) => {
     return response.render('cadastro');
   },
 

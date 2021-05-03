@@ -13,6 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/cadastro.css">
     <link rel="stylesheet" href="/stylesheets/shared/header-button.css">
+    <link rel="shortcut icon" href="/public/Logo.png">
     <title>Login</title>
 </head>
 
@@ -24,10 +25,10 @@
             <div class="logo">SHOEFIE</div>
             <div class="nao-tem-conta">
                 <div class="frase">
-                    Já tem uma conta?
+                    Não tem uma conta?
                 </div>
                 <div>
-                    <button class="cadastrar">Faça login</button>
+                    <button class="cadastrar">Cadastre-se</button>
                 </div>
             </div>
         </header>
@@ -37,13 +38,13 @@
                 <img src="/media/ilustracao/Shopping call.svg" alt=" image Login">
             </div>
 
-               
-                 <div class="formularioLogin"> 
-                <form >
+
+            <div class="formularioLogin">
+                <form action="/usuarios/auth">
                     <div class="mensagem">
                         <p> Bem vindo de volta !</p>
                     </div>
-                   
+
                     <label class="field">Email</label>
                     <input type="email" name="email" id="email">
 
@@ -52,16 +53,16 @@
                     <label class="field"> Esqueceu sua senha ?</label>
                     <label class="field"></label>
                     <div class="bt-login">
-                        <button class="botao-enviar" type="submit">Fazer login</button>
+                        <button class="botao-enviar" type="submit">Entra</button>
                     </div>
                 </form>
-             
+
             </div>
-          </div>
-        </main>
-        
-        <footer class="rodape"> SHOEFIE © todos os direitos reservados</footer>
+    </div>
+    </main>
+
+    <footer class="rodape"> SHOEFIE © todos os direitos reservados</footer>
 
 </body>
-      
+
 </html>
