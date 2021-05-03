@@ -4,9 +4,11 @@ const produtosController = {
   index: async (request, response) => {
     const produtos = await Produto.findAll();
 
-    return response.status(200).render('produtos');
+    return response.status(200).json(produtos);
   },
-
+  produtos: (request, response) => {
+    return response.render('produtos');
+  },
   store: async (request, response) => {
     const { nome, preco, qtdEstoque } = request.body;
 
