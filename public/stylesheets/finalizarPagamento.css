@@ -1,18 +1,18 @@
-header .container {
-  display: flex;
+:root {
+  --preto: #000000;
+  --branco: #ffffff;
+  --amarelo: #f5ba25;
+  --hover: #696969;
+  --cinza: #f2eeee;
 }
 
-.container .icons {
-  align-self: center;
-}
-
-.icons img:first-of-type {
-  padding-left: 0;
-}
-
-.icons img {
-  flex-direction: row;
-  padding-left: 5px;
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  color: var(--preto);
 }
 
 body {
@@ -295,12 +295,4 @@ aside p {
 
 button .checkout-cta {
   margin-top: 20xp;
-}
-
-footer {
-  bottom: 0;
-  position: absolute;
-  /* width: 70%; */
-  text-align: center;
-  height: 50px;
 }
