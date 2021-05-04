@@ -1,8 +1,10 @@
-const { Produto } = require('../models');
+const { Produto, Categoria } = require('../models');
 
 const produtosController = {
   index: async (request, response) => {
-    const produtos = await Produto.findAll();
+    const produtos = await Produto.findAll({
+      include: { model: Categoria, as: 'categorias' },
+    });
 
     return response.render('produtos', { listProducts: produtos });
     // return response.json(produtos);
