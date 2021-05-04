@@ -1,0 +1,109 @@
+:root {
+    --preto: #000000;
+    --branco: #ffffff;
+    --amarelo: #f5ba25;
+    --hover: #696969;
+    --cinza: #F2EEEE;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+  }
+  button {
+    cursor: pointer;
+  }
+  
+  main {
+    margin: 0;
+    display: flex;
+   
+  }
+  .mensagem {
+    text-align: left;
+    font-size: 30px;
+    width: 400px;
+    margin-bottom: 25px;
+  }
+  
+  input {
+  
+    justify-content:flex-end;
+    flex-direction: column;
+    background-color: var(--cinza);
+    border: solid 1px var(--cinza);
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 350px;
+    height: 45px;
+    margin-bottom: 15px;
+  }
+  
+  .botao-enviar {
+    cursor: pointer;
+    padding: 8px 30px;
+    border-radius: 5px;
+    border: 3px solid var(--preto);
+    background-color: var(--preto);
+    color: var(--branco);
+   
+  }
+  
+  .formularioLogin input {
+    justify-content:flex-end;
+    flex-direction: column;
+    background-color: var(--cinza);
+    border: solid 1px var(--cinza);
+    padding: 8px;
+    width: 350px;
+    height: 45px;
+    margin-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  .bannerLogin{
+  
+    align-items: center;
+    justify-content: space-between;
+    background-position: center;
+    background-size: cover;
+  }
+  .bannerLogin {
+    margin: 0px 60px;
+    width: 450px;
+    height: 350px;
+    }
+     .formularioLogin{
+      max-width: 100%;
+      width: 200px ;
+      height: 15px;
+    }
+    .formularioLogin{
+  
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .botao-enviar {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 8px 30px;
+    border-radius: 5px;
+    border: 3px solid var(--preto);
+    background-color: var(--preto);
+    color: var(--branco);
+  }
+  
+  .bt-login
+  {
+   align-items: center;
+   margin:30px 100px ;
+  
+  }
+  footer{
+    position:absolute;
+    width:100%;
+  }
