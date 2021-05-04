@@ -13,7 +13,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/cadastro.css">
     <link rel="stylesheet" href="/stylesheets/shared/header-button.css">
-    <link rel="shortcut icon" href="/public/Logo.png">
+    <link rel="shortcut icon" href="/Logo.png">
+    <link rel="stylesheet" href="/stylesheets/shared/footer.css">
     <title>Registre-se</title>
 </head>
 
@@ -22,7 +23,9 @@
     <div class="container">
 
         <header>
-            <div class="logo">SHOEFIE</div>
+            <div class="logo">
+                <a href="">SHOEFIE</a>
+            </div>
             <div class="nao-tem-conta">
                 <div class="frase">
                     Já tem uma conta?
@@ -40,24 +43,31 @@
                 <img src="/media/ilustracao/Waiting.png" alt=" imagemCadastro">
             </div>
 
-
             <div class="formulario">
                 <form action="/usuarios/auth" method="POST">
                     <div class="mensagem">
                         <p>Falta pouco para você compra conosco!</p>
                     </div>
 
+<div class="box"> 
                     <label class="field">Nome</label>
                     <input type="text" name="nome" id="nome">
+</div>
 
-                    <label class="field">Email</label>
-                    <input type="email" name="email" id="email">
+                    <div class="box">
+                        <label class="field">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
 
-                    <label class="field">Senha</label>
-                    <input type="password" name="senha" id="senha" min="6" max="12">
+                    <div class="box">
+                        <label class="field">Senha</label>
+                        <input type="password" name="senha" id="senha" min="6" max="12">
+                    </div>
 
-                    <label class="field">Confirme sua senha</label>
-                    <input type="password" name="confirmaSenha" id="confirmaSenha">
+                    <div class="box">
+                        <label class="field">Confirme sua senha</label>
+                        <input type="password" name="confirmaSenha" id="confirmaSenha">
+                    </div>
                     <div class="bt-cadastro">
                         <button class="botao-enviar" type="submit">Cadastrar</button>
                     </div>
