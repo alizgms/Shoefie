@@ -27,7 +27,7 @@ header {
 .logo {
   font-family: "Bebas Neue";
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 1px;
   justify-content: center;
 }
@@ -45,4 +45,9 @@ header {
 
 a {
   text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+  color: var(--hover);
 }

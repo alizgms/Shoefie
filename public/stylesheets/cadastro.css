@@ -13,68 +13,60 @@
   box-sizing: border-box;
   font-family: "Montserrat";
 }
+
 button {
   cursor: pointer;
 }
 
 main {
-  margin: 0;
+  width: 100%;
   display: flex;
+  justify-content: space-around;
 }
 
 div .bannerCadastro {
-  height: 372px;
-  width: 1240px;
-}
-
-.bannerCadastro {
+  width: 50%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  background-position: center;
-  background-size: cover;
-}
-
-.formulario {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
+  padding: 10px;
 }
 
 div .formulario {
-  max-width: 100%;
+  width: 50%;
 }
 
-div .formulario {
-  margin: 0 auto;
-  display: inline;
-  justify-content: flex-end;
+.bannerCadastro img {
+  width: 80%;
 }
 
 .mensagem {
+  flex-wrap: wrap;
   text-align: left;
   font-size: 30px;
-  width: 400px;
   margin-bottom: 25px;
 }
 
-input {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
+.formulario {
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  display: flex; 
+  margin-bottom: 10px;
+}
+
+.formulario input {
   background-color: var(--cinza);
   border: solid 1px var(--cinza);
   padding: 8px;
+  width: 50%;
   margin-bottom: 10px;
-  width: 350px;
-  height: 45px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .botao-enviar {
-  display: flex;
-  cursor: pointer;
   padding: 8px 30px;
   border-radius: 5px;
   border: 3px solid var(--preto);
@@ -83,60 +75,12 @@ input {
 }
 
 .bt-cadastro {
-  margin: 0% 30%;
-}
-
-.formularioLogin input {
   display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  background-color: var(--cinza);
-  border: solid 1px var(--cinza);
-  padding: 8px;
-  width: 350px;
-  height: 45px;
-  margin-bottom: 10px;
-  margin-bottom: 30px;
-}
-.bannerLogin {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-position: center;
-  background-size: cover;
-}
-.bannerLogin {
-  margin: 0px 60px;
-  width: 450px;
-  height: 350px;
-}
-.formularioLogin {
-  max-width: 100%;
-  width: 200px;
-  height: 15px;
-}
-.formularioLogin {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: flex-end;
-}
-div .formularioLogin {
-  max-width: 100%;
-}
-div .formularioLogin {
-  margin: 0 auto;
-  display: inline;
   justify-content: center;
 }
 
-.bt-login {
+.box {
+  flex-direction: column;
   display: flex;
   align-items: center;
-  margin: 30px 100px;
-}
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
