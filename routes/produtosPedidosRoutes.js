@@ -3,8 +3,7 @@ const produtosPedidosController = require('../controllers/produtosPedidosControl
 const router = express.Router();
 
 router.get('/:id', produtosPedidosController.carrinho);
-
-router.get('/', produtosPedidosController.index);
-router.post('/', produtosPedidosController.store);
+router.get('/all', produtosPedidosController.index);
+router.post('/:id', produtosPedidosController.store);
 
 module.exports = router;
