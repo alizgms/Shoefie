@@ -35,7 +35,7 @@
 
         <div class="icons">
           <a href=""><img src="../media/icons/truck.svg" alt="" /></a>
-          <a href=""
+          <a href="/usuarios/profile"
             ><img src="../media/icons/user.svg" alt="" /><a href=""></a
           ></a>
           <a href=""><img src="../media/icons/shopping-bag.svg" alt="" /></a>
@@ -69,25 +69,25 @@
           </div>
         </div>
 
-        <div class="box-produtos">
-          <% for (let pedido of listProducts) { %>
-          <div class="produto-nome">
-            <p><strong><%= pedido.produtos.nome%></strong></p>
-          </div>
+        <div id="carrinho">
+          <div class="box-produtos" id="box-produtos">
+            <div class="produto-nome">
+              <p><strong>sapato masas</strong></p>
+            </div>
 
-          <div class="qtd-produto">
-            <p><a href="">+</a> <%=pedido.qtdProduto%> <a href="">-</a></p>
-          </div>
+            <div class="qtd-produto">
+              <p><a href="">+</a> 3 <a href="">-</a></p>
+            </div>
 
-          <div class="produto-valor">
-            <p><%=pedido.produtos.preco%></p>
-            <div class="lixo">
-              <a href=""
-                ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
-              /></a>
+            <div class="produto-valor">
+              <p>400,00</p>
+              <div class="lixo">
+                <a href=""
+                  ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
+                /></a>
+              </div>
             </div>
           </div>
-          <% } %>
         </div>
 
         <div class="total">
@@ -102,6 +102,37 @@
         </div>
       </div>
     </div>
+
+    <script>
+      let produtos = localStorage.getItem('carrinho');
+      let produtoCarrinho = JSON.parse(produtos);
+      let conteudo = '';
+      for (let produto of produtoCarrinho.produtos) {
+        console.log(produto);
+        conteudo += `<div class="box-produtos">
+          <div class="produto-nome">
+            <p><strong> ${produto.nome}</strong></p>
+          </div>
+
+          <div class="qtd-produto">
+            <p><a href="">+</a> 1 <a href="">-</a></p>
+          </div>
+
+          <div class="produto-valor">
+            <p>${produto.preco}</p>
+            <div class="lixo">
+              <a href=""
+                ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
+              /></a>
+            </div>
+          </div>
+        </div>`;
+      }
+
+      console.log(conteudo);
+
+      document.getElementById('carrinho').innerHTML = conteudo;
+    </script>
   </body>
 
   <footer>shoefie © todos os direitos reservados</footer>

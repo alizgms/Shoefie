@@ -2,7 +2,11 @@ const express = require('express');
 const produtosPedidosController = require('../controllers/produtosPedidosController');
 const router = express.Router();
 
-router.get('/:id', produtosPedidosController.carrinho);
+router.delete('/:id', produtosPedidosController.delete);
+
+// carrinho add produto
+router.get('/', produtosPedidosController.indexCarrinho);
+
 router.get('/all', produtosPedidosController.index);
 router.post('/:id', produtosPedidosController.store);
 
