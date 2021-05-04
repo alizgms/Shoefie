@@ -1,21 +1,8 @@
 body {
-  height: 100%;
+  background-color: #fff;
+  color: #666;
   padding: 0;
   margin: 0;
-}
-
-table {
-  width: 100%;
-  margin-top: 40px;
-}
-
-tr td {
-  height: 50px;
-}
-
-tr,
-td {
-  text-align: center;
 }
 
 button {
@@ -28,35 +15,34 @@ button:focus {
   background-color: #555;
 }
 
-.pedidos-header {
-  border-bottom: 1px solid #c4c4c4;
+.pedido-box{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 10%;
 }
 
-.pedidos-body {
-  border-bottom: 1px solid #c4c4c4;
+.acompanhe{
+  font-family: "Montserrat";
 }
 
-.numero-pedido {
-  padding-left: 15px;
+.box-top{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #111;
 }
 
-.button {
-  margin-left: 40px;
+.box-id{
+  display: flex;
+  border-bottom: #111;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #111;
+  margin-top: 10px;
 }
 
-td button {
-  border: 0;
-  background-color: black;
-  border-radius: 5px;
-  padding: 5px;
-  color: white;
-  padding: 5px;
-}
-
-footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  height: 50px;
+footer{
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
