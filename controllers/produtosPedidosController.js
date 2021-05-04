@@ -1,4 +1,4 @@
-const { ProdutoPedido, Produto } = require('../models');
+const { ProdutoPedido } = require('../models');
 
 const produtosPedidosController = {
   indexCarrinho: async (request, response) => {

@@ -77,7 +77,7 @@ const usuariosController = {
     // console.log(token);
 
     request.session.usuarioLogado = usuario;
-    return response.redirect('/produtos');
+    return response.redirect('/categorias/produtos');
     // return response.status(200).send({
     //   status: 1,
     //   message: 'Usuário logado com sucesso!',
