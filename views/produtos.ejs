@@ -1,101 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="/stylesheets/produtos.css" />
-  <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/produtos.css" />
+    <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-    crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-    crossorigin="anonymous" />
-  <link rel="shortcut icon" href="/Logo.png" />
-  <title>Produtos | SHOEFIE</title>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="/Logo.png" />
+    <title>Produtos | SHOEFIE</title>
+  </head>
 
-<body>
-  <header>
-    <div class="logo">SHOEFIE</div>
-    <div class="icons">
-      <img src="/media/icons/truck.svg" alt="Acompanhar envio" />
-      <a href="/usuarios/profile">
-        <img src="/media/icons/user.svg" alt="Perfil" />
-      </a>
-      <img src="/media/icons/shopping-bag.svg" alt="Carrinho de compras" />
-      <img src="/media/icons/log-out.svg" alt="Logout" />
-    </div>
-  </header>
-
-  <section class="menu">
-    <nav>
-      <a href="">LANÇAMENTOS</a>
-      <a href="">OFERTAS</a>
-      <a href="">MASCULINO</a>
-      <a href="">FEMININO</a>
-      <a href="">INFANTIL</a>
-    </nav>
-  </section>
-
-  <div class="carrossel">
-    <h1 class="titulo-carrossel">Infantil</h1>
-    <div class="owl-carousel owl-theme">
-      <% for (let products of listProducts) { %>
-
-        <a href="/carrinho/<%= products.id %> ">
-          <div class="item">
-            <img src="<%= products.imagem %> ">
-            <p>
-              <%=products.nome %>
-            </p>
-            <h5>
-              <%=products.preco %>
-            </h5>
-          </div>
+  <body>
+    <header>
+      <div class="logo">SHOEFIE</div>
+      <div class="icons">
+        <img src="../media/icons/truck.svg" alt="Acompanhar envio" />
+        <a href="/usuarios/profile">
+          <img src="../media/icons/user.svg" alt="Perfil" />
         </a>
+        <img src="../media/icons/shopping-bag.svg" alt="Carrinho de compras" />
+        <img src="../media/icons/log-out.svg" alt="Logout" />
+      </div>
+    </header>
+
+    <section class="menu">
+      <nav>
+        <a href="">LANÇAMENTOS</a>
+        <a href="">OFERTAS</a>
+        <a href="">MASCULINO</a>
+        <a href="">FEMININO</a>
+        <a href="">INFANTIL</a>
+      </nav>
+    </section>
+
+    <div class="carrossel">
+      <h1 class="titulo-carrossel">Infantil</h1>
+      <div class="owl-carousel owl-theme">
+        <% for (let products of listProducts) { %>
+
+          <a href="/carrinho/<%= products.id %> ">
+            <div class="item" >
+              <img src="<%= products.imagem %> " >
+              <p><%=products.nome %></p>
+              <h5><%=products.preco %></h5>
+            </div>
+          </a>
         <% } %>
+      </div>
     </div>
-  </div>
 
-  <script src="https://kit.fontawesome.com/e288b4d2a5.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
-    integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-    crossorigin="anonymous"></script>
-  <!-- <script src="/js/OwlCarousel/main.js"></script> -->
-  <script>
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      responsiveClass: true,
-      nav: false,
-      responsive: {
-        0: {
-          items: 1,
+    <script
+      src="https://kit.fontawesome.com/e288b4d2a5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+      integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        nav: false,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 5,
+          },
         },
-        600: {
-          items: 3,
-        },
-        1000: {
-          items: 5,
-        },
-      },
-    });
-  </script>
-</body>
-
+      });
+    </script>
+  </body>
 </html>

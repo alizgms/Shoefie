@@ -7,7 +7,6 @@ module.exports = async (request, response, next) => {
     return response.status(400).json({ error: 'Email invalido' });
   }
 
-  console.log({ nome, email, senha });
   const usuarioExiste = await Usuario.findAll({
     where: { email },
   });

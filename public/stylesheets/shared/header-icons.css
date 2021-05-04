@@ -45,9 +45,9 @@ header {
 
 a {
   text-decoration: none;
-}
-
-a:hover{
+  
+a:hover {
   text-decoration: none;
+  transition: 0.2s ease-out;
   color: var(--hover);
 }

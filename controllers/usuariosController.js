@@ -3,12 +3,28 @@ const bcrypt = require('bcryptjs');
 const { v4: uuid } = require('uuid');
 
 const usuariosController = {
-  index: async (request, response) => {
-    const usuario = await Usuario.findAll();
-
-    return response.status(200).json(usuario);
+  // Renderiza tela de cadastro do usuário
+  signup: (request, response) => {
+    return response.render('cadastro');
   },
 
+  // Renderiza perfil do usuário
+  profile: (request, response) => {
+    return response.render('telaUsuario');
+  },
+
+  // Renderiza tela de login
+  login: (request, response) => {
+    return response.render('login');
+  },
+
+  index: async (request, response) => {
+    const usuarios = await Usuario.findAll();
+
+    return response.status(200).send({ usuarios });
+  },
+
+  // Cadastra usuario
   store: async (request, response) => {
     const { nome, email, senha } = request.body;
 
@@ -23,12 +39,13 @@ const usuariosController = {
 
     usuario.senha = undefined;
 
-    return response.redirect('/produtos');
-  },
-  login: (request, response) => {
-    return response.render('login');
+    // return response.redirect('/produtos');
+    return response.status(201).send({
+      usuario,
+    });
   },
 
+  // Autentica login do usuario
   auth: async (request, response) => {
     const { email, senha, loginStatus } = request.body;
 
@@ -53,11 +70,15 @@ const usuariosController = {
       }
     );
 
-    usuario.senha = undefined;
+    // console.log(token);
 
     request.session.usuarioLogado = usuario;
     return response.redirect('/produtos');
-    // return response.json(usuario);
+    // return response.status(200).send({
+    //   status: 1,
+    //   message: 'Usuário logado com sucesso!',
+    //   usuario,
+    // });
   },
   delete: async (request, response) => {
     const { id } = request.params;
