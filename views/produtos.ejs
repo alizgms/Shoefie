@@ -38,11 +38,18 @@
     <header>
       <div class="logo">SHOEFIE</div>
       <div class="icons">
-        <img src="../media/icons/truck.svg" alt="Acompanhar envio" />
+        <a href="/pedidos/shipping">
+          <img src="../media/icons/truck.svg" alt="Acompanhar envio" />
+        </a>
         <a href="/usuarios/profile">
           <img src="../media/icons/user.svg" alt="Perfil" />
         </a>
-        <img src="../media/icons/shopping-bag.svg" alt="Carrinho de compras" />
+        <a href="/carrinho">
+          <img
+            src="../media/icons/shopping-bag.svg"
+            alt="Carrinho de compras"
+          />
+        </a>
         <img src="../media/icons/log-out.svg" alt="Logout" />
       </div>
     </header>
@@ -61,19 +68,19 @@
       <h1 class="titulo-carrossel">Infantil</h1>
       <div class="owl-carousel owl-theme">
         <% for (let products of listProducts) { %>
-
-        <a href="/carrinho/<%= products.id %> "> </a>
-        <div class="item">
-          <img src="<%= products.imagem %> " />
-          <p><%=products.nome %></p>
-          <h5><%=products.preco %></h5>
-          <button
-            onclick="addItemCarrinho('<%=products.id%>', '<%=products.nome%>', '<%=products.preco%>')"
-            id="btn-comprar"
-          >
-            Comprar
-          </button>
-        </div>
+        <a href="/carrinho/<%= products.id %> ">
+          <div class="item">
+            <img src="<%= products.imagem %> " />
+            <p><%=products.nome %></p>
+            <h5><%=products.preco %></h5>
+            <button
+              onclick="addItemCarrinho('<%=products.id%>', '<%=products.nome%>', '<%=products.preco%>')"
+              id="btn-comprar"
+            >
+              Comprar
+            </button>
+          </div>
+        </a>
         <% } %>
       </div>
     </div>
@@ -123,7 +130,7 @@
           600: {
             items: 3,
           },
-          1000: {
+          1200: {
             items: 5,
           },
         },

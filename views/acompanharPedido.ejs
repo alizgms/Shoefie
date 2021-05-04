@@ -13,12 +13,12 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/public/stylesheets/acompanharPedido.css" />
-  <!-- <link rel="stylesheet" href="/public/stylesheets/home.css" /> -->
-  <link rel="stylesheet" href="/public/stylesheets/shared/header-icons.css">
+  <link rel="stylesheet" href="/stylesheets/acompanharPedido.css" />
+  <!-- <link rel="stylesheet" href="/stylesheets/home.css" /> -->
+  <link rel="stylesheet" href="/stylesheets/shared/header-icons.css">
 
-  <script src="../public/scripts/shoppingCart.js" defer></script>
-  <link rel="shortcut icon" href="/public/Logo.png">
+  <script src="../scripts/shoppingCart.js" defer></script>
+  <link rel="shortcut icon" href="/Logo.png">
   <title>SHOEFIE</title>
 </head>
 
@@ -30,10 +30,14 @@
       </div>
 
       <div class="icons">
-        <a href=""><img src="../public/media/icons/truck.svg" alt=""></a>
-        <a href=""><img src="../public/media/icons/user.svg" alt=""><a href=""></a></a>
-        <a href=""><img src="../public/media/icons/shopping-bag.svg" alt=""></a>
-        <a href=""><img src="../public/media/icons/log-out.svg" alt=""></a>
+        <a href="/pedidos/shipping"><img src="../media/icons/truck.svg" alt=""></a>
+        <a href="/usuarios/profile"><img src="../media/icons/user.svg" alt=""><a href=""></a></a>
+        <a href="/carrinho"><img src="../media/icons/shopping-bag.svg" alt=""></a>
+        <form action="/usuarios/logoff" method="POST">
+          <button id='logoff' type="submit">
+            <a href=""><img src="../media/icons/log-out.svg" alt=""></a>
+          </button>
+        </form>
       </div>
 
     </header>

@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 
 app.use(
   session({
-    secret: 'shofie',
+    secret: 'projeto-shofie',
     saveUninitialized: true,
     resave: true,
   })

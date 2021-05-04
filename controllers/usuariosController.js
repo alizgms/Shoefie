@@ -7,7 +7,11 @@ const usuariosController = {
   signup: (request, response) => {
     return response.render('cadastro');
   },
+  logoff: (request, response) => {
+    request.session.destroy();
 
+    return response.redirect('/');
+  },
   // Renderiza perfil do usuário
   profile: (request, response) => {
     return response.render('telaUsuario');
