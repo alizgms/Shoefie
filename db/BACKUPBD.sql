@@ -88,7 +88,7 @@ CREATE TABLE `pedidos` (
   PRIMARY KEY (`id`),
   KEY `fk_pedidos_usuarios1_idx` (`usuarios_id`),
   CONSTRAINT `fk_pedidos_usuarios1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,7 @@ CREATE TABLE `pedidos` (
 
 LOCK TABLES `pedidos` WRITE;
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
-INSERT INTO `pedidos` VALUES (9,NULL,'1',15164732,NULL,'2021-05-03 14:25:38','7ffe8645-ac26-4647-92e4-dd5062d27159');
+INSERT INTO `pedidos` VALUES (9,NULL,'1',15164732,NULL,'2021-05-03 14:25:38','7ffe8645-ac26-4647-92e4-dd5062d27159'),(10,NULL,'1',37522898,NULL,'2021-05-03 18:52:00','4f791b6f-ddff-4a58-a6a5-bc260198e54d');
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,6 +180,7 @@ CREATE TABLE `produtos_pedidos` (
 
 LOCK TABLES `produtos_pedidos` WRITE;
 /*!40000 ALTER TABLE `produtos_pedidos` DISABLE KEYS */;
+INSERT INTO `produtos_pedidos` VALUES (7,10,5),(8,10,5);
 /*!40000 ALTER TABLE `produtos_pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,7 +207,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES ('4f791b6f-ddff-4a58-a6a5-bc260198e54d','teste3','teste3@email.com','$2a$10$RKgyVLWuA2NWY910JpLIwuogIA2m5Ic7boJ6my.avQbMUpXiMJEai',1),('7ffe8645-ac26-4647-92e4-dd5062d27159','teste1','teste1@email.com','$2a$10$8xlE/4AhktE.NVLYFf7Rm.hnJTLNnb3HegH5kfncwd9OTxof8kN2a',1),('fbc8c577-50bc-471c-8e4b-897339b0687a','teste2','teste2@email.com','$2a$10$RVtkG1sFpqZAsvNW1bvgQOmYhEFHIChcN6uPkOiT60jGkjuK598pK',NULL);
+INSERT INTO `usuarios` VALUES ('01d9a1d0-bea6-4244-ac0f-99c22b7736a1','teste5','teste5@email.com','$2a$10$yGbl/xAdjMZDNqFTN0RnSOxuy26MjikgjpSLPo0rMm6Rcx1f05MI.',NULL),('02bc68f0-001e-4b56-8a19-36564a109780','teste4','teste4@email.com','$2a$10$KN3ikQhgA/bKes4GvsjhEetjY4sv781qxLS0tpDSLKVC5iq56q1Ru',NULL),('4f791b6f-ddff-4a58-a6a5-bc260198e54d','teste3','teste3@email.com','$2a$10$RKgyVLWuA2NWY910JpLIwuogIA2m5Ic7boJ6my.avQbMUpXiMJEai',1),('7ffe8645-ac26-4647-92e4-dd5062d27159','teste1','teste1@email.com','$2a$10$8xlE/4AhktE.NVLYFf7Rm.hnJTLNnb3HegH5kfncwd9OTxof8kN2a',1),('fbc8c577-50bc-471c-8e4b-897339b0687a','teste2','teste2@email.com','$2a$10$RVtkG1sFpqZAsvNW1bvgQOmYhEFHIChcN6uPkOiT60jGkjuK598pK',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -219,4 +220,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-03 14:43:00
+-- Dump completed on 2021-05-03 21:32:14

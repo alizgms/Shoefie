@@ -1,100 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/stylesheets/carrinhoCompra.css" />
     <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
-    <link rel="shortcut icon" href="/media/icons/logo.png">
+    <link rel="shortcut icon" href="/media/icons/logo.png" />
     <title>SHOEFIE</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header>
-            <div class="logo">
-                <a href="/">SHOEFIE</a>
-            </div>
-
-            <div class="icons">
-                <a href=""><img src="../media/icons/truck.svg" alt=""></a>
-                <a href=""><img src="../media/icons/user.svg" alt=""><a href=""></a></a>
-                <a href=""><img src="../media/icons/shopping-bag.svg" alt=""></a>
-                <a href=""><img src="../media/icons/log-out.svg" alt=""></a>
-            </div>
-
-        </header>
-
-        <section class="menu">
-            <nav>
-                <a href="">LANÇAMENTOS</a>
-                <a href="">OFERTAS</a>
-                <a href="">MASCULINO</a>
-                <a href="">FEMININO</a>
-                <a href="">INFANTIL</a>
-            </nav>
-        </section>
-
-        <div class="carrinho-box">
-            <div>
-                <p class="carrinho">Carrinho de compras</p>
-            </div>
-            <div class="box-top">
-                <div>
-                    <p class="produo">Produto</p>
-                </div>
-                <div>
-                    <p class="quantidade">Quantidade</p>
-                </div>
-                <div>
-                    <p class="preco">Preço</p>
-                </div>
-            </div>
-
-            <div class="box-produtos">
-                <div class="produto-imagem">
-                    <div>
-                        <p><strong>Nike Shox</strong></p>
-                    </div>
-                </div>
-
-                <div class="qtd-produto">
-                    <p><a href="">+</a> 1 <a href="">-</a></p>
-                </div>
-
-                <div class="produto-valor">
-                    <p>R$ 250,00</p>
-                    <div class="lixo">
-                        <a href=""><img src="/media/icons/trash.svg" alt="lixo" id="lixo"></a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="total">
-                <p>Subtotal(1 Item): R$ 250,00</p>
-            </div>
-
-            <div class="button-compra">
-                <button class="comprar">CONFIRMAR COMPRA <img src="/media/icons/arrow-right.svg"
-                        alt="seta para a direita">
-                </button>
-            </div>
+      <header>
+        <div class="logo">
+          <a href="/">SHOEFIE</a>
         </div>
 
+        <div class="icons">
+          <a href=""><img src="../media/icons/truck.svg" alt="" /></a>
+          <a href=""
+            ><img src="../media/icons/user.svg" alt="" /><a href=""></a
+          ></a>
+          <a href=""><img src="../media/icons/shopping-bag.svg" alt="" /></a>
+          <a href=""><img src="../media/icons/log-out.svg" alt="" /></a>
+        </div>
+      </header>
+
+      <section class="menu">
+        <nav>
+          <a href="">LANÇAMENTOS</a>
+          <a href="">OFERTAS</a>
+          <a href="">MASCULINO</a>
+          <a href="">FEMININO</a>
+          <a href="">INFANTIL</a>
+        </nav>
+      </section>
+
+      <div class="carrinho-box">
+        <div>
+          <p class="carrinho">Carrinho de compras</p>
+        </div>
+        <div class="box-top">
+          <div>
+            <p class="produo">Produto</p>
+          </div>
+          <div>
+            <p class="quantidade">Quantidade</p>
+          </div>
+          <div>
+            <p class="preco">Preço</p>
+          </div>
+        </div>
+
+        <div class="box-produtos">
+          <% for (let pedido of listProducts) { %>
+          <div class="produto-nome">
+            <p><strong><%= pedido.produtos.nome%></strong></p>
+          </div>
+
+          <div class="qtd-produto">
+            <p><a href="">+</a> <%=pedido.qtdProduto%> <a href="">-</a></p>
+          </div>
+
+          <div class="produto-valor">
+            <p><%=pedido.produtos.preco%></p>
+            <div class="lixo">
+              <a href=""
+                ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
+              /></a>
+            </div>
+          </div>
+          <% } %>
+        </div>
+
+        <div class="total">
+          <p>Subtotal(1 Item): R$ 250,00</p>
+        </div>
+
+        <div class="button-compra">
+          <button class="comprar">
+            CONFIRMAR COMPRA
+            <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
+          </button>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 
-<footer>shoefie © todos os direitos reservados</footer>
-
+  <footer>shoefie © todos os direitos reservados</footer>
 </html>

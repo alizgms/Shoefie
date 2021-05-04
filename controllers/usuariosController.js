@@ -3,17 +3,28 @@ const bcrypt = require('bcryptjs');
 const { v4: uuid } = require('uuid');
 
 const usuariosController = {
+  // Renderiza tela de cadastro do usuário
+  signup: (request, response) => {
+    return response.render('cadastro');
+  },
+
+  // Renderiza perfil do usuário
+  profile: (request, response) => {
+    return response.render('telaUsuario');
+  },
+
+  // Renderiza tela de login
+  login: (request, response) => {
+    return response.render('login');
+  },
+
   index: async (request, response) => {
     const usuarios = await Usuario.findAll();
 
     return response.status(200).send({ usuarios });
   },
-  signup: (request, response) => {
-    return response.render('cadastro');
-  },
-  profile: (request, response) => {
-    return response.render('telaUsuario');
-  },
+
+  // Cadastra usuario
   store: async (request, response) => {
     const { nome, email, senha } = request.body;
 
@@ -26,15 +37,15 @@ const usuariosController = {
 
     await Usuario.create(usuario);
 
+    usuario.senha = undefined;
+
     // return response.redirect('/produtos');
     return response.status(201).send({
       usuario,
     });
   },
-  login: (request, response) => {
-    return response.render('login');
-  },
 
+  // Autentica login do usuario
   auth: async (request, response) => {
     const { email, senha, loginStatus } = request.body;
 
