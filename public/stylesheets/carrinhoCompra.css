@@ -58,7 +58,6 @@ section nav a:hover{
 
 .box-produtos{
     display: flex;
-    border-top: #111;
     border-bottom: #111;
     justify-content: space-between;
     align-items: center;
