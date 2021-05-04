@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -66,24 +65,77 @@
     </section>
 
     <div class="carrossel">
+      <h1 class="titulo-carrossel">Feminino</h1>
+      <div class="owl-carousel owl-theme">
+        <% for (let products of listProducts) { %>
+          <% if (products.id === 1) { %>
+            <% for (let i = 0; i < products.produtos.length; i++) { %>
+              <a href="">
+                <div class="item" >
+                  <img src="<%= products.produtos[i].imagem %> " >
+                  <p><%=products.produtos[i].nome %></p>
+                  <h5><%=products.produtos[i].preco %></h5>
+                </div>
+                <button
+                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>')"
+                id="btn-comprar"
+              >
+                Comprar
+              </button>
+              </a>
+            <% }%>
+            <%}%>
+        <% } %>
+      </div>
+
+      <h1 class="titulo-carrossel">Masculino</h1>
+      <div class="owl-carousel owl-theme">
+        <% for (let products of listProducts) { %>
+          <% if (products.id === 2) { %>
+            <% for (let i = 0; i < products.produtos.length; i++) { %>
+              <a href="">
+
+                <div class="item" >
+                  <img src="<%= products.produtos[i].imagem %> " >
+                  <p><%=products.produtos[i].nome %></p>
+                  <h5><%=products.produtos[i].preco %></h5>
+                </div>
+                <button
+                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>')"
+                id="btn-comprar"
+              >
+                Comprar
+              </button>
+              </a>
+            <% }%>
+            <%}%>
+        <% } %>
+      </div>
+
       <h1 class="titulo-carrossel">Infantil</h1>
       <div class="owl-carousel owl-theme">
         <% for (let products of listProducts) { %>
-        <a href="/carrinho/<%= products.id %> ">
-          <div class="item">
-            <img src="<%= products.imagem %> " />
-            <p><%=products.nome %></p>
-            <h5><%=products.preco %></h5>
-            <button
-              onclick="addItemCarrinho('<%=products.id%>', '<%=products.nome%>', '<%=products.preco%>')"
-              id="btn-comprar"
-            >
-              Comprar
-            </button>
-          </div>
-        </a>
+          <% if (products.id === 3) { %>
+            <% for (let i = 0; i < products.produtos.length; i++) { %>
+              <a href="">
+
+                <div class="item" >
+                  <img src="<%= products.produtos[i].imagem %> " >
+                  <p><%=products.produtos[i].nome %></p>
+                  <h5><%=products.produtos[i].preco %></h5>
+                </div>
+                <button
+                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>')"
+                id="btn-comprar"
+              >
+                Comprar
+              </button>
+              </a>
+            <% }%>
+            <%}%>
         <% } %>
       </div>
+     
     </div>
 
     <script>
