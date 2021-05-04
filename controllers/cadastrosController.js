@@ -6,10 +6,6 @@ const cadastrosController = {
 
     return response.json(cadastro);
   },
-  register: (request, response) => {
-    return response.render('cadastro');
-  },
-
   store: async (request, response) => {
     const { nome, cpf, cep, uf, cidade, endereco, usuarios_id } = request.body;
 

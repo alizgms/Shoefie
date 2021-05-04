@@ -1,19 +1,35 @@
-const { ProdutoPedido } = require('../models');
+const { ProdutoPedido, Produto } = require('../models');
 
 const produtosPedidosController = {
+  carrinho: async (request, response) => {
+    const { id } = request.params;
+    const produtosPedidos = await ProdutoPedido.findAll({
+      where: { pedidos_id: id },
+      include: { model: Produto, as: 'produtos' },
+    });
+
+    return response.render('carrinhoCompra', {
+      listProducts: produtosPedidos,
+    });
+    // return response.json(produtosPedidos);
+  },
+
   index: async (request, response) => {
     const produtosPedidos = await ProdutoPedido.findAll();
-
-    return response.status(200).json(produtosPedidos);
+    return response.json(produtosPedidos);
   },
+
   store: async (request, response) => {
-    const { produtos_id, pedidos_id, qtdProduto } = request.body;
+    const { pedidos_id, qtdProduto } = request.body;
+    const { id } = request.params;
 
     const produtoPedido = {
-      produtos_id,
+      produtos_id: parseInt(id),
       pedidos_id,
       qtdProduto,
     };
+
+    console.log(produtoPedido);
 
     await ProdutoPedido.create(produtoPedido);
 

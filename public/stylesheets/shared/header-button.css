@@ -1,3 +1,11 @@
+:root {
+  --preto: #000000;
+  --branco: #ffffff;
+  --amarelo: #f5ba25;
+  --hover: #696969;
+  --cinza: #f2eeee;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -5,13 +13,14 @@ header {
   padding-left: 50px;
   padding-right: 50px;
 }
-
-.logo {
+.logo a {
+  text-decoration: none;
   font-family: "Bebas Neue";
   font-size: 55px;
   font-weight: 500;
   letter-spacing: 3px;
   justify-content: center;
+  color: var(--preto);
 }
 
 .cadastrar {
@@ -34,10 +43,4 @@ header {
 .nao-tem-conta {
   display: flex;
   align-items: center;
-}
-
-footer {
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 20px;
 }

@@ -1,0 +1,84 @@
+:root {
+  --preto: #000000;
+  --branco: #ffffff;
+  --hover: #696969;
+  --cinza: #f2eeee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+section nav a {
+  text-decoration: none;
+  color: var(--preto);
+  padding: 10px;
+  margin: 0 auto; /* NÃO ALINHA */
+}
+
+section nav a:hover {
+  color: var(--hover);
+}
+
+.dados {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+div .formulario {
+  width: 50%;
+}
+
+div .formulario {
+  margin: 0 auto;
+  display: inline;
+  justify-content: flex-end;
+}
+
+input {
+  background-color: var(--cinza);
+  border: solid 1px var(--cinza);
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 350px;
+  height: 45px;
+}
+
+button.botao-editar {
+  cursor: pointer;
+  padding: 8px 30px;
+  border-radius: 5px;
+  border: 3px solid var(--preto);
+  background-color: var(--preto);
+  color: var(--branco);
+}
+
+.perfil {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}

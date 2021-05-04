@@ -5,9 +5,13 @@ const router = express.Router();
 // Middlewares
 const validarUsuario = require('../middlewares/ValidarUsuario');
 
+router.get('/', usuariosController.index);
 router.get('/login', usuariosController.login);
+router.get('/signup', usuariosController.signup);
+router.post('/auth', validarUsuario, usuariosController.store);
+
+router.get('/profile', usuariosController.profile);
 router.post('/login', usuariosController.auth);
-router.post('/', validarUsuario, usuariosController.store);
 router.delete('/:id', usuariosController.delete);
 
 module.exports = router;
