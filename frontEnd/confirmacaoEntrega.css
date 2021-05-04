@@ -5,8 +5,59 @@
     --hover: #696969;
     --cinza: #F2EEEE;
   }
+
   
-  * {
+.logo{
+    position: absolute;
+    width: 162px;
+    height: 66px;
+    left: 69px;
+    top: 43px;
+
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 66px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.08em;
+
+    color: #000000;
+}
+
+.icons{
+  position: absolute;
+  width: 141px;
+  height: 24px;
+  left: 1100px;
+  top: 49px;
+
+}
+    
+
+
+
+.mensagem p{
+    
+position: absolute;
+width: 267px;
+height: 30px;
+left: 69px;
+top: 217px;
+
+}
+.bannerEntrega{
+    
+position: absolute;
+left: 70%;
+right: 80%;
+top: 50%;
+bottom: 15%;
+}
+
+* {
     margin: 0;
     padding: 0;
     outline: 0;
@@ -22,11 +73,12 @@
     display: flex;
    
   }
-  .mensagem {
-    text-align: left;
-    font-size: 30px;
-    width: 400px;
-    margin-bottom: 25px;
+  .mensagem  { 
+    position: absolute;
+    width: 267px;
+    height: 30px;
+    left: 69px;
+    top: 217px;
   }
   
   input {
@@ -105,5 +157,10 @@
   }
   footer{
     position:absolute;
-    width:100%;
+    width: 437px;
+    height: 24px;
+    left: 507px;
+    top: 961px;
   }
+
+  
