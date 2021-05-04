@@ -115,7 +115,7 @@ CREATE TABLE `produtos` (
   `qtdEstoque` int DEFAULT NULL,
   `imagem` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +124,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (6,'Sapato Amina',200.00,10,'https://i.ibb.co/XXcpR7Y/6-Amina.jpg'),(7,'Sapato Alice',200.00,10,'https://i.ibb.co/1ss8w60/2-Alice.jpg'),(8,'Sapato Budgeron',200.00,10,'https://i.ibb.co/4dQnj1r/8-Budgeron.jpg'),(9,'Sapato Mikail',200.00,10,'https://i.ibb.co/nft37fH/7-Mikail.jpg');
+INSERT INTO `produtos` VALUES (6,'Sapato Amina',200.00,10,'https://i.ibb.co/XXcpR7Y/6-Amina.jpg'),(7,'Sapato Alice',200.00,10,'https://i.ibb.co/1ss8w60/2-Alice.jpg'),(8,'Sapato Budgeron',200.00,10,'https://i.ibb.co/4dQnj1r/8-Budgeron.jpg'),(9,'Sapato Mikail',200.00,10,'https://i.ibb.co/nft37fH/7-Mikail.jpg'),(10,'Tuan',150.00,5,'https://i.ibb.co/GPjqtBB/9-Tuan.jpg'),(11,'Tuan',150.00,5,'https://i.ibb.co/GPjqtBB/9-Tuan.jpg'),(12,'Tuan',150.00,5,'https://i.ibb.co/GPjqtBB/9-Tuan.jpg'),(13,'Sapato Slip',130.00,10,'https://i.ibb.co/ZB7qwc1/3-Slip.png');
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -220,4 +220,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-03 21:32:14
+-- Dump completed on 2021-05-04  9:31:37
