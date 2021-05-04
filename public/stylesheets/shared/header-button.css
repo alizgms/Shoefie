@@ -13,6 +13,7 @@ header {
   padding-left: 50px;
   padding-right: 50px;
 }
+
 .logo a {
   text-decoration: none;
   font-family: "Bebas Neue";
@@ -43,4 +44,14 @@ header {
 .nao-tem-conta {
   display: flex;
   align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  transition: 0.2s ease-out;
+  color: var(--hover);
 }
