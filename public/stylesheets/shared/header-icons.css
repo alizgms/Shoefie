@@ -24,7 +24,7 @@ header {
   padding-top: 10px;
   }
 
-.logo {
+.logo a {
   font-family: "Bebas Neue";
   font-size: 40px;
   font-weight: 500;
@@ -45,7 +45,8 @@ header {
 
 a {
   text-decoration: none;
-  
+}
+
 a:hover {
   text-decoration: none;
   transition: 0.2s ease-out;
