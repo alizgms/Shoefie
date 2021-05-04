@@ -3,16 +3,14 @@ const { Usuario } = require('../models');
 module.exports = async (request, response, next) => {
   const { nome, email, senha } = request.body;
 
-  if (!email || email.length < 0) {
-    return response.status(400).json({ error: 'Email invalido' });
-  }
+  const usuario = await Usuario.findAll({
+      where: { email },
+    });
 
-  const usuarioExiste = await Usuario.findAll({
-    where: { email },
-  });
-
-  if (usuarioExiste.length) {
-    return response.status(400).json({ erro: 'Email já registrado' });
+  if (usuario.email || email.length < 0 || !usuario.email) {
+    return response
+      .status(400)
+      .json({ error: 'Email invalido ou já cadastrado' });
   } else if (!senha || senha.length < 6 || senha.length > 12) {
     return response.status(400).json({ erro: 'Senha inválida ' });
   } else if (!nome || nome.length < 2) {

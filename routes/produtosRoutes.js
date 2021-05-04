@@ -5,7 +5,7 @@ const router = express.Router();
 // middleware
 const loginAuthenticate = require('../middlewares/LoginAuthenticate');
 
-router.get('/', produtosController.index);
+// router.get('/', produtosController.index);
 router.delete('/:id', produtosController.delete);
 router.post('/', produtosController.store);
 router.use(loginAuthenticate);

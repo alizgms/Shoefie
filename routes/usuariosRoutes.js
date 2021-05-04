@@ -4,16 +4,22 @@ const router = express.Router();
 
 // Middlewares
 const validarUsuario = require('../middlewares/ValidarUsuario');
-const loginAuthenticate = require('../middlewares/ValidarUsuario');
+const loginAuthenticate = require('../middlewares/LoginAuthenticate');
 
-router.post('/logoff', usuariosController.logoff);
-router.get('/', usuariosController.index);
+// logoff
+router.get('/logoff', usuariosController.logoff);
+// login
 router.get('/login', usuariosController.login);
+// tela cadastro
 router.get('/signup', usuariosController.signup);
-router.post('/auth', validarUsuario, usuariosController.store);
-
-router.get('/profile', loginAuthenticate, usuariosController.profile);
+// cadastrar
+router.post('/register', validarUsuario, usuariosController.store);
+// autentica usuario
 router.post('/login', usuariosController.auth);
+
+router.use(loginAuthenticate);
+router.get('/profile', usuariosController.profile);
 router.delete('/:id', usuariosController.delete);
+router.get('/', usuariosController.index);
 
 module.exports = router;
