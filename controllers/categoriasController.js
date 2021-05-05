@@ -6,7 +6,12 @@ const categoriasController = {
       include: { model: Produto, as: 'produtos' },
     });
 
-    return response.render('produtos', { listProducts: categoria });
+    const { id } = request.session.usuarioLogado;
+
+    return response.render('produtos', {
+      listProducts: categoria,
+      idusuarios: id,
+    });
   },
 
   store: async (request, response) => {
