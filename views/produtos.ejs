@@ -76,7 +76,7 @@
                 </h5>
               </div>
               <button
-                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>', '<%=products.produtos[i].imagem%>')"
+                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>', '<%=products.produtos[i].imagem%>','<%=idusuarios%>')"
                 id="btn-comprar">
                 Comprar
               </button>
@@ -102,7 +102,7 @@
                 </h5>
               </div>
               <button
-                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>',  '<%=products.produtos[i].imagem%>')"
+                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>',  '<%=products.produtos[i].imagem%>','<%=idusuarios%>')"
                 id="btn-comprar">
                 Comprar
               </button>
@@ -128,7 +128,7 @@
                 </h5>
               </div>
               <button
-                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>', '<%=products.produtos[i].imagem%>')"
+                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>', '<%=products.produtos[i].imagem%>','<%=idusuarios%>')"
                 id="btn-comprar">
                 Comprar
               </button>
@@ -140,7 +140,7 @@
   </div>
 
     <script>
-      function addItemCarrinho(id, nome, preco, imagem) {
+      function addItemCarrinho(id, nome, preco, imagem,idusuario) {
         // console.log(id, nome, preco);
         let produtos = localStorage.getItem('carrinho');
         if (produtos) {
@@ -160,7 +160,7 @@
         } else {
           let qtd = 1;
           const carrinho = {
-            usuario_id: 1,
+            usuario_id: idusuario,
             produtos: [{ id, nome, preco, imagem, qtd }],
           };
           localStorage.setItem('carrinho', JSON.stringify(carrinho));

@@ -1,4 +1,4 @@
-const { Pedido, ProdutoPedido } = require('../models');
+const { Pedido } = require('../models');
 
 const pedidosController = {
   shippingDetail: async (request, response) => {
@@ -23,6 +23,7 @@ const pedidosController = {
     };
 
     await Pedido.create(pedidos);
+
     return response.status(201).json(pedidos);
   },
 
