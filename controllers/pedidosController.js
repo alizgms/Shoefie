@@ -1,4 +1,4 @@
-const { Pedido } = require('../models');
+const { Pedido, Usuario } = require('../models');
 
 const pedidosController = {
   shippingDetail: async (request, response) => {
@@ -26,27 +26,14 @@ const pedidosController = {
 
     return response.status(201).json(pedidos);
   },
-  // connect: async (request, response) => {
-  //   const produtos = request.localStorage.getItem('carrinho');
-  //   const pedido = await Pedido.findOne({where: {statusPedido: null}});
 
+  checkout: async (request, response) => {
+    const { id } = request.session.usuarioLogado;
+    const pedido = await Pedido.findAll({ where: { usuarios_id: id } });
 
-  //   for(let product of produtos){
-  //     let produto = await ProdutoPedido.findOne({where: {nome: product.nome}}) 
+    // return response.json(pedido);
 
-  //     let produtopedido = {
-  //       produtos_id = produto.id,
-  //       pedidos_id = pedido.id,
-  //       qtdProduto = produto.qtd
-  //     }
-  //     await ProdutoPedido.create(produtopedido);
-  //   }
-
-  //   return response.status(201);
-  // },
-
-  checkout: (request, response) => {
-    return response.render('finalizarPagamento');
+    return response.render('finalizarPagamento', { pedidos: pedido });
   },
 };
 
