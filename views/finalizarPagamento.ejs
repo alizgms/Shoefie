@@ -64,7 +64,7 @@
           <div class="quantity">
             <p class="quantity-field">1</p>
           </div>
-          <div class="subtotal">150</div>
+          <div class="subtotal"></div>
           <div class="remove">
             <button>Remover</button>
           </div>
@@ -79,14 +79,14 @@
         <div class="summary-total-items"><span class="total-items"></span> Valor das compras</div>
         <div class="summary-subtotal">
           <div class="subtotal-title">Subtotal</div>
-          <div class="subtotal-value final-value" id="basket-subtotal">1150.00</div>
+          <div class="subtotal-value final-value" id="basket-subtotal"></div>
         </div>
         <div class="summary-total">
           <div class="total-title">Total</div>
-          <div class="total-value final-value" id="basket-total">1150.00</div>
+          <div class="total-value final-value" id="basket-total"></div>
         </div>
         <div class="summary-checkout">
-          <button class="checkout-cta">Gerar boleto</button>
+          <button onclick="finalizar()" class="checkout-cta" >Gerar boleto</button>
         </div>
       </div>
     </aside>
@@ -112,9 +112,9 @@
         </div>
         <div class="price">${produto.preco}</div>
         <div class="quantity">
-          <p class="quantity-field">1</p>
+          <p class="quantity-field">${produto.qtd}</p>
         </div>
-        <div class="subtotal">1000</div>
+        <div class="subtotal">${produto.preco * produto.qtd}</div>
         <div class="remove">
           <button>Remover</button>
         </div>
@@ -124,6 +124,35 @@
     console.log(conteudo);
 
     document.getElementById('carrinho').innerHTML = conteudo;
+
+    function finalizar() {
+        fetch('http://localhost:3000/pedidos', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${productsCarrinho.usuario_id}\"}`,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            for (let produto of productsCarrinho.produtos) {
+              console.log(produto);
+              console.log(data.id);
+            }
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+    }
+
+    const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
+    
+    conteudo = `<p>${total}</p>`;
+
+    document.getElementById('basket-total').innerHTML = conteudo;
+    document.getElementById('basket-subtotal').innerHTML = conteudo;
+
+
   </script>
 
 <script>
