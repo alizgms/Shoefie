@@ -74,11 +74,3 @@ button.botao-editar {
   justify-content: center;
   margin-bottom: 10px;
 }
-
-footer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
