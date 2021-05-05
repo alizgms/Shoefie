@@ -33,7 +33,7 @@
         <a href="/pedidos/shipping"><img src="../media/icons/truck.svg" alt=""></a>
         <a href="/usuarios/profile"><img src="../media/icons/user.svg" alt=""><a href=""></a></a>
         <a href="/carrinho"><img src="../media/icons/shopping-bag.svg" alt=""></a>
-        <a href="/usuarios/logoff"><img src="../media/icons/log-out.svg" alt=""></a>
+        <a onclick="logoff()" href="/usuarios/logoff"><img src="../media/icons/log-out.svg" alt=""></a>
       </div>
 
     </header>
@@ -73,6 +73,12 @@
   </div>
 
 </body>
+
+<script>
+  function logoff() {
+    localStorage.clear();
+  }
+</script>
 
 <footer> SHOEFIE © todos os direitos reservados</footer>
 

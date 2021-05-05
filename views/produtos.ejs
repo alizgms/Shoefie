@@ -52,7 +52,7 @@
             alt="Carrinho de compras"
           />
         </a>
-        <a href="/usuarios/logoff">
+        <a onclick="logoff()" href="/usuarios/logoff">
           <img src="../media/icons/log-out.svg" alt="Logout" />
         </a>
       </div>
@@ -146,6 +146,12 @@
           };
           localStorage.setItem('carrinho', JSON.stringify(carrinho));
         }
+      }
+    </script>
+
+    <script>
+      function logoff() {
+        localStorage.clear();
       }
     </script>
     <script
