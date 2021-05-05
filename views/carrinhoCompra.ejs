@@ -1,37 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/stylesheets/carrinhoCompra.css" />
-    <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
-    <link rel="shortcut icon" href="/media/icons/logo.png" />
-    <title>SHOEFIE</title>
-  </head>
-
-  <body>
-    <div class="container">
-      <header>
-        <div class="logo">
-          <a href="">SHOEFIE</a>
-        </div>
 
         <div class="icons">
           <a href="/pedidos/shipping"
@@ -40,80 +8,60 @@
           <a href="/usuarios/profile"
             ><img src="../media/icons/user.svg" alt="" /><a href=""></a
           ></a>
-          <a href=""><img src="../media/icons/shopping-bag.svg" alt="" /></a>
-          <a href="/usuarios/logoff"
+          <a href="/carrinho"
+            ><img src="../media/icons/shopping-bag.svg" alt=""
+          /></a>
+          <a onclick="logoff()" href="/usuarios/logoff"
             ><img src="../media/icons/log-out.svg" alt=""
           /></a>
         </div>
-      </header>
-
-      <section class="menu">
-        <nav>
-          <a href="">LANÇAMENTOS</a>
-          <a href="">OFERTAS</a>
-          <a href="">MASCULINO</a>
-          <a href="">FEMININO</a>
-          <a href="">INFANTIL</a>
-        </nav>
-      </section>
-
-      <div class="carrinho-box">
         <div>
-          <p class="carrinho">Carrinho de compras</p>
+          <p class="quantidade">Quantidade</p>
         </div>
-        <div class="box-top">
-          <div>
-            <p class="produo">Produto</p>
-          </div>
-          <div>
-            <p class="quantidade">Quantidade</p>
-          </div>
-          <div>
-            <p class="preco">Preço</p>
-          </div>
-        </div>
-
-        <div id="carrinho">
-          <div class="box-produtos" id="box-produtos">
-            <div class="produto-nome">
-              <p><strong></strong></p>
-            </div>
-
-            <div class="qtd-produto">
-              <p><a href="">-</a> <a href="">+</a></p>
-            </div>
-
-            <div class="produto-valor">
-              <p></p>
-              <div class="lixo">
-                <a href=""
-                  ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
-                /></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="total">
-          <p>Subtotal(1 Item): R$ 250,00</p>
-        </div>
-
-        <div class="button-compra">
-          <button class="comprar">
-            CONFIRMAR COMPRA
-            <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
-          </button>
+        <div>
+          <p class="preco">Preço</p>
         </div>
       </div>
-    </div>
 
-    <script>
-      let produtos = localStorage.getItem('carrinho');
-      let produtoCarrinho = JSON.parse(produtos);
-      let conteudo = '';
-      for (let produto of produtoCarrinho.produtos) {
-        console.log(produto);
-        conteudo += `
+      <div id="carrinho">
+        <div class="box-produtos" id="box-produtos">
+          <div class="produto-nome">
+            <p><strong></strong></p>
+          </div>
+
+          <div class="qtd-produto">
+            <p><a href="">-</a> <a href="">+</a></p>
+          </div>
+
+          <div class="produto-valor">
+            <p></p>
+            <div class="lixo">
+              <a href=""><img src="/media/icons/trash.svg" alt="lixo" id="lixo" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="total">
+        <p>Subtotal(1 Item): R$ 250,00</p>
+      </div>
+
+      <div class="button-compra">
+        <button class="comprar">
+          CONFIRMAR COMPRA
+          <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let produtos = localStorage.getItem('carrinho');
+    let produtoCarrinho = JSON.parse(produtos);
+    let conteudo = '';
+    for (let produto of produtoCarrinho.produtos) {
+      console.log(produto);
+      conteudo += `
         <div class="box-produtos">
           <div class="produto-nome">
             <p><strong> ${produto.nome}</strong></p>
@@ -132,13 +80,26 @@
             </div>
           </div>
         </div>`;
-      }
+    }
 
-      console.log(conteudo);
+    console.log(conteudo);
 
+    document.getElementById('carrinho').innerHTML = conteudo;
+  </script>
+</body>
+
+<<<<<<< HEAD
       document.getElementById('carrinho').innerHTML = conteudo;
     </script>
-  </body>
 
-  <footer>shoefie © todos os direitos reservados</footer>
+    <script>
+      function logoff() {
+        localStorage.clear();
+      }
+    </script>
+  </body>
+=======
+<footer>shoefie © todos os direitos reservados</footer>
+>>>>>>> e4e7ea41d848df3bcf6ae53ff86353b67cabd23a
+
 </html>

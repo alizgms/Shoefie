@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/stylesheets/confirmacaoEntrega.css">
     <link rel="stylesheet" href="/stylesheets/shared/header-icons.css">
     <link rel="stylesheet" href="/stylesheets/shared/footer.css">
-    <link rel="shortcut icon" href="/Logo.png">
+    <link rel="shortcut icon" href="/media/icons/logo.png" />
     <title>Confirmação de Entrega</title>
 </head>
 
@@ -24,15 +24,18 @@
 
         <header>
             <div class="logo">
-                <a href="">SHOEFIE</a>
+                <a href="/">SHOEFIE</a>
             </div>
+
             <div class="icons">
-                <img src="/media/icons/truck.svg" alt="Acompanhar envio" />
+                <a href="/pedidos/shipping">
+                    <img src="/media/icons/truck.svg" alt="Acompanhar envio" />
+                </a>
                 <a href="/profile">
                     <img src="/media/icons/user.svg" alt="Perfil" />
                 </a>
                 <img src="/media/icons/shopping-bag.svg" alt="Carrinho de compras" />
-                <a href="/usuarios/logoff">
+                <a onclick="logoff()" href="/usuarios/logoff">
                     <img src="/media/icons/log-out.svg" alt="Logout" />
                 </a>
             </div>

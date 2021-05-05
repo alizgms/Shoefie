@@ -5,17 +5,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
-    rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/telaUsuario.css"/>
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="/media/icons/logo.png" />
 
+    <link rel="stylesheet" href="/stylesheets/telaUsuario.css" />
+    <link rel="shortcut icon" href="/media/icons/logo.png" />
+    <link rel="stylesheet" href="/stylesheets/shared/header-icons.css">
     <title>SHOEFIE</title>
 
 </head>
@@ -24,7 +24,7 @@
     <div>
         <header>
             <div class="logo">
-                <a href="">SHOEFIE</a>
+                <a href="/">SHOEFIE</a>
             </div>
 
             <section class="menu">
@@ -39,12 +39,17 @@
 
             <div class="icons">
 
-                <img src="../media/icons/truck.svg" alt="Acompanhar envio" />
-                <img src="../media/icons/user.svg" alt="Perfil" />
-                <img src="../media/icons/shopping-bag.svg" alt="Carrinho de compras" />
-                <a href="/usuarios/logout">
+                <a href="/pedidos/shipping">
+                    <img src="../media/icons/truck.svg" alt="Acompanhar envio" />
+                </a>
+                <a href="/usuarios/profile">
+                    <img src="../media/icons/user.svg" alt="Perfil" />
+                </a>
+                <a href="/carrinho">
+                    <img src="../media/icons/shopping-bag.svg" alt="Carrinho de compras" />
+                </a>
+                <a  onclick="logoff()" href="/usuarios/logout">
                     <img src="../media/icons/log-out.svg" alt="Logout" />
-
                 </a>
             </div>
 
@@ -84,8 +89,12 @@
             </div>
             shoefie © todos os direitos reservados
         </footer>
+
+        <script>
+            function logoff() {
+              localStorage.clear();
+            }
+          </script>
 </body>
-
-
 
 </html>
