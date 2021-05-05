@@ -16,26 +16,27 @@
   <link rel="stylesheet" href="/stylesheets/acompanharPedido.css" />
   <link rel="stylesheet" href="/stylesheets/shared/header-icons.css">
   <link rel="stylesheet" href="/stylesheets/shared/footer.css">
-  <script src="../scripts/shoppingCart.js" defer></script>
+  <!-- <script src="../scripts/shoppingCart.js" defer></script> -->
   <link rel="shortcut icon" href="/media/icons/logo.png" />
   <title>SHOEFIE</title>
 </head>
 
+<header>
+  <div class="logo">
+    <a href="/">SHOEFIE</a>
+  </div>
+
+  <div class="icons">
+    <a href="/pedidos/shipping"><img src="../media/icons/truck.svg" alt=""></a>
+    <a href="/usuarios/profile"><img src="../media/icons/user.svg" alt=""></a>
+    <a href="/carrinho"><img src="../media/icons/shopping-bag.svg" alt=""></a>
+    <a onclick="logoff()" href="/usuarios/logoff"><img src="../media/icons/log-out.svg" alt=""></a>
+  </div>
+</header>
+
+<div class="container">
+
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <a href="/">SHOEFIE</a>
-      </div>
-
-      <div class="icons">
-        <a href="/pedidos/shipping"><img src="../media/icons/truck.svg" alt=""></a>
-        <a href="/usuarios/profile"><img src="../media/icons/user.svg" alt=""></a>
-        <a href="/carrinho"><img src="../media/icons/shopping-bag.svg" alt=""></a>
-        <a onclick="logoff()" href="/usuarios/logoff"><img src="../media/icons/log-out.svg" alt=""></a>
-      </div>
-    </header>
-
     <div class="pedido-box">
       <div>
         <p class="acompanhe">Acompanhe seus pedidos</p>
@@ -53,19 +54,21 @@
       </div>
 
       <div id="acompanhe-box">
-        <div class="box-id" id="box-id">
-          <div class="produto-nome">
-            <p><strong>2132131</strong></p>
-          </div>
+        <% for(let pedidos of listarPedidos){ %> 
+          <div class="box-id" id="box-id">
+            <div class="produto-nome">
+              <p><strong><%= pedidos.id %> </strong></p>
+            </div>
 
-          <div class="boletoCode">
-            <p></p>
-          </div>
+            <div class="boletoCode">
+              <p><%= pedidos.codigoBoleto %> </p>
+            </div>
 
-          <div class="boleto-valor">
-            <p>R$ 250.00</p>
+            <div class="boleto-valor">
+              <p><%= pedidos.valor %> </p>
+            </div>
           </div>
-        </div>
+        <% } %> 
       </div>
     </div>
 

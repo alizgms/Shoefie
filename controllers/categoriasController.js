@@ -10,7 +10,7 @@ const categoriasController = {
 
     return response.render('produtos', {
       listProducts: categoria,
-      idUsuarios: id,
+      idusuarios: id,
     });
   },
 

@@ -14,9 +14,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
     crossorigin="anonymous" />
-
-  <body>
-
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
@@ -74,12 +71,14 @@
                 <h5>
                   <%=products.produtos[i].preco %>
                 </h5>
+                <div class="botao">
+                  <button
+                  onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>', '<%=products.produtos[i].imagem%>','<%=idusuarios%>')"
+                  id="btn-comprar">
+                  Comprar
+                </button>
+                 </div>
               </div>
-              <button
-                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>', '<%=products.produtos[i].imagem%>','<%=idUsuarios%>')"
-                id="btn-comprar">
-                Comprar
-              </button>
             </a>
             <% }%>
               <%}%>
@@ -100,12 +99,14 @@
                 <h5>
                   <%=products.produtos[i].preco %>
                 </h5>
+                <div class="botao">
+                  <button
+                  onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>',  '<%=products.produtos[i].imagem%>','<%=idusuarios%>')"
+                  id="btn-comprar">
+                  Comprar
+                </button>
+                </div>
               </div>
-              <button
-                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>',  '<%=products.produtos[i].imagem%>','<%=idUsuarios%>')"
-                id="btn-comprar">
-                Comprar
-              </button>
             </a>
             <% }%>
               <%}%>
@@ -126,12 +127,14 @@
                 <h5>
                   <%=products.produtos[i].preco %>
                 </h5>
+                <div class="botao">
+                  <button
+                  onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>', '<%=products.produtos[i].imagem%>','<%=idusuarios%>')"
+                  id="btn-comprar">
+                  Comprar
+                </button>
+                </div>
               </div>
-              <button
-                onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>', '<%=products.produtos[i].imagem%>','<%=idUsuarios%>')"
-                id="btn-comprar">
-                Comprar
-              </button>
             </a>
             <% }%>
               <%}%>
@@ -210,5 +213,5 @@
     );
   </script>
 </body>
-
+<footer>SHOEFIE © todos os direitos reservados</footer>
 </html>

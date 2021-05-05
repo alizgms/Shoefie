@@ -2,10 +2,11 @@ const { Pedido, Usuario } = require('../models');
 
 const pedidosController = {
   shippingDetail: async (request, response) => {
-    const pedido = await Pedido.findAll();
-
+    const usuario = request.session.usuarioLogado;
+    const usuarios_id = usuario.id;
+    const pedidos = await Pedido.findAll({where:{usuarios_id}});
     // return response.status(200).json(pedido);
-    return response.render('acompanharPedido');
+    return response.render('acompanharPedido',{listarPedidos: pedidos});
   },
   store: async (request, response) => {
     const { statusPedido, dataVencimento, usuarios_id } = request.body;
