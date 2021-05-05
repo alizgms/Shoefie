@@ -80,6 +80,7 @@
             <h5><%=products.produtos[i].preco %></h5>
           </div>
           <button
+          <% if (products.id === 1) {%>
             onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>')"
             id="btn-comprar"
           >
@@ -137,12 +138,27 @@
         if (produtos) {
           console.log(JSON.parse(produtos));
           let produtoCarrinho = JSON.parse(produtos);
-          produtoCarrinho.produtos.push({ id, nome, preco });
+          let flag = 0;
+          let cont = 0;
+          for(let products of produtoCarrinho){
+            if(products.nome == nome)
+            {
+              flag = 1;
+            }
+            cont = cont + 1;
+          }
+
+          if(flag == 1) {
+            produtoCarrinho.produtos[cont].qtd = produtoCarrinho.produtos[cont].qtd + 1;
+          } else {
+            let qtd = 1;
+            produtoCarrinho.produtos.push({ id, nome, preco, qtd });
+          }
           localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
         } else {
+          let qtd = 1;
           const carrinho = {
-            usuario_id: 1,
-            produtos: [{ id, nome, preco }],
+            produtos: [{ id, nome, preco, qtd }],
           };
           localStorage.setItem('carrinho', JSON.stringify(carrinho));
         }
