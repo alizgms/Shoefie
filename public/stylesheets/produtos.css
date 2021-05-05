@@ -13,6 +13,11 @@
   box-sizing: border-box;
 }
 
+
+button {
+  cursor: pointer;
+}
+
 body {
   font-family: "Montserrat";
   background-color: var(--branco);
@@ -64,4 +69,13 @@ section nav a {
 
 section nav a:hover {
   color: var(--hover);
+}
+
+#btn-comprar {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: var(--preto);
+  border: 3px solid var(--preto);
+  color: var(--branco);
+  justify-content: center;
 }
