@@ -4,10 +4,10 @@ module.exports = async (request, response, next) => {
   const { nome, email, senha } = request.body;
 
   const usuario = await Usuario.findAll({
-      where: { email },
-    });
+    where: { email },
+  });
 
-  if (usuario.email || email.length < 0 || !usuario.email) {
+  if (usuario.email || email.length < 0 || !email) {
     return response
       .status(400)
       .json({ error: 'Email invalido ou já cadastrado' });
