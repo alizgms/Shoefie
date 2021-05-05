@@ -27,10 +27,10 @@
     </div>
 
     <div class="icons">
-      <a href=""><img src="/media/icons/truck.svg" alt=""></a>
-      <a href=""><img src="/media/icons/user.svg" alt=""><a href=""></a></a>
-      <a href=""><img src="/media/icons/shopping-bag.svg" alt=""></a>
-      <a href=""><img src="/media/icons/log-out.svg" alt=""></a>
+      <a href="/pedidos/shipping"><img src="/media/icons/truck.svg" alt=""></a>
+      <a href="/usuarios/profile"><img src="/media/icons/user.svg" alt=""><a href=""></a></a>
+      <a href="/carrinho"><img src="/media/icons/shopping-bag.svg" alt=""></a>
+      <a href="/usuarios/logoff"><img src="/media/icons/log-out.svg" alt=""></a>
     </div>
 
   </header>
@@ -47,44 +47,31 @@
           <li class="subtotal">Subtotal</li>
         </ul>
       </div>
-      <div class="basket-product">
-        <div class="item">
-          <div class="product-image">
-            <img src="/media/masculinos/03 - Anderson.jpg" alt="Placholder Image 2" class="product-frame">
+   
+
+      <div id="carrinho">
+        <div class="basket-product">
+          <div class="item">
+            <div class="product-image">
+              <img src="" alt="Placholder Image 2" class="product-frame">
+            </div>
+            <div class="product-details">
+              <p><strong></strong></p>
+              <p></p>
+            </div>
           </div>
-          <div class="product-details">
-            <p><strong>Nike Shox</strong></p>
-            <p>Product Code - 232321939</p>
+          <div class="price"></div>
+          <div class="quantity">
+            <p class="quantity-field">1</p>
           </div>
-        </div>
-        <div class="price">250.00</div>
-        <div class="quantity">
-          <p class="quantity-field">4</p>
-        </div>
-        <div class="subtotal">1000</div>
-        <div class="remove">
-          <button>Remover</button>
+          <div class="subtotal">150</div>
+          <div class="remove">
+            <button>Remover</button>
+          </div>
         </div>
       </div>
-      <div class="basket-product">
-        <div class="item">
-          <div class="product-image">
-            <img src="/media/femininos/13 - Pazanni.jpg" alt="Placholder Image 2" class="product-frame">
-          </div>
-          <div class="product-details">
-            <p><strong>Navy, Size 10</strong></p>
-            <p>Product Code - 232321939</p>
-          </div>
-        </div>
-        <div class="price">150</div>
-        <div class="quantity">
-          <p class="quantity-field">1</p>
-        </div>
-        <div class="subtotal">150</div>
-        <div class="remove">
-          <button>Remover</button>
-        </div>
-      </div>
+
+
     </div>
     <aside>
       <p>Finalize seu pagamento</p>
@@ -105,6 +92,39 @@
     </aside>
   </div>
   </main>
+
+  <script>
+    let produtos = localStorage.getItem('carrinho');
+    let produtoCarrinho = JSON.parse(produtos);
+    let conteudo = '';
+    for (let produto of produtoCarrinho.produtos) {
+      console.log(produto);
+      conteudo += `
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="${produto.imagem}" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <p><strong>${produto.nome}</strong></p>
+            <p>Product Code - ${produto.id}</p>
+          </div>
+        </div>
+        <div class="price">${produto.preco}</div>
+        <div class="quantity">
+          <p class="quantity-field">1</p>
+        </div>
+        <div class="subtotal">1000</div>
+        <div class="remove">
+          <button>Remover</button>
+        </div>
+      </div>`;
+    }
+
+    console.log(conteudo);
+
+    document.getElementById('carrinho').innerHTML = conteudo;
+  </script>
 </body>
 
 </html>
