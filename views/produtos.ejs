@@ -143,7 +143,7 @@
   </div>
 
     <script>
-      function addItemCarrinho(id, nome, preco, imagem,idusuario) {
+      function addItemCarrinho(id, nome, preco, imagem, idUsuario) {
         // console.log(id, nome, preco);
         let produtos = localStorage.getItem('carrinho');
         if (produtos) {
@@ -163,7 +163,7 @@
         } else {
           let qtd = 1;
           const carrinho = {
-            usuario_id: idusuario,
+            usuario_id: idUsuario,
             produtos: [{ id, nome, preco, imagem, qtd }],
           };
           localStorage.setItem('carrinho', JSON.stringify(carrinho));
@@ -173,6 +173,7 @@
       function logoff() {
         localStorage.clear();
       }
+      
     </script>
     <script
       src="https://kit.fontawesome.com/e288b4d2a5.js"

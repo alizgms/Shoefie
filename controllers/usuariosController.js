@@ -14,7 +14,9 @@ const usuariosController = {
   },
   // Renderiza perfil do usuário
   profile: (request, response) => {
-    return response.render('telaUsuario');
+    const userLogged = request.session.usuarioLogado;
+
+    return response.render('telaUsuario', { usuarioLogado: userLogged });
   },
 
   // Renderiza tela de login
@@ -70,8 +72,6 @@ const usuariosController = {
         },
       }
     );
-
-    // console.log(token);
 
     request.session.usuarioLogado = usuario;
     return response.redirect('/categorias/produtos');

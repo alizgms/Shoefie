@@ -59,16 +59,16 @@
             <form class="dados">
 
                 <label class="field">Nome</label>
-                <input type="text" nome="nome" placeholder="Digite seu nome">
+                <input type="text" nome="nome" placeholder="Digite seu nome" value="<%= usuarioLogado.nome %> ">
 
                 <label class="field">Endereço</label>
-                <input type="text" nome="Endereço" placeholder="Digite seu email">
+                <input type="text" nome="Endereço" placeholder="Digite seu email" >
 
                 <label class="field">Telefone</label>
                 <input type="tel" nome="Telefone" placeholder="Digite seu telefone">
 
                 <label class="field">Email</label>
-                <input type="email" name="email" id="email" placeholder="Digite seu email">
+                <input type="email" name="email" id="email" placeholder="Digite seu email" value="<%= usuarioLogado.email %> ">
 
                 <label class="field">Senha</label>
                 <input type="password" name="senha" id="senha" min="6" max="12" placeholder="Digite sua senha">

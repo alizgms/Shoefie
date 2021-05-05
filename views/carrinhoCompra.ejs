@@ -49,16 +49,6 @@
   </section>
 
   <div class="container">
-  
-    <div class="carrinho-box">
-      <div>
-        <p class="carrinho">Carrinho de compras</p>
-      </div>
-      <div class="box-top">
-        <div>
-          <p class="produto">Produto</p>
-</div>
-   
       <div class="carrinho-box">
         <div>
           <p class="carrinho">Carrinho de compras</p>
@@ -101,10 +91,12 @@
         </div>
 
         <div class="button-compra">
-          <button onclick="finalizar()" class="comprar">
-            CONFIRMAR COMPRA
-            <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
-          </button>
+          <a href="/pedidos/checkout">
+            <button class="comprar">
+              CONFIRMAR ENDEREÇO
+              <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -114,7 +106,6 @@
       let produtoCarrinho = JSON.parse(produtos);
       let conteudo = '';
       for (let produto of produtoCarrinho.produtos) {
-        console.log(produto);
         conteudo += `
         <div class="box-produtos">
           <div class="produto-nome">
@@ -128,48 +119,37 @@
           <div class="produto-valor">
             <p>R$ ${produto.preco * produto.qtd}</p>
             <div class="lixo">
-              <a href=""
-                ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
-              /></a>
+              <a href="" onclick="remover(${produto.id})" >
+                <img src="/media/icons/trash.svg" alt="lixo" id="lixo"/>
+              </a>
             </div>
           </div>
         </div>`;
       }
 
       document.getElementById('carrinho').innerHTML = conteudo;
-    </script>
-
-    <script>
-      let products = localStorage.getItem('carrinho');
-      let productsCarrinho = JSON.parse(products);
-      const sum = productsCarrinho.produtos
-        .map((v) => v.preco)
-        .reduce((sum, current) => sum + current, 0);
-      let conteudo1 = `<p>Subtotal(1 Item): R$ ${sum}</p>`;
-
-      document.getElementById('total').innerHTML = conteudo1;
-      function finalizar() {
-        fetch('http://localhost:3000/pedidos', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${productsCarrinho.usuario_id}\"}`,
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            for (let produto of productsCarrinho.produtos) {
-              console.log(produto);
-              console.log(data.id);
-            }
-          })
-          .catch((err) => {
-            console.error(err);
-          });
+    
+      const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
+      const qtdTotal = produtoCarrinho.produtos.map((v) => v.qtd ).reduce((qtdTotal, current) => qtdTotal + current, 0);
+      if(qtdTotal > 1){
+        conteudo = `<p>Subtotal(${qtdTotal} Itens): R$ ${total}</p>`;
+      }else{
+        conteudo = `<p>Subtotal(${qtdTotal} Item): R$ ${total}</p>`;
       }
+
+      document.getElementById('total').innerHTML = conteudo;
+
     </script>
 
     <script>
+      function remover(id){
+        let produtos = localStorage.getItem('carrinho');
+        let produtoCarrinho = JSON.parse(produtos);
+        let index = produtoCarrinho.produtos.findIndex((obj => obj.id == id));
+        produtoCarrinho.produtos.splice(index,1);
+        localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
+      }
+
       function logoff() {
         localStorage.clear();
       }
