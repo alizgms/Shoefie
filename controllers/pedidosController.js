@@ -1,4 +1,4 @@
-const { Pedido, ProdutoPedido } = require('../models');
+const { Pedido } = require('../models');
 
 const pedidosController = {
   shippingDetail: async (request, response) => {
@@ -23,8 +23,10 @@ const pedidosController = {
     };
 
     await Pedido.create(pedidos);
+
     return response.status(201).json(pedidos);
   },
+<<<<<<< HEAD
   // connect: async (request, response) => {
   //   const produtos = request.localStorage.getItem('carrinho');
   //   const pedido = await Pedido.findOne({where: {statusPedido: null}});
@@ -43,6 +45,8 @@ const pedidosController = {
 
   //   return response.status(201);
   // },
+=======
+>>>>>>> 5eb6dde23b195bce7d6889dc9b3e24dcd5605021
 
   checkout: (request, response) => {
     return response.render('finalizarPagamento');

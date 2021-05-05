@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/stylesheets/carrinhoCompra.css" />
-    <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
-    <link rel="shortcut icon" href="/media/icons/logo.png" />
-    <title>SHOEFIE</title>
-  </head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/stylesheets/carrinhoCompra.css" />
+  <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
+  <link rel="stylesheet" href="/stylesheets/shared/footer.css">
+  <link rel="shortcut icon" href="/media/icons/logo.png" />
+  <title>SHOEFIE</title>
+</head>
 
-  <body>
-    <div class="container">
-      <header>
-        <div class="logo">
-          <a href="">SHOEFIE</a>
-        </div>
+ <header>
+    <div class="logo">
+      <a href="/">SHOEFIE</a>
+    </div>
 
-        <div class="icons">
+   <div class="icons">
           <a href="/pedidos/shipping"
             ><img src="../media/icons/truck.svg" alt=""
           /></a>
@@ -44,19 +35,30 @@
           <a onclick="logoff()" href="/usuarios/logoff"
             ><img src="../media/icons/log-out.svg" alt=""
           /></a>
-        </div>
-      </header>
+  </header>
 
-      <section class="menu">
-        <nav>
-          <a href="">LANÇAMENTOS</a>
-          <a href="">OFERTAS</a>
-          <a href="">MASCULINO</a>
-          <a href="">FEMININO</a>
-          <a href="">INFANTIL</a>
-        </nav>
-      </section>
+  <body>
+    <div class="container">
 
+  <section class="menu">
+    <nav>
+      <a href="">MASCULINO</a>
+      <a href="">FEMININO</a>
+      <a href="">INFANTIL</a>
+    </nav>
+  </section>
+
+  <div class="container">
+  
+    <div class="carrinho-box">
+      <div>
+        <p class="carrinho">Carrinho de compras</p>
+      </div>
+      <div class="box-top">
+        <div>
+          <p class="produto">Produto</p>
+</div>
+   
       <div class="carrinho-box">
         <div>
           <p class="carrinho">Carrinho de compras</p>
@@ -99,6 +101,7 @@
         </div>
 
         <div class="button-compra">
+<<<<<<< HEAD
          
             <button onclick="finalizar()" class="comprar">
               CONFIRMAR COMPRA
@@ -108,6 +111,12 @@
               />
             </button>
           
+=======
+          <button onclick="finalizar()" class="comprar">
+            CONFIRMAR COMPRA
+            <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
+          </button>
+>>>>>>> 5eb6dde23b195bce7d6889dc9b3e24dcd5605021
         </div>
       </div>
     </div>
@@ -139,14 +148,13 @@
         </div>`;
       }
 
-      console.log(conteudo);
-
       document.getElementById('carrinho').innerHTML = conteudo;
     </script>
 
     <script>
       let products = localStorage.getItem('carrinho');
       let productsCarrinho = JSON.parse(products);
+<<<<<<< HEAD
       const sum = productsCarrinho.produtos.map( v => v.preco ).reduce( (sum, current) => sum + current, 0 );
       let conteudo1 = `<p>Subtotal(1 Item): R$ ${sum}</p>`;
 
@@ -169,6 +177,33 @@
       }
 
 
+=======
+      const sum = productsCarrinho.produtos
+        .map((v) => v.preco)
+        .reduce((sum, current) => sum + current, 0);
+      let conteudo1 = `<p>Subtotal(1 Item): R$ ${sum}</p>`;
+
+      document.getElementById('total').innerHTML = conteudo1;
+      function finalizar() {
+        fetch('http://localhost:3000/pedidos', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${productsCarrinho.usuario_id}\"}`,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            for (let produto of productsCarrinho.produtos) {
+              console.log(produto);
+              console.log(data.id);
+            }
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+>>>>>>> 5eb6dde23b195bce7d6889dc9b3e24dcd5605021
     </script>
 
     <script>
