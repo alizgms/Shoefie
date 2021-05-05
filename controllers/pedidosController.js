@@ -24,6 +24,10 @@ const pedidosController = {
     await Pedido.create(pedidos);
     return response.status(201).json(pedidos);
   },
+
+  checkout: (request, response) => {
+    return response.render('finalizarPagamento');
+  },
 };
 
 module.exports = pedidosController;

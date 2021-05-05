@@ -2,21 +2,7 @@ const { ProdutoPedido } = require('../models');
 
 const produtosPedidosController = {
   indexCarrinho: async (request, response) => {
-    // const { id } = request.params;
-
-    // const produtosPedidos = await ProdutoPedido.findAll({
-    //   where: { pedidos_id: id },
-    //   include: { model: Produto, as: 'produtos' },
-    // });
-
-    // let produtos = localStorage.getItem('carrinho');
-    // console.log(produtos);
-
-    return response.render('carrinhoCompra', {
-      // listProducts: produtosPedidos,
-    });
-
-    // return response.json(produtosPedidos);
+    return response.render('carrinhoCompra');
   },
 
   index: async (request, response) => {
