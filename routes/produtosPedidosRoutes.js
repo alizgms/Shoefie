@@ -12,6 +12,6 @@ router.delete('/:id', produtosPedidosController.delete);
 // carrinho add produto
 router.get('/', produtosPedidosController.indexCarrinho);
 router.get('/all', produtosPedidosController.index);
-router.post('/:id', produtosPedidosController.store);
+router.post('/', produtosPedidosController.store);
 
 module.exports = router;
