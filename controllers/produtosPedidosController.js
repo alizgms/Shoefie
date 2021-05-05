@@ -11,11 +11,10 @@ const produtosPedidosController = {
   },
 
   store: async (request, response) => {
-    const { pedidos_id, qtdProduto } = request.body;
-    const { id } = request.params;
+    const { pedidos_id, qtdProduto, produtos_id } = request.body;
 
     const produtoPedido = {
-      produtos_id: parseInt(id),
+      produtos_id,
       pedidos_id,
       qtdProduto,
     };

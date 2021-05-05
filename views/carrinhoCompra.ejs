@@ -91,10 +91,12 @@
         </div>
 
         <div class="button-compra">
-          <button class="comprar">
-            CONFIRMAR ENEDEREÇO
-            <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
-          </button>
+          <a href="/pedidos/checkout">
+            <button class="comprar">
+              CONFIRMAR ENDEREÇO
+              <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -104,7 +106,6 @@
       let produtoCarrinho = JSON.parse(produtos);
       let conteudo = '';
       for (let produto of produtoCarrinho.produtos) {
-        console.log(produto);
         conteudo += `
         <div class="box-produtos">
           <div class="produto-nome">
