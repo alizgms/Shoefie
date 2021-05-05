@@ -49,16 +49,6 @@
   </section>
 
   <div class="container">
-  
-    <div class="carrinho-box">
-      <div>
-        <p class="carrinho">Carrinho de compras</p>
-      </div>
-      <div class="box-top">
-        <div>
-          <p class="produto">Produto</p>
-</div>
-   
       <div class="carrinho-box">
         <div>
           <p class="carrinho">Carrinho de compras</p>
@@ -101,8 +91,8 @@
         </div>
 
         <div class="button-compra">
-          <button onclick="finalizar()" class="comprar">
-            CONFIRMAR COMPRA
+          <button class="comprar">
+            CONFIRMAR ENEDEREÇO
             <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
           </button>
         </div>
@@ -137,36 +127,16 @@
       }
 
       document.getElementById('carrinho').innerHTML = conteudo;
-    </script>
-
-    <script>
-      let products = localStorage.getItem('carrinho');
-      let productsCarrinho = JSON.parse(products);
-      const sum = productsCarrinho.produtos
-        .map((v) => v.preco)
-        .reduce((sum, current) => sum + current, 0);
-      let conteudo1 = `<p>Subtotal(1 Item): R$ ${sum}</p>`;
-
-      document.getElementById('total').innerHTML = conteudo1;
-      function finalizar() {
-        fetch('http://localhost:3000/pedidos', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${productsCarrinho.usuario_id}\"}`,
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            for (let produto of productsCarrinho.produtos) {
-              console.log(produto);
-              console.log(data.id);
-            }
-          })
-          .catch((err) => {
-            console.error(err);
-          });
+    
+      const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
+      const qtdTotal = produtoCarrinho.produtos.map((v) => v.qtd ).reduce((qtdTotal, current) => qtdTotal + current, 0);
+      if(qtdTotal > 1){
+        conteudo = `<p>Subtotal(${qtdTotal} Itens): R$ ${total}</p>`;
+      }else{
+        conteudo = `<p>Subtotal(${qtdTotal} Item): R$ ${total}</p>`;
       }
+
+      document.getElementById('total').innerHTML = conteudo;
     </script>
 
     <script>
