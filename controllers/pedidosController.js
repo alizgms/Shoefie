@@ -25,7 +25,6 @@ const pedidosController = {
     await Pedido.create(pedidos);
     return response.status(201).json(pedidos);
   },
-<<<<<<< HEAD
   // connect: async (request, response) => {
   //   const produtos = request.localStorage.getItem('carrinho');
   //   const pedido = await Pedido.findOne({where: {statusPedido: null}});
@@ -43,13 +42,11 @@ const pedidosController = {
   //   }
 
   //   return response.status(201);
-  // }
-=======
+  // },
 
   checkout: (request, response) => {
     return response.render('finalizarPagamento');
   },
->>>>>>> 5c6599e4f05fe79c37af4556d0134d5d0a9271b7
 };
 
 module.exports = pedidosController;

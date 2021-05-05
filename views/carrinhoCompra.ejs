@@ -94,20 +94,20 @@
           </div>
         </div>
 
-        <div class="total">
-          <p>Subtotal(1 Item): R$ 250,00</p>
+        <div class="total" id="total">
+          <p></p>
         </div>
 
         <div class="button-compra">
-          <a href="">
-            <button class="comprar">
+         
+            <button onclick="finalizar()" class="comprar">
               CONFIRMAR COMPRA
               <img
                 src="/media/icons/arrow-right.svg"
                 alt="seta para a direita"
               />
             </button>
-          </a>
+          
         </div>
       </div>
     </div>
@@ -125,11 +125,11 @@
           </div>
 
           <div class="qtd-produto">
-            <p><a href="">+</a> 1 <a href="">-</a></p>
+            <p><a href="">+</a> ${produto.qtd} <a href="">-</a></p>
           </div>
 
           <div class="produto-valor">
-            <p>${produto.preco}</p>
+            <p>R$ ${produto.preco * produto.qtd}</p>
             <div class="lixo">
               <a href=""
                 ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
@@ -142,6 +142,33 @@
       console.log(conteudo);
 
       document.getElementById('carrinho').innerHTML = conteudo;
+    </script>
+
+    <script>
+      let products = localStorage.getItem('carrinho');
+      let productsCarrinho = JSON.parse(products);
+      const sum = productsCarrinho.produtos.map( v => v.preco ).reduce( (sum, current) => sum + current, 0 );
+      let conteudo1 = `<p>Subtotal(1 Item): R$ ${sum}</p>`;
+
+      document.getElementById('total').innerHTML = conteudo1;
+      function finalizar(){
+                fetch("http://localhost:3000/pedidos", {
+          "method": "POST",
+          "headers": {
+            "cookie": "connect.sid=s%253Au4SonayyC_hOSZs4lllrZSjUL4rxmX2q.wNbWQyzcqyz%252FBr4A1RCYcH9xjuf%252FzM%252BH09GxuNnDd1M",
+            "Content-Type": "application/json"
+          },
+          "body": `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${products.usuario_id}\"}`
+        })
+        .then(response => {
+          console.log(response.json())
+        })
+        .catch(err => {
+          console.error(err);
+        });
+      }
+
+
     </script>
 
     <script>
