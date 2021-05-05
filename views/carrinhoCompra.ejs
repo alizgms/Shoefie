@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,20 +19,26 @@
   <title>SHOEFIE</title>
 </head>
 
-<body>
-
-  <header>
+ <header>
     <div class="logo">
       <a href="/">SHOEFIE</a>
     </div>
 
-    <div class="icons">
-      <a href="/pedidos/shipping"><img src="../media/icons/truck.svg" alt=""></a>
-      <a href="/usuarios/profile"><img src="../media/icons/user.svg" alt=""></a>
-      <a href="/carrinho"><img src="../media/icons/shopping-bag.svg" alt=""></a>
-      <a href="/usuarios/logoff"><img src="../media/icons/log-out.svg" alt=""></a>
-    </div>
+   <div class="icons">
+          <a href="/pedidos/shipping"
+            ><img src="../media/icons/truck.svg" alt=""
+          /></a>
+          <a href="/usuarios/profile"
+            ><img src="../media/icons/user.svg" alt="" /><a href=""></a
+          ></a>
+          <a href=""><img src="../media/icons/shopping-bag.svg" alt="" /></a>
+          <a onclick="logoff()" href="/usuarios/logoff"
+            ><img src="../media/icons/log-out.svg" alt=""
+          /></a>
   </header>
+
+  <body>
+    <div class="container">
 
   <section class="menu">
     <nav>
@@ -51,55 +56,71 @@
       </div>
       <div class="box-top">
         <div>
-          <p class="produo">Produto</p>
-        </div>
+          <p class="produto">Produto</p>
+</div>
+   
+      <div class="carrinho-box">
         <div>
-          <p class="quantidade">Quantidade</p>
+          <p class="carrinho">Carrinho de compras</p>
         </div>
-        <div>
-          <p class="preco">Preço</p>
+        <div class="box-top">
+          <div>
+            <p class="produo">Produto</p>
+          </div>
+          <div>
+            <p class="quantidade">Quantidade</p>
+          </div>
+          <div>
+            <p class="preco">Preço</p>
+          </div>
         </div>
-      </div>
 
-      <div id="carrinho">
-        <div class="box-produtos" id="box-produtos">
-          <div class="produto-nome">
-            <p><strong></strong></p>
-          </div>
+        <div id="carrinho">
+          <div class="box-produtos" id="box-produtos">
+            <div class="produto-nome">
+              <p><strong></strong></p>
+            </div>
 
-          <div class="qtd-produto">
-            <p><a href="">-</a> <a href="">+</a></p>
-          </div>
+            <div class="qtd-produto">
+              <p><a href="">-</a> <a href="">+</a></p>
+            </div>
 
-          <div class="produto-valor">
-            <p></p>
-            <div class="lixo">
-              <a href=""><img src="/media/icons/trash.svg" alt="lixo" id="lixo" /></a>
+            <div class="produto-valor">
+              <p></p>
+              <div class="lixo">
+                <a href=""
+                  ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
+                /></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="total">
-        <p>Subtotal(1 Item): R$ 250,00</p>
-      </div>
+        <div class="total">
+          <p>Subtotal(1 Item): R$ 250,00</p>
+        </div>
 
-      <div class="button-compra">
-        <button class="comprar">
-          CONFIRMAR COMPRA
-          <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
-        </button>
+        <div class="button-compra">
+          <a href="">
+            <button class="comprar">
+              CONFIRMAR COMPRA
+              <img
+                src="/media/icons/arrow-right.svg"
+                alt="seta para a direita"
+              />
+            </button>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    let produtos = localStorage.getItem('carrinho');
-    let produtoCarrinho = JSON.parse(produtos);
-    let conteudo = '';
-    for (let produto of produtoCarrinho.produtos) {
-      console.log(produto);
-      conteudo += `
+    <script>
+      let produtos = localStorage.getItem('carrinho');
+      let produtoCarrinho = JSON.parse(produtos);
+      let conteudo = '';
+      for (let produto of produtoCarrinho.produtos) {
+        console.log(produto);
+        conteudo += `
         <div class="box-produtos">
           <div class="produto-nome">
             <p><strong> ${produto.nome}</strong></p>
@@ -118,14 +139,19 @@
             </div>
           </div>
         </div>`;
-    }
+      }
 
-    console.log(conteudo);
+      console.log(conteudo);
 
-    document.getElementById('carrinho').innerHTML = conteudo;
-  </script>
-</body>
+      document.getElementById('carrinho').innerHTML = conteudo;
+    </script>
 
-<footer>shoefie © todos os direitos reservados</footer>
+    <script>
+      function logoff() {
+        localStorage.clear();
+      }
+    </script>
+  </body>
 
+  <footer>shoefie © todos os direitos reservados</footer>
 </html>

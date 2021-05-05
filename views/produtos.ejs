@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
     crossorigin="anonymous" />
+
+  <body>
+
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
@@ -136,49 +139,74 @@
     </div>
   </div>
 
-  <script>
-    function addItemCarrinho(id, nome, preco, imagem) {
-      // console.log(id, nome, preco);
-      let produtos = localStorage.getItem('carrinho');
-      if (produtos) {
-        console.log(JSON.parse(produtos));
-        let produtoCarrinho = JSON.parse(produtos);
-        produtoCarrinho.produtos.push({ id, nome, preco, imagem });
-        localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
-      } else {
-        const carrinho = {
-          usuario_id: 1,
-          produtos: [{ id, nome, preco, imagem }],
-        };
-        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    <script>
+      function addItemCarrinho(id, nome, preco, imagem) {
+        // console.log(id, nome, preco);
+        let produtos = localStorage.getItem('carrinho');
+        if (produtos) {
+          console.log(JSON.parse(produtos));
+
+          let produtoCarrinho = JSON.parse(produtos);
+
+          let index = produtoCarrinho.produtos.findIndex((obj => obj.nome == nome));
+
+          if(index != -1) {
+            produtoCarrinho.produtos[index].qtd = produtoCarrinho.produtos[index].qtd + 1;
+          } else {
+            let qtd = 1;
+            produtoCarrinho.produtos.push({ id, nome, preco, imagem, qtd });
+          }
+          localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
+        } else {
+          let qtd = 1;
+          const carrinho = {
+            usuario_id: 1,
+            produtos: [{ id, nome, preco, imagem, qtd }],
+          };
+          localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        }
       }
-    }
-  </script>
-  <script src="https://kit.fontawesome.com/e288b4d2a5.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
-    integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-    crossorigin="anonymous"></script>
-  <script>
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      responsiveClass: true,
-      nav: false,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 3,
+
+      function logoff() {
+        localStorage.clear();
+      }
+    </script>
+    <script
+      src="https://kit.fontawesome.com/e288b4d2a5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+      integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        nav: false,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1200: {
+            items: 5,
+          },
         },
         1200: {
           items: 5,
         },
       },
-    });
+    );
   </script>
 </body>
 
