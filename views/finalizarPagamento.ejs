@@ -126,11 +126,11 @@
     document.getElementById('carrinho').innerHTML = conteudo;
 
     function finalizar() {
-        fetch('http://localhost:3000/pedidos', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+      fetch('http://localhost:3000/pedidos', {
+        method: 'POST',
+        headers: {
+         'Content-Type': 'application/json',
+        },
           body: `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${productsCarrinho.usuario_id}\"}`,
         })
           .then((response) => response.json())

@@ -119,9 +119,9 @@
           <div class="produto-valor">
             <p>R$ ${produto.preco * produto.qtd}</p>
             <div class="lixo">
-              <a href=""
-                ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
-              /></a>
+              <a href="" onclick="remover(${produto.id})" >
+                <img src="/media/icons/trash.svg" alt="lixo" id="lixo"/>
+              </a>
             </div>
           </div>
         </div>`;
@@ -138,9 +138,18 @@
       }
 
       document.getElementById('total').innerHTML = conteudo;
+
     </script>
 
     <script>
+      function remover(id){
+        let produtos = localStorage.getItem('carrinho');
+        let produtoCarrinho = JSON.parse(produtos);
+        let index = produtoCarrinho.produtos.findIndex((obj => obj.id == id));
+        produtoCarrinho.produtos.splice(index,1);
+        localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
+      }
+
       function logoff() {
         localStorage.clear();
       }
