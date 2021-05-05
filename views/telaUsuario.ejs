@@ -38,10 +38,19 @@
             </section>
 
             <div class="icons">
-                <a href="/pedidos/shipping"><img src="../media/icons/truck.svg" alt=""></a>
-                <a href="/usuarios/profile"><img src="../media/icons/user.svg" alt=""></a>
-                <a href="/carrinho"><img src="../media/icons/shopping-bag.svg" alt=""></a>
-                <a href="/usuarios/logoff"><img src="../media/icons/log-out.svg" alt=""></a>
+
+                <a href="/pedidos/shipping">
+                    <img src="../media/icons/truck.svg" alt="Acompanhar envio" />
+                </a>
+                <a href="/usuarios/profile">
+                    <img src="../media/icons/user.svg" alt="Perfil" />
+                </a>
+                <a href="/carrinho">
+                    <img src="../media/icons/shopping-bag.svg" alt="Carrinho de compras" />
+                </a>
+                <a  onclick="logoff()" href="/usuarios/logout">
+                    <img src="../media/icons/log-out.svg" alt="Logout" />
+                </a>
             </div>
 
         </header>
@@ -80,6 +89,12 @@
             </div>
             shoefie © todos os direitos reservados
         </footer>
+
+        <script>
+            function logoff() {
+              localStorage.clear();
+            }
+          </script>
 </body>
 
 </html>

@@ -43,10 +43,7 @@ const usuariosController = {
 
     usuario.senha = undefined;
 
-    // return response.redirect('/produtos');
-    return response.status(201).send({
-      usuario,
-    });
+    return response.redirect('/categorias/produtos');
   },
 
   // Autentica login do usuario
@@ -78,12 +75,8 @@ const usuariosController = {
 
     request.session.usuarioLogado = usuario;
     return response.redirect('/categorias/produtos');
-    // return response.status(200).send({
-    //   status: 1,
-    //   message: 'Usuário logado com sucesso!',
-    //   usuario,
-    // });
   },
+
   delete: async (request, response) => {
     const { id } = request.params;
 
