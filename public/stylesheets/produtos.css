@@ -79,3 +79,16 @@ section nav a:hover {
   color: var(--branco);
   justify-content: center;
 }
+
+.owl-carousel {
+margin-bottom: 15px;
+}
+
+.item {
+  text-align: center;
+}
+
+div.item .botao {
+  padding-top: 5px;
+  justify-content: center;
+}
