@@ -80,12 +80,7 @@
             <h5><%=products.produtos[i].preco %></h5>
           </div>
           <button
-<<<<<<< HEAD
-          <% if (products.id === 1) {%>
-            onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>')"
-=======
             onclick="addItemCarrinho('<%= products.produtos[i].id%>', '<%=products.produtos[i].nome%>', '<%=products.produtos[i].preco%>', '<%=products.produtos[i].imagem%>')"
->>>>>>> 5c6599e4f05fe79c37af4556d0134d5d0a9271b7
             id="btn-comprar"
           >
             Comprar
@@ -98,7 +93,7 @@
       <div class="owl-carousel owl-theme">
         <% for (let products of listProducts) { %> <% if (products.id === 2) {
         %> <% for (let i = 0; i < products.produtos.length; i++) { %>
-        <a href="">
+        <a>
           <div class="item">
             <img src="<%= products.produtos[i].imagem %> " />
             <p><%=products.produtos[i].nome %></p>
@@ -118,7 +113,7 @@
       <div class="owl-carousel owl-theme">
         <% for (let products of listProducts) { %> <% if (products.id === 3) {
         %> <% for (let i = 0; i < products.produtos.length; i++) { %>
-        <a href="">
+        <a>
           <div class="item">
             <img src="<%= products.produtos[i].imagem %> " />
             <p><%=products.produtos[i].nome %></p>
@@ -141,37 +136,23 @@
         let produtos = localStorage.getItem('carrinho');
         if (produtos) {
           console.log(JSON.parse(produtos));
-          let produtoCarrinho = JSON.parse(produtos);
-<<<<<<< HEAD
-          let flag = 0;
-          let cont = 0;
-          for(let products of produtoCarrinho){
-            if(products.nome == nome)
-            {
-              flag = 1;
-            }
-            cont = cont + 1;
-          }
 
-          if(flag == 1) {
-            produtoCarrinho.produtos[cont].qtd = produtoCarrinho.produtos[cont].qtd + 1;
+          let produtoCarrinho = JSON.parse(produtos);
+
+          let index = produtoCarrinho.produtos.findIndex((obj => obj.nome == nome));
+
+          if(index != -1) {
+            produtoCarrinho.produtos[index].qtd = produtoCarrinho.produtos[index].qtd + 1;
           } else {
             let qtd = 1;
-            produtoCarrinho.produtos.push({ id, nome, preco, qtd });
+            produtoCarrinho.produtos.push({ id, nome, preco, imagem, qtd });
           }
-=======
-          produtoCarrinho.produtos.push({ id, nome, preco, imagem });
->>>>>>> 5c6599e4f05fe79c37af4556d0134d5d0a9271b7
           localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
         } else {
           let qtd = 1;
           const carrinho = {
-<<<<<<< HEAD
-            produtos: [{ id, nome, preco, qtd }],
-=======
             usuario_id: 1,
-            produtos: [{ id, nome, preco, imagem }],
->>>>>>> 5c6599e4f05fe79c37af4556d0134d5d0a9271b7
+            produtos: [{ id, nome, preco, imagem, qtd }],
           };
           localStorage.setItem('carrinho', JSON.stringify(carrinho));
         }
