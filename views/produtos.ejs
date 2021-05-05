@@ -19,28 +19,6 @@
     crossorigin="anonymous" />
 
   <body>
-    <header>
-      <div class="logo">
-        <a href="">SHOEFIE</a>
-      </div>
-      <div class="icons">
-        <a href="/pedidos/shipping">
-          <img src="../media/icons/truck.svg" alt="Acompanhar envio" />
-        </a>
-        <a href="/usuarios/profile">
-          <img src="../media/icons/user.svg" alt="Perfil" />
-        </a>
-        <a href="/carrinho">
-          <img
-            src="../media/icons/shopping-bag.svg"
-            alt="Carrinho de compras"
-          />
-        </a>
-        <a onclick="logoff()" href="/usuarios/logoff">
-          <img src="../media/icons/log-out.svg" alt="Logout" />
-        </a>
-      </div>
-    </header>
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
@@ -160,25 +138,6 @@
     </div>
   </div>
 
-  <script>
-    function addItemCarrinho(id, nome, preco, imagem) {
-      // console.log(id, nome, preco);
-      let produtos = localStorage.getItem('carrinho');
-      if (produtos) {
-        console.log(JSON.parse(produtos));
-        let produtoCarrinho = JSON.parse(produtos);
-        produtoCarrinho.produtos.push({ id, nome, preco, imagem });
-        localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
-      } else {
-        const carrinho = {
-          usuario_id: 1,
-          produtos: [{ id, nome, preco, imagem }],
-        };
-        localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      }
-    }
-    </script>
-
     <script>
       function addItemCarrinho(id, nome, preco, imagem) {
         // console.log(id, nome, preco);
@@ -205,6 +164,8 @@
           };
           localStorage.setItem('carrinho', JSON.stringify(carrinho));
         }
+      }
+
       function logoff() {
         localStorage.clear();
       }
