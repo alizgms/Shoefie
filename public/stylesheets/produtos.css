@@ -40,7 +40,7 @@ h5 {
 }
 
 p {
-font-size: 12px;
+  font-size: 12px;
 }
 
 .carrossel {
@@ -54,7 +54,6 @@ font-size: 12px;
   margin-bottom: 20px;
   margin-top: 30px;
 }
-
 
 section nav a {
   text-decoration: none;

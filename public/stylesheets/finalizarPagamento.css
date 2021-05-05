@@ -90,7 +90,7 @@ button,
 .subtotal-value:before,
 .total-value:before,
 .promo-value:before {
-  content: 'R$';
+  content: "R$";
 }
 
 main {
@@ -143,7 +143,7 @@ li {
 
 li.price:before,
 li.subtotal:before {
-  content: '';
+  content: "";
 }
 
 .item {
