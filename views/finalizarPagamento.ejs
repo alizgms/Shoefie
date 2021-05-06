@@ -126,16 +126,19 @@
         },
           body: `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${produtoCarrinho.usuario_id}\",\"valor\":\"${produtoCarrinho.valorTotal}\"}`,
         })
-          .then((response) => response.json())
-          .then((data) => {
-            for (let produto of produtoCarrinho.produtos) {
-              console.log(produto);
-              console.log(data.id);
-            }
-          })
-          .catch((err) => {
-            console.error(err);
-          });
+        .then((response) => response.json())
+        .then((data) => {
+          for (let produto of produtoCarrinho.produtos) {
+            console.log(produto);
+            console.log(data.id);
+          }
+        })
+        .catch((err) => {
+           console.error(err);
+        });
+        produtoCarrinho.produtos.splice(0,produtoCarrinho.produtos.length);
+        produtoCarrinho.valorTotal = 0;
+        localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
     }
 
     const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
