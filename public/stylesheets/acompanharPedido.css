@@ -48,3 +48,8 @@ button:focus {
   border-bottom: 1px solid #111;
   margin-top: 10px;
 }
+
+.produto-nome{
+  display: flex;
+  width: 100px;
+}

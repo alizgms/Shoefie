@@ -119,7 +119,7 @@
           </div>
 
           <div class="produto-valor">
-            <p>R$ ${produto.preco * produto.qtd}</p>
+            <p>R$ ${produto.preco * produto.qtd}.00</p>
             <div class="lixo">
               <a href="" onclick="remover(${produto.id})" >
                 <img src="/media/icons/trash.svg" alt="lixo" id="lixo"/>
@@ -134,9 +134,9 @@
       const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
       const qtdTotal = produtoCarrinho.produtos.map((v) => v.qtd ).reduce((qtdTotal, current) => qtdTotal + current, 0);
       if(qtdTotal > 1){
-        conteudo = `<p>Subtotal(${qtdTotal} Itens): R$ ${total}</p>`;
+        conteudo = `<p>Subtotal(${qtdTotal} Itens): R$ ${total}.00</p>`;
       }else{
-        conteudo = `<p>Subtotal(${qtdTotal} Item): R$ ${total}</p>`;
+        conteudo = `<p>Subtotal(${qtdTotal} Item): R$ ${total}.00</p>`;
       }
 
       document.getElementById('total').innerHTML = conteudo;
