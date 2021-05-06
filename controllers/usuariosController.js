@@ -55,9 +55,7 @@ const usuariosController = {
     const usuario = await Usuario.findOne({ where: { email } });
 
     if (!usuario || !bcrypt.compareSync(senha, usuario.senha)) {
-      return response
-        .status(400)
-        .json({ status: 0, message: 'E-email ou senha incorretos!' });
+      return response.render('login');
     }
 
     const usuario_id = usuario.id;
@@ -78,29 +76,37 @@ const usuariosController = {
   },
 
   delete: async (request, response) => {
-    const usuario = request.session.usuarioLogado;
-    const {id} = usuario.id;
+    const { id } = request.body;
 
-    const usuarioDeletado = await Usuario.destroy({
+    await Usuario.destroy({
       where: {
         id,
       },
     });
-    return response.status(201).send(usuarioDeletado);
+
+    request.session.destroy();
+    return response.redirect('/');
   },
   edit: async (request, response) => {
     const usuario = request.session.usuarioLogado;
-    const {id} = usuario.id;
-    const {nome, email} = request.body;
+    const { id } = usuario;
+    const { nome, email } = request.body;
 
-    const usuarioAtualizado = await Usuario.update({
-      nome, 
-      email,
-      }, {
-      where: { id }
-    });
-    return response.status(201).send(usuarioAtualizado);
-  }
+    const usuarioAtualizado = await Usuario.update(
+      {
+        nome,
+        email,
+      },
+      {
+        where: { id },
+      }
+    );
+
+    request.session.usuarioLogado.nome = nome;
+    request.session.usuarioLogado.email = email;
+    // request.session.usuarioLogado = usuarioAtualizado;
+    return response.render('telaUsuario', { editarPerfil: usuarioAtualizado });
+  },
 };
 
 module.exports = usuariosController;
