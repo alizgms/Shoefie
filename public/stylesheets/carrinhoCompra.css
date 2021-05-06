@@ -69,6 +69,11 @@ section nav a:hover {
   margin-top: 10px;
 }
 
+.produto-nome{
+  display: flex;
+  width: 100px;
+}
+
 .qtd-produto {
   display: flex;
   align-items: center;
@@ -88,6 +93,8 @@ section nav a:hover {
 
 .produto-valor {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #lixo {

@@ -110,7 +110,7 @@
         <div class="quantity">
           <p class="quantity-field">${produto.qtd}</p>
         </div>
-        <div class="subtotal">${produto.preco * produto.qtd}</div>
+        <div class="subtotal">${produto.preco * produto.qtd}.00</div>
       </div>`;
     }
 
@@ -149,7 +149,7 @@
     const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
     produtoCarrinho.valorTotal = total;
     localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
-    conteudo = `<p>${total}</p>`;
+    conteudo = `<p>${total}.00</p>`;
 
     document.getElementById('basket-total').innerHTML = conteudo;
 
