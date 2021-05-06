@@ -64,8 +64,9 @@
           <input
             type="text"
             nome="nome"
+            id="nome"
             placeholder="Digite seu nome"
-            value="<%= usuarioLogado.nome %> "
+            value="<%= usuarioLogado.nome %>"
           />
 
           <label class="field">Email</label>
@@ -74,22 +75,11 @@
             name="email"
             id="email"
             placeholder="Digite seu email"
-            value="<%= usuarioLogado.email %> "
-          />
-
-          <label class="field">Senha</label>
-          <input
-            type="password"
-            name="senha"
-            id="senha"
-            min="6"
-            max="12"
-            placeholder="Confirme a sua senha"
+            value="<%= usuarioLogado.email %>"
           />
 
           <div class="bt-editar">
-            <button class="botao-editar" type="submit">Editar</button>
-            <button class="botao-deletar" type="submit">Deletar</button>
+            <button onclick="editProfile()" class="botao-editar">Editar</button>
           </div>
         </form>
       </div>
@@ -105,6 +95,27 @@
     <footer>shoefie © todos os direitos reservados</footer>
   </body>
   <script>
+    function editProfile() {
+      let nome = document.getElementById('nome').value;
+      let email = document.getElementById('email').value;
+      console.log({ nome, email });
+      fetch('http://localhost:3000/usuarios', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: `{"nome":"${nome}","email":"${email}"}`,
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+
+      alert('Usuario atualizado com sucesso!');
+    }
+
     function logoff() {
       localStorage.clear();
     }
