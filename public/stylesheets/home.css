@@ -17,6 +17,11 @@ button {
   cursor: pointer;
 }
 
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
 #pesquisar {
   display: flex;
   justify-content: center;
@@ -65,6 +70,9 @@ body {
   font-family: "Montserrat";
   background-color: var(--branco);
   color: var(--preto);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 .comprar {
