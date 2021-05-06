@@ -42,9 +42,9 @@
 
   <section class="menu">
     <nav>
-      <a href="">MASCULINO</a>
-      <a href="">FEMININO</a>
-      <a href="">INFANTIL</a>
+      <a href="/categorias/produtos#masculino">MASCULINO</a>
+      <a href="/categorias/produtos#feminino">FEMININO</a>
+      <a href="/categorias/produtos#infantil">INFANTIL</a>
     </nav>
   </section>
 
@@ -72,15 +72,15 @@
             </div>
 
             <div class="qtd-produto">
-              <p><a href="">-</a> <a href="">+</a></p>
+              <p><a href=""></a> <a href=""></a></p>
             </div>
 
             <div class="produto-valor">
               <p></p>
               <div class="lixo">
-                <a href=""
-                  ><img src="/media/icons/trash.svg" alt="lixo" id="lixo"
-                /></a>
+                <a href="">
+                  <img src=""/>
+                </a>
               </div>
             </div>
           </div>
@@ -113,7 +113,7 @@
           </div>
 
           <div class="qtd-produto">
-            <p><a href="">+</a> ${produto.qtd} <a href="">-</a></p>
+            <p><a href="" onclick="adicionar(${produto.qtd},${produto.id})">+</a> ${produto.qtd} <a href="" onclick="subtrair(${produto.qtd},${produto.id})">-</a></p>
           </div>
 
           <div class="produto-valor">
@@ -148,6 +148,26 @@
         let index = produtoCarrinho.produtos.findIndex((obj => obj.id == id));
         produtoCarrinho.produtos.splice(index,1);
         localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
+      }
+
+      function adicionar(qtd, id){
+        let produtos = localStorage.getItem('carrinho');
+        let produtoCarrinho = JSON.parse(produtos);
+        let index = produtoCarrinho.produtos.findIndex((obj => obj.id == id));
+        produtoCarrinho.produtos[index].qtd = qtd + 1;
+        localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
+      }
+
+      function subtrair(qtd, id){
+        if(qtd > 1){
+          let produtos = localStorage.getItem('carrinho');
+          let produtoCarrinho = JSON.parse(produtos);
+          let index = produtoCarrinho.produtos.findIndex((obj => obj.id == id));
+          produtoCarrinho.produtos[index].qtd = qtd - 1;
+          localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
+        }else{
+          alert(`Para remover clique na lixeira!`);
+        }
       }
 
       function logoff() {
