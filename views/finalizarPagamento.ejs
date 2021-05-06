@@ -38,7 +38,7 @@
   <div class="container">
 
     <div class="basket">
-      <p class="resumo">Resumo do envio</p>
+      <p class="resumo">Resumo da compra</p>
       <div class="basket-labels">
         <ul>
           <li class="item item-heading">Item</li>
@@ -140,7 +140,9 @@
         produtoCarrinho.valorTotal = 0;
         localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
 
-        alert(`Pedido conluido!`);
+        alert(`Pedido concluido!`);
+
+        window.location.href = "/pedidos/shipping";
 
     }
 
