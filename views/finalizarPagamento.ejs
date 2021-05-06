@@ -139,6 +139,9 @@
         produtoCarrinho.produtos.splice(0,produtoCarrinho.produtos.length);
         produtoCarrinho.valorTotal = 0;
         localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
+
+        alert(`Pedido conluido!`);
+
     }
 
     const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
