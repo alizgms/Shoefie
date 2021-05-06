@@ -5,7 +5,7 @@ const router = express.Router();
 // middleware
 const loginAuthenticate = require('../middlewares/LoginAuthenticate');
 
-// router.use(loginAuthenticate);
+router.use(loginAuthenticate);
 // Acompanhar envio
 router.get('/shipping', pedidosController.shippingDetail);
 // Finalizar pagamento

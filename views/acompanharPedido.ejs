@@ -1,85 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/acompanharPedido.css" />
+    <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
+    <link rel="stylesheet" href="/stylesheets/shared/footer.css" />
+    <!-- <script src="../scripts/shoppingCart.js" defer></script> -->
+    <link rel="shortcut icon" href="/media/icons/logo.png" />
+    <title>SHOEFIE</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/stylesheets/acompanharPedido.css" />
-  <link rel="stylesheet" href="/stylesheets/shared/header-icons.css">
-  <link rel="stylesheet" href="/stylesheets/shared/footer.css">
-  <!-- <script src="../scripts/shoppingCart.js" defer></script> -->
-  <link rel="shortcut icon" href="/media/icons/logo.png" />
-  <title>SHOEFIE</title>
-</head>
-
-<header>
-  <div class="logo">
-    <a href="/">SHOEFIE</a>
-  </div>
-
-  <div class="icons">
-    <a href="/pedidos/shipping"><img src="../media/icons/truck.svg" alt=""></a>
-    <a href="/usuarios/profile"><img src="../media/icons/user.svg" alt=""></a>
-    <a href="/carrinho"><img src="../media/icons/shopping-bag.svg" alt=""></a>
-    <a onclick="logoff()" href="/usuarios/logoff"><img src="../media/icons/log-out.svg" alt=""></a>
-  </div>
-</header>
-
-<div class="container">
-
-<body>
-    <div class="pedido-box">
-      <div>
-        <p class="acompanhe">Acompanhe seus pedidos</p>
-      </div>
-      <div class="box-top">
-        <div>
-          <p class="pedido">Nº do pedido</p>
-        </div>
-        <div>
-          <p class="boleto">Boleto</p>
-        </div>
-        <div>
-          <p class="preco">Preço</p>
-        </div>
+  <div class="conteudo">
+    <header>
+      <div class="logo">
+        <a href="/">SHOEFIE</a>
       </div>
 
-      <div id="acompanhe-box">
-        <% for(let pedidos of listarPedidos){ %> 
-          <div class="box-id" id="box-id">
-            <div class="produto-nome">
-              <p><strong><%= pedidos.id %> </strong></p>
-            </div>
+      <div class="icons">
+        <a href="/pedidos/shipping"
+          ><img src="../media/icons/truck.svg" alt=""
+        /></a>
+        <a href="/usuarios/profile"
+          ><img src="../media/icons/user.svg" alt=""
+        /></a>
+        <a href="/carrinho"
+          ><img src="../media/icons/shopping-bag.svg" alt=""
+        /></a>
+        <a onclick="logoff()" href="/usuarios/logoff"
+          ><img src="../media/icons/log-out.svg" alt=""
+        /></a>
+      </div>
+    </header>
 
-            <div class="boletoCode">
-              <p><%= pedidos.codigoBoleto %> </p>
+    <body>
+      <div class="container">
+        <div class="pedido-box">
+          <div>
+            <p class="acompanhe">Acompanhe seus pedidos</p>
+          </div>
+          <div class="box-top">
+            <div>
+              <p class="pedido">Nº do pedido</p>
             </div>
-
-            <div class="boleto-valor">
-              <p><%= pedidos.valor %> </p>
+            <div>
+              <p class="boleto">Boleto</p>
+            </div>
+            <div>
+              <p class="preco">Preço</p>
             </div>
           </div>
-        <% } %> 
+
+          <div id="acompanhe-box">
+            <% for(let pedidos of listarPedidos){ %>
+            <div class="box-id" id="box-id">
+              <div class="produto-nome">
+                <p><strong><%= pedidos.id %> </strong></p>
+              </div>
+
+              <div class="boletoCode">
+                <p><%= pedidos.codigoBoleto %></p>
+              </div>
+
+              <div class="boleto-valor">
+                <p><%= pedidos.valor %></p>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
       </div>
     </div>
+      <footer>SHOEFIE © todos os direitos reservados</footer>
+    </body>
 
-</body>
-
-<script>
-  function logoff() {
-    localStorage.clear();
-  }
-</script>
-
-<footer> SHOEFIE © todos os direitos reservados</footer>
-
+    <script>
+      function logoff() {
+        localStorage.clear();
+      }
+    </script>
 </html>

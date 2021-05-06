@@ -1,97 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href="/media/icons/logo.png" />
 
     <link rel="stylesheet" href="/stylesheets/telaUsuario.css" />
     <link rel="shortcut icon" href="/media/icons/logo.png" />
-    <link rel="stylesheet" href="/stylesheets/shared/header-icons.css">
-    <link rel="stylesheet" href="/stylesheets/shared/footer-icons.css">
+    <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
+    <link rel="stylesheet" href="/stylesheets/shared/footer-icons.css" />
     <title>SHOEFIE</title>
+  </head>
 
-</head>
-
-<body>
-    <div>
-        <header>
-            <div class="logo">
-                <a href="/">SHOEFIE</a>
-            </div>
-
-            <section class="menu">
-                <nav>
-                    <a href="/categorias/produtos#masculino">Masculino</a>
-                    <a href="/categorias/produtos#feminino">Feminino</a>
-                    <a href="/categorias/produtos#infantil">Infantil</a>
-                </nav>
-            </section>
-
-            <div class="icons">
-
-                <a href="/pedidos/shipping">
-                    <img src="../media/icons/truck.svg" alt="Acompanhar envio" />
-                </a>
-                <a href="/usuarios/profile">
-                    <img src="../media/icons/user.svg" alt="Perfil" />
-                </a>
-                <a href="/carrinho">
-                    <img src="../media/icons/shopping-bag.svg" alt="Carrinho de compras" />
-                </a>
-                <a  onclick="logoff()" href="/usuarios/logoff">
-                    <img src="../media/icons/log-out.svg" alt="Logout" />
-                </a>
-            </div>
-
-        </header>
-        <h2 class="perfil">Seu Perfil</h2>
-
-        <div class="formulario">
-            <form class="dados">
-
-                <label class="field">Nome</label>
-                <input type="text" nome="nome" placeholder="Digite seu nome" value="<%= usuarioLogado.nome %> ">
-
-                <label class="field">Email</label>
-                <input type="email" name="email" id="email" placeholder="Digite seu email" value="<%= usuarioLogado.email %> ">
-
-                <label class="field">Senha</label>
-                <input type="password" name="senha" id="senha" min="6" max="12" placeholder="Confirme a sua senha">
-
-
-                <div class="bt-editar">
-                    <button class="botao-editar" type="submit">Editar</button>
-                    <button class="botao-deletar" type="submit">Deletar</button>
-                </div>
-            </form>
+  <body>
+    <div class="conteudo">
+      <header>
+        <div class="logo">
+          <a href="/">SHOEFIE</a>
         </div>
 
-      
-        <footer>
-            <div>
-                <div class="redes-sociais">
-                  <img src="/media/icons/facebook.svg" alt="ícone do facebook" />
-                  <img src="/media/icons/instagram.svg" alt="ícone do instagram" />
-                  <img src="/media/icons/twitter.svg" alt="ícone do twitter" />
-                </div>
-    
-            shoefie © todos os direitos reservados
-        </footer>
+        <section class="menu">
+          <nav>
+            <a href="/categorias/produtos#masculino">Masculino</a>
+            <a href="/categorias/produtos#feminino">Feminino</a>
+            <a href="/categorias/produtos#infantil">Infantil</a>
+          </nav>
+        </section>
 
-        <script>
-            function logoff() {
-              localStorage.clear();
-            }
-          </script>
-</body>
+        <div class="icons">
+          <a href="/pedidos/shipping">
+            <img src="../media/icons/truck.svg" alt="Acompanhar envio" />
+          </a>
+          <a href="/usuarios/profile">
+            <img src="../media/icons/user.svg" alt="Perfil" />
+          </a>
+          <a href="/carrinho">
+            <img
+              src="../media/icons/shopping-bag.svg"
+              alt="Carrinho de compras"
+            />
+          </a>
+          <a onclick="logoff()" href="/usuarios/logoff">
+            <img src="../media/icons/log-out.svg" alt="Logout" />
+          </a>
+        </div>
+      </header>
+      <h2 class="perfil">Seu Perfil</h2>
 
+      <div class="formulario">
+        <form class="dados">
+          <label class="field">Nome</label>
+          <input
+            type="text"
+            nome="nome"
+            placeholder="Digite seu nome"
+            value="<%= usuarioLogado.nome %> "
+          />
+
+          <label class="field">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Digite seu email"
+            value="<%= usuarioLogado.email %> "
+          />
+
+          <label class="field">Senha</label>
+          <input
+            type="password"
+            name="senha"
+            id="senha"
+            min="6"
+            max="12"
+            placeholder="Confirme a sua senha"
+          />
+
+          <div class="bt-editar">
+            <button class="botao-editar" type="submit">Editar</button>
+            <button class="botao-deletar" type="submit">Deletar</button>
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <div class="redes-sociais">
+          <img src="/media/icons/facebook.svg" alt="ícone do facebook" />
+          <img src="/media/icons/instagram.svg" alt="ícone do instagram" />
+          <img src="/media/icons/twitter.svg" alt="ícone do twitter" />
+        </div>
+      </div>
+    </div>
+    <footer>shoefie © todos os direitos reservados</footer>
+  </body>
+  <script>
+    function logoff() {
+      localStorage.clear();
+    }
+  </script>
 </html>
