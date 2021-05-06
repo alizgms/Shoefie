@@ -9,6 +9,13 @@ button {
   cursor: pointer;
 }
 
+html,
+body {
+  height: 100%;
+}
+.conteudo {
+  min-height: 80%;
+}
 button:hover,
 button:focus {
   transition: 0.2s ease-out;
@@ -23,7 +30,8 @@ button:focus {
 }
 
 .acompanhe {
-  font-family: "Montserrat";
+  font-weight: 700;
+  font-family: 'Montserrat';
 }
 
 .box-top {

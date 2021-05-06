@@ -13,6 +13,14 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  height: 100%;
+}
+
+.conteudo {
+  min-height: 90%;
+}
 button {
   cursor: pointer;
 }
@@ -62,7 +70,7 @@ section nav a:hover {
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   background-color: var(--branco);
   color: var(--preto);
 }
