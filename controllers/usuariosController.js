@@ -78,15 +78,29 @@ const usuariosController = {
   },
 
   delete: async (request, response) => {
-    const { id } = request.params;
+    const usuario = request.session.usuarioLogado;
+    const {id} = usuario.id;
 
-    await Usuario.destroy({
+    const usuarioDeletado = await Usuario.destroy({
       where: {
         id,
       },
     });
-    return response.status(201).send();
+    return response.status(201).send(usuarioDeletado);
   },
+  edit: async (request, response) => {
+    const usuario = request.session.usuarioLogado;
+    const {id} = usuario.id;
+    const {nome, email} = request.body;
+
+    const usuarioAtualizado = await Usuario.update({
+      nome, 
+      email,
+      }, {
+      where: { id }
+    });
+    return response.status(201).send(usuarioAtualizado);
+  }
 };
 
 module.exports = usuariosController;

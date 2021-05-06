@@ -19,7 +19,7 @@ router.post('/login', usuariosController.auth);
 
 router.use(loginAuthenticate);
 router.get('/profile', usuariosController.profile);
-router.delete('/:id', usuariosController.delete);
-router.get('/', usuariosController.index);
+router.delete('/', usuariosController.delete);
+router.put('/', usuariosController.edit);
 
 module.exports = router;

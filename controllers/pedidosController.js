@@ -9,7 +9,7 @@ const pedidosController = {
     return response.render('acompanharPedido',{listarPedidos: pedidos});
   },
   store: async (request, response) => {
-    const { statusPedido, dataVencimento, usuarios_id } = request.body;
+    const { statusPedido, dataVencimento, usuarios_id, valor } = request.body;
     // const { usuarios_id } = request.session.usuarioLogado;
 
     let codigoBoleto = Math.random() * 100000000;
@@ -21,6 +21,7 @@ const pedidosController = {
       codigoBoleto,
       dataVencimento,
       usuarios_id,
+      valor
     };
 
     await Pedido.create(pedidos);

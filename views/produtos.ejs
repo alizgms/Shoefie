@@ -50,14 +50,14 @@
 
   <section class="menu">
     <nav>
-      <a href="">MASCULINO</a>
-      <a href="">FEMININO</a>
-      <a href="">INFANTIL</a>
+      <a href="#masculino">MASCULINO</a>
+      <a href="#feminino">FEMININO</a>
+      <a href="#infantil">INFANTIL</a>
     </nav>
   </section>
 
   <div class="carrossel">
-    <h1 class="titulo-carrossel">Feminino</h1>
+    <h1 class="titulo-carrossel" id="feminino">Feminino</h1>
     <div class="owl-carousel owl-theme">
       <% for (let products of listProducts) { %>
         <% if (products.id===1) { %>
@@ -85,7 +85,7 @@
                 <% } %>
     </div>
 
-    <h1 class="titulo-carrossel">Masculino</h1>
+    <h1 class="titulo-carrossel" id="masculino">Masculino</h1>
     <div class="owl-carousel owl-theme">
       <% for (let products of listProducts) { %>
         <% if (products.id===2) { %>
@@ -113,7 +113,7 @@
                 <% } %>
     </div>
 
-    <h1 class="titulo-carrossel">Infantil</h1>
+    <h1 class="titulo-carrossel" id="infantil">Infantil</h1>
     <div class="owl-carousel owl-theme">
       <% for (let products of listProducts) { %>
         <% if (products.id===3) { %>
@@ -165,9 +165,11 @@
           const carrinho = {
             usuario_id: idUsuario,
             produtos: [{ id, nome, preco, imagem, qtd }],
+            valorTotal: 0,
           };
           localStorage.setItem('carrinho', JSON.stringify(carrinho));
         }
+        alert(`Pedido adicionado ao carrinho!`);
       }
 
       function logoff() {
