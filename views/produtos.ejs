@@ -165,6 +165,7 @@
           const carrinho = {
             usuario_id: idUsuario,
             produtos: [{ id, nome, preco, imagem, qtd }],
+            valorTotal: 0,
           };
           localStorage.setItem('carrinho', JSON.stringify(carrinho));
         }

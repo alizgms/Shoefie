@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
   <link rel="stylesheet" href="/stylesheets/shared/footer.css">
   <link rel="shortcut icon" href="/media/icons/logo.png" />
-  <script src="/scripts/shoppingCart.js" defer></script>
+  <!-- <script src="/scripts/shoppingCart.js" defer></script> -->
   <title>SHOEFIE</title>
 </head>
 
@@ -77,10 +77,6 @@
       <p>Finalize seu pagamento</p>
       <div class="summary">
         <div class="summary-total-items"><span class="total-items"></span> Valor das compras</div>
-        <div class="summary-subtotal">
-          <div class="subtotal-title">Subtotal</div>
-          <div class="subtotal-value final-value" id="basket-subtotal"></div>
-        </div>
         <div class="summary-total">
           <div class="total-title">Total</div>
           <div class="total-value final-value" id="basket-total"></div>
@@ -115,9 +111,6 @@
           <p class="quantity-field">${produto.qtd}</p>
         </div>
         <div class="subtotal">${produto.preco * produto.qtd}</div>
-        <div class="remove">
-          <button>Remover</button>
-        </div>
       </div>`;
     }
 
@@ -131,11 +124,11 @@
         headers: {
          'Content-Type': 'application/json',
         },
-          body: `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${productsCarrinho.usuario_id}\"}`,
+          body: `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${produtoCarrinho.usuario_id}\",\"valor\":\"${produtoCarrinho.valorTotal}\"}`,
         })
           .then((response) => response.json())
           .then((data) => {
-            for (let produto of productsCarrinho.produtos) {
+            for (let produto of produtoCarrinho.produtos) {
               console.log(produto);
               console.log(data.id);
             }
@@ -146,12 +139,11 @@
     }
 
     const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
-    
+    produtoCarrinho.valorTotal = total;
+    localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
     conteudo = `<p>${total}</p>`;
 
     document.getElementById('basket-total').innerHTML = conteudo;
-    document.getElementById('basket-subtotal').innerHTML = conteudo;
-
 
   </script>
 
