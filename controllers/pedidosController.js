@@ -31,11 +31,11 @@ const pedidosController = {
 
   checkout: async (request, response) => {
     const { id } = request.session.usuarioLogado;
-    const pedido = await Pedido.findAll({ where: { usuarios_id: id } });
+    const pedidos = await Pedido.findAll({ where: { usuarios_id: id } });
 
     // return response.json(pedido);
 
-    return response.render('finalizarPagamento', { pedidos: pedido });
+    return response.render('finalizarPagamento', { pedidos });
   },
 };
 

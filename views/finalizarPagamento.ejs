@@ -53,7 +53,7 @@
         <div class="basket-product">
           <div class="item">
             <div class="product-image">
-              <img src="" alt="Placholder Image 2" class="product-frame">
+              <img src="" alt="Placholder Image" class="product-frame">
             </div>
             <div class="product-details">
               <p><strong></strong></p>
@@ -106,7 +106,7 @@
             <p>Product Code - ${produto.id}</p>
           </div>
         </div>
-        <div class="price">${produto.preco}</div>
+        <div class="price"><p>R$ ${produto.preco}.00</p></div>
         <div class="quantity">
           <p class="quantity-field">${produto.qtd}</p>
         </div>
@@ -155,11 +155,11 @@
 
   </script>
 
-<script>
-  function logoff() {
-    localStorage.clear();
-  }
-</script>
+  <script>
+    function logoff() {
+      localStorage.clear();
+    }
+  </script>
 </body>
 
 </html>

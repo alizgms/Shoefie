@@ -25,16 +25,11 @@
     </div>
 
    <div class="icons">
-          <a href="/pedidos/shipping"
-            ><img src="../media/icons/truck.svg" alt=""
-          /></a>
-          <a href="/usuarios/profile"
-            ><img src="../media/icons/user.svg" alt="" /><a href=""></a
-          ></a>
-          <a href=""><img src="../media/icons/shopping-bag.svg" alt="" /></a>
-          <a onclick="logoff()" href="/usuarios/logoff"
-            ><img src="../media/icons/log-out.svg" alt=""
-          /></a>
+      <a href="/pedidos/shipping"><img src="../media/icons/truck.svg" alt=""/></a>
+      <a href="/usuarios/profile"><img src="../media/icons/user.svg" alt="" /><a href=""></a></a>
+      <a href=""><img src="../media/icons/shopping-bag.svg" alt="" /></a>
+      <a onclick="logoff()" href="/usuarios/logoff"><img src="../media/icons/log-out.svg" alt=""/></a>
+    </div>
   </header>
 
   <body>
@@ -49,58 +44,63 @@
   </section>
 
   <div class="container">
-      <div class="carrinho-box">
-        <div>
-          <p class="carrinho">Carrinho de compras</p>
-        </div>
-        <div class="box-top">
-          <div>
-            <p class="produo">Produto</p>
-          </div>
-          <div>
-            <p class="quantidade">Quantidade</p>
-          </div>
-          <div>
-            <p class="preco">Preço</p>
-          </div>
-        </div>
+    <div class="basket">
 
-        <div id="carrinho">
-          <div class="box-produtos" id="box-produtos">
-            <div class="produto-nome">
+      <p class="resumo">Carrinho de compra</p>
+
+      <div class="basket-labels">
+        <div>Item</div>
+        <div>Preço</div>
+        <div>Quantidade</div>
+        <div>Subtotal</div>
+      </div>
+        
+      <div id="carrinho">
+        <div class="basket-product">
+          <div class="item">
+
+            <div class="product-image">
+              <img>
+            </div>
+
+            <div class="product-details">
               <p><strong></strong></p>
-            </div>
-
-            <div class="qtd-produto">
-              <p><a href=""></a> <a href=""></a></p>
-            </div>
-
-            <div class="produto-valor">
               <p></p>
-              <div class="lixo">
-                <a href="">
-                  <img src=""/>
-                </a>
-              </div>
             </div>
+
           </div>
+
+          <div class="quantity">
+            <a href=""></a>
+            <a href=""></a>
+          </div>
+
+          <div class="subtotal"></div>
+
+            <div class="remove">
+              <a href="" onclick="" >
+                <img/>
+              </a>
+            </div>
+
+          </div>
+
         </div>
 
         <div class="total" id="total">
           <p></p>
         </div>
-
-        <div class="button-compra">
-          <a href="/pedidos/checkout">
-            <button class="comprar">
-              Resumo da Compra
-              <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
-            </button>
-          </a>
-        </div>
       </div>
-    </div>
+      <div class="button-compra">
+        <a href="/pedidos/checkout">
+          <button class="comprar">
+            Resumo da Compra
+            <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
+          </button>
+        </a>
+      </div>
   </div>
+
   <footer>shoefie © todos os direitos reservados</footer>
 
     <script>
@@ -109,24 +109,40 @@
       let conteudo = '';
       for (let produto of produtoCarrinho.produtos) {
         conteudo += `
-        <div class="box-produtos">
-          <div class="produto-nome">
-            <p><strong> ${produto.nome}</strong></p>
+        <div class="basket-product">
+
+          <div class="item">
+
+            <div class="product-image">
+              <img src="${produto.imagem}" alt="Placholder Image" class="product-frame">
+            </div>
+
+            <div class="product-details">
+              <p><strong> ${produto.nome}</strong></p>
+              <p>Product Code - ${produto.id}</p>
+            </div>
+
           </div>
 
-          <div class="qtd-produto">
-            <p><a href="" onclick="adicionar(${produto.qtd},${produto.id})">+</a> ${produto.qtd} <a href="" onclick="subtrair(${produto.qtd},${produto.id})">-</a></p>
+          <div class="price">${produto.preco}</div>
+
+          <div class="quantity">
+            <a href="" onclick="adicionar(${produto.qtd},${produto.id})">+</a>
+            <p class="quantity-field"> ${produto.qtd} </p>
+            <a href="" onclick="subtrair(${produto.qtd},${produto.id})">-</a>
           </div>
 
-          <div class="produto-valor">
+          <div class="subtotal">
             <p>R$ ${produto.preco * produto.qtd}.00</p>
-            <div class="lixo">
-              <a href="" onclick="remover(${produto.id})" >
+            <div class="remove">
+              <a href="" onclick="remover(${produto.id})">
                 <img src="/media/icons/trash.svg" alt="lixo" id="lixo"/>
               </a>
             </div>
           </div>
-        </div>`;
+
+        </div>
+        `;
       }
 
       document.getElementById('carrinho').innerHTML = conteudo;
@@ -134,16 +150,13 @@
       const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
       const qtdTotal = produtoCarrinho.produtos.map((v) => v.qtd ).reduce((qtdTotal, current) => qtdTotal + current, 0);
       if(qtdTotal > 1){
-        conteudo = `<p>Subtotal(${qtdTotal} Itens): R$ ${total}.00</p>`;
+        conteudo = `<p>(${qtdTotal} Itens) R$ ${total}.00</p>`;
       }else{
-        conteudo = `<p>Subtotal(${qtdTotal} Item): R$ ${total}.00</p>`;
+        conteudo = `<p>(${qtdTotal} Item) R$ ${total}.00</p>`;
       }
 
       document.getElementById('total').innerHTML = conteudo;
 
-    </script>
-
-    <script>
       function remover(id){
         let produtos = localStorage.getItem('carrinho');
         let produtoCarrinho = JSON.parse(produtos);
@@ -175,8 +188,9 @@
       function logoff() {
         localStorage.clear();
       }
-    </script>
-  </body>
 
+    </script>
+
+  </body>
   
 </html>
