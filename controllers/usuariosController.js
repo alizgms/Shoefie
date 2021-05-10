@@ -7,8 +7,21 @@ const usuariosController = {
   signup: (request, response) => {
     return response.render('cadastro');
   },
-  logoff: (request, response) => {
+  logoff: async (request, response) => {
+    const { id } = request.session.usuarioLogado;
+
     request.session.destroy();
+
+    await Usuario.update(
+      {
+        loginStatus: 1,
+      },
+      {
+        where: {
+          id,
+        },
+      }
+    );
 
     return response.redirect('/');
   },
@@ -50,7 +63,7 @@ const usuariosController = {
 
   // Autentica login do usuario
   auth: async (request, response) => {
-    const { email, senha, loginStatus } = request.body;
+    const { email, senha } = request.body;
 
     const usuario = await Usuario.findOne({ where: { email } });
 

@@ -7,10 +7,10 @@ const cadastrosController = {
     return response.json(cadastro);
   },
   store: async (request, response) => {
-    const { nome, cpf, cep, uf, cidade, endereco } = request.body;
-
+    const { nome, cpf, cep, uf, cidade, endereco, telefone } = request.body;
     const { id } = request.session.usuarioLogado;
-    console.log();
+
+    const cadastroExistente = await Cadastro.findAll({ where: { cpf } });
 
     const cadastro = {
       nome,
@@ -19,15 +19,29 @@ const cadastrosController = {
       uf,
       cidade,
       endereco,
+      telefone,
       usuarios_id: id,
     };
 
-    await Cadastro.create(cadastro);
+    if (Object.entries(cadastroExistente).length === 0) {
+      await Cadastro.create(cadastro);
+      return response.redirect('/pedidos/checkout');
+    }
 
-    return response.status(201).json(cadastro);
+    return response.redirect('/pedidos/checkout');
   },
-  cadastroEndereco: (request, response) => {
-    return response.render('confirmacaoEntrega');
+  cadastroEndereco: async (request, response) => {
+    const userlogged = request.session.usuarioLogado;
+
+    const registeredUser = await Cadastro.findAll({
+      where: { usuarios_id: userlogged.id },
+    });
+
+    console.log(JSON.stringify(registeredUser));
+
+    return response.render('confirmacaoEntrega', {
+      information: registeredUser,
+    });
   },
 };
 

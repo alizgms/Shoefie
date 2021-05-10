@@ -42,56 +42,105 @@
         </header>
 
         <main>
+            <% if (information.length > 0) { %> 
+            <% for (let info of information) { %> 
             <div class="formulario">
-                <form action="/cadastros" method="POST">
+                <form action="/cadastros/endereco" method="POST">
                     <div class="mensagem">
                         <p>Informações de envio</p>
                     </div>
 
                     <div class="campo">
-                        <input type="text" name="nome" id="nome" placeholder="*Nome">
+                        <input type="text" name="nome" id="nome" placeholder="*Nome" value="<%=info.nome%>">
                     </div>
 
                     <div class="campo">
-                        <input type="text" name="endereco" id="endereco" placeholder="*Endereço">
+                        <input type="text" name="endereco" id="endereco" placeholder="*Endereço" value="<%= info.endereco %>">
                     </div>
 
                     <div class="campo">
-                        <input type="text" name="telefone" id="telefone" placeholder="*Telefone">
+                        <input type="text" name="telefone" id="telefone" placeholder="*Telefone" value="<%= info.telefone %>">
                     </div>
 
                     <div class="campo">
-                        <input type="text" name="cep" id="cep" placeholder="*CEP/Codigo Postal">
+                        <input type="text" name="cep" id="cep" placeholder="*CEP/Codigo Postal" value="<%= info.cep %>">
                     </div>
 
                     <div class="campo">
-                        <input type="text" name="estado" id="estado" placeholder="*Estado">
+                        <input type="text" name="uf" id="uf" placeholder="*UF" value="<%= info.uf %>">
                     </div>
 
                     <div class="campo">
-                        <input type="name" name="cidade" id="cidade" placeholder="*Cidade">
+                        <input type="name" name="cidade" id="cidade" placeholder="*Cidade" value="<%= info.cidade %>">
                     </div>
 
                     <div class="campo">
-                        <input type="text" name="cpf" id="cpf" placeholder="*Número do CPF">
+                        <input type="text" name="cpf" id="cpf" placeholder="*Número do CPF"value="<%= info.cpf %>" >
                     </div>
 
                     <div class="proceder">
-                        <button class="botao-enviar" type="submit">
+                        <a href="/pedidos/checkout"></a>
+                        <button class="botao-enviar">
                             Proceder para compra
                             <img src="/media/icons/arrow-right.svg" alt="">
                         </button>
                     </div>
                 </form>
             </div>
+            <% break %> 
+            <% } %> 
+            <% } else { %> 
+                <div class="formulario">
+                    <form action="/cadastros/endereco" method="POST">
+                        <div class="mensagem">
+                            <p>Informações de envio</p>
+                        </div>
+    
+                        <div class="campo">
+                            <input type="text" name="nome" id="nome" placeholder="*Nome">
+                        </div>
+    
+                        <div class="campo">
+                            <input type="text" name="endereco" id="endereco" placeholder="*Endereço">
+                        </div>
+    
+                        <div class="campo">
+                            <input type="text" name="telefone" id="telefone" placeholder="*Telefone" >
+                        </div>
+    
+                        <div class="campo">
+                            <input type="text" name="cep" id="cep" placeholder="*CEP/Codigo Postal" >
+                        </div>
+    
+                        <div class="campo">
+                            <input type="text" name="uf" id="uf" placeholder="*UF" >
+                        </div>
+    
+                        <div class="campo">
+                            <input type="name" name="cidade" id="cidade" placeholder="*Cidade" >
+                        </div>
+    
+                        <div class="campo">
+                            <input type="text" name="cpf" id="cpf" placeholder="*Número do CPF" >
+                        </div>
+    
+                        <div class="proceder">
+                            <button class="botao-enviar" type="submit">
+                                Proceder para compra
+                                <img src="/media/icons/arrow-right.svg" alt="">
+                            </button>
+                        </div>
+                    </form>
+                    </div>
+
+                <%  }%> 
 
             <div class="bannerEntrega">
                 <img src="/media/ilustracao/Dog call.svg" alt="imagemEntrega">
             </div>
-
         </main>
-</body>
+    </body>
 
-<footer> SHOEFIE © todos os direitos reservados</footer>
+    <footer> SHOEFIE © todos os direitos reservados</footer>
 
-</html>
+    </html>
