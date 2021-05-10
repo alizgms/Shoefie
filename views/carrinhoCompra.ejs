@@ -1,90 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/stylesheets/carrinhoCompra.css" />
-  <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
-  <link rel="stylesheet" href="/stylesheets/shared/footer.css">
-  <link rel="shortcut icon" href="/media/icons/logo.png" />
-  <title>SHOEFIE</title>
-</head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/carrinhoCompra.css" />
+    <link rel="stylesheet" href="/stylesheets/shared/header-icons.css" />
+    <link rel="stylesheet" href="/stylesheets/shared/footer.css" />
+    <link rel="shortcut icon" href="/media/icons/logo.png" />
+    <title>SHOEFIE</title>
+  </head>
 
- <header>
+  <header>
     <div class="logo">
       <a href="/">SHOEFIE</a>
     </div>
 
-   <div class="icons">
-      <a href="/pedidos/shipping"><img src="../media/icons/truck.svg" alt=""/></a>
-      <a href="/usuarios/profile"><img src="../media/icons/user.svg" alt="" /><a href=""></a></a>
+    <div class="icons">
+      <a href="/pedidos/shipping"
+        ><img src="../media/icons/truck.svg" alt=""
+      /></a>
+      <a href="/usuarios/profile"
+        ><img src="../media/icons/user.svg" alt="" /><a href=""></a
+      ></a>
       <a href=""><img src="../media/icons/shopping-bag.svg" alt="" /></a>
-      <a onclick="logoff()" href="/usuarios/logoff"><img src="../media/icons/log-out.svg" alt=""/></a>
+      <a onclick="logoff()" href="/usuarios/logoff"
+        ><img src="../media/icons/log-out.svg" alt=""
+      /></a>
     </div>
   </header>
 
   <body>
+    <section class="menu">
+      <nav>
+        <a href="/categorias/produtos#masculino">MASCULINO</a>
+        <a href="/categorias/produtos#feminino">FEMININO</a>
+        <a href="/categorias/produtos#infantil">INFANTIL</a>
+      </nav>
+    </section>
+
     <div class="container">
+      <div class="basket">
+        <p class="resumo">Carrinho de compra</p>
 
-  <section class="menu">
-    <nav>
-      <a href="/categorias/produtos#masculino">MASCULINO</a>
-      <a href="/categorias/produtos#feminino">FEMININO</a>
-      <a href="/categorias/produtos#infantil">INFANTIL</a>
-    </nav>
-  </section>
+        <div class="basket-labels">
+          <div>Item</div>
+          <div>Preço</div>
+          <div>Quantidade</div>
+          <div>Subtotal</div>
+        </div>
 
-  <div class="container">
-    <div class="basket">
+        <div id="carrinho">
+          <div class="basket-product">
+            <div class="item">
+              <div class="product-image">
+                <img />
+              </div>
 
-      <p class="resumo">Carrinho de compra</p>
-
-      <div class="basket-labels">
-        <div>Item</div>
-        <div>Preço</div>
-        <div>Quantidade</div>
-        <div>Subtotal</div>
-      </div>
-        
-      <div id="carrinho">
-        <div class="basket-product">
-          <div class="item">
-
-            <div class="product-image">
-              <img>
+              <div class="product-details">
+                <p><strong></strong></p>
+                <p></p>
+              </div>
             </div>
 
-            <div class="product-details">
-              <p><strong></strong></p>
-              <p></p>
+            <div class="quantity">
+              <a href=""></a>
+              <a href=""></a>
             </div>
 
-          </div>
-
-          <div class="quantity">
-            <a href=""></a>
-            <a href=""></a>
-          </div>
-
-          <div class="subtotal"></div>
+            <div class="subtotal"></div>
 
             <div class="remove">
-              <a href="" onclick="" >
-                <img/>
+              <a href="" onclick="">
+                <img />
               </a>
             </div>
-
           </div>
-
         </div>
 
         <div class="total" id="total">
@@ -92,16 +99,16 @@
         </div>
       </div>
       <div class="button-compra">
-        <a href="/pedidos/checkout">
+        <a href="/cadastros/endereco">
           <button class="comprar">
-            Resumo da Compra
+            Dados de envio
             <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
           </button>
         </a>
       </div>
-  </div>
+    </div>
 
-  <footer>shoefie © todos os direitos reservados</footer>
+    <footer>shoefie © todos os direitos reservados</footer>
 
     <script>
       let produtos = localStorage.getItem('carrinho');
@@ -114,7 +121,9 @@
           <div class="item">
 
             <div class="product-image">
-              <img src="${produto.imagem}" alt="Placholder Image" class="product-frame">
+              <img src="${
+                produto.imagem
+              }" alt="Placholder Image" class="product-frame">
             </div>
 
             <div class="product-details">
@@ -146,41 +155,45 @@
       }
 
       document.getElementById('carrinho').innerHTML = conteudo;
-    
-      const total = produtoCarrinho.produtos.map((v) => v.preco *v.qtd ).reduce((total, current) => total + current, 0);
-      const qtdTotal = produtoCarrinho.produtos.map((v) => v.qtd ).reduce((qtdTotal, current) => qtdTotal + current, 0);
-      if(qtdTotal > 1){
+
+      const total = produtoCarrinho.produtos
+        .map((v) => v.preco * v.qtd)
+        .reduce((total, current) => total + current, 0);
+      const qtdTotal = produtoCarrinho.produtos
+        .map((v) => v.qtd)
+        .reduce((qtdTotal, current) => qtdTotal + current, 0);
+      if (qtdTotal > 1) {
         conteudo = `<p>(${qtdTotal} Itens) R$ ${total}.00</p>`;
-      }else{
+      } else {
         conteudo = `<p>(${qtdTotal} Item) R$ ${total}.00</p>`;
       }
 
       document.getElementById('total').innerHTML = conteudo;
 
-      function remover(id){
+      function remover(id) {
         let produtos = localStorage.getItem('carrinho');
         let produtoCarrinho = JSON.parse(produtos);
-        let index = produtoCarrinho.produtos.findIndex((obj => obj.id == id));
-        produtoCarrinho.produtos.splice(index,1);
+        let index = produtoCarrinho.produtos.findIndex((obj) => obj.id == id);
+        produtoCarrinho.produtos.splice(index, 1);
         localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
       }
 
-      function adicionar(qtd, id){
+      function adicionar(qtd, id) {
         let produtos = localStorage.getItem('carrinho');
         let produtoCarrinho = JSON.parse(produtos);
-        let index = produtoCarrinho.produtos.findIndex((obj => obj.id == id));
+        let index = produtoCarrinho.produtos.findIndex((obj) => obj.id == id);
         produtoCarrinho.produtos[index].qtd = qtd + 1;
         localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
       }
 
-      function subtrair(qtd, id){
-        if(qtd > 1){
+      function subtrair(qtd, id) {
+        if (qtd > 1) {
           let produtos = localStorage.getItem('carrinho');
           let produtoCarrinho = JSON.parse(produtos);
-          let index = produtoCarrinho.produtos.findIndex((obj => obj.id == id));
+          let index = produtoCarrinho.produtos.findIndex((obj) => obj.id == id);
           produtoCarrinho.produtos[index].qtd = qtd - 1;
           localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
-        }else{
+        } else {
           alert(`Para remover clique na lixeira!`);
         }
       }
@@ -188,9 +201,6 @@
       function logoff() {
         localStorage.clear();
       }
-
     </script>
-
   </body>
-  
 </html>

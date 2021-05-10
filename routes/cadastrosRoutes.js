@@ -6,8 +6,8 @@ const router = express.Router();
 const LoginAuthenticate = require('../middlewares/LoginAuthenticate');
 
 router.use(LoginAuthenticate);
-router.get('/address', cadastrosController.cadastroEndereco);
+router.get('/endereco', cadastrosController.cadastroEndereco);
 router.get('/', cadastrosController.index);
-router.post('/', cadastrosController.store);
+router.post('/endereco', cadastrosController.store);
 
 module.exports = router;

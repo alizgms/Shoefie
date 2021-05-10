@@ -1,4 +1,4 @@
-:root{
+:root {
   --preto: #000000;
   --branco: #ffffff;
   --amarelo: #f5ba25;
@@ -6,16 +6,16 @@
   --cinza: #f2eeee;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   color: var(--preto);
 }
 
-body{
+body {
   background-color: #fff;
   color: #666;
   margin: 0 auto;
@@ -36,8 +36,12 @@ button:focus {
 }
 
 html,
-body{
+body {
   height: 100%;
+}
+
+.container {
+  min-height: 80%;
 }
 
 section nav a {
@@ -59,28 +63,28 @@ section nav a:hover {
   margin-top: 30px;
 }
 
-strong{
+strong {
   font-weight: bold;
 }
 
-.resumo{
+.resumo {
   font-size: 25px;
 }
 
 .basket img,
-.basket-product{
+.basket-product {
   width: 100%;
 }
 
-.basket-module{
+.basket-module {
   color: #111;
 }
 
-label{
+label {
   display: block;
 }
 
-.basket-labels{
+.basket-labels {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #ccc;
@@ -89,43 +93,44 @@ label{
   padding: 10px;
 }
 
-ul{
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-li{
+li {
   color: #111;
   display: inline-block;
   padding: 0.625rem 0;
 }
 
-.remove{
+.remove {
   width: 20px;
   margin-bottom: 20px;
 }
 
-.item{
+.item {
   display: flex;
   width: 25%;
 }
 
-.basket-product{
+.basket-product {
   display: flex;
   border-bottom: 1px solid #ccc;
   padding: 1rem 0;
 }
 
-.product-image{
+.product-image {
   width: 25%;
 }
 
-.product-details{
+.product-details {
+  margin-left: 15px;
   width: 75%;
 }
 
-.product-frame{
+.product-frame {
   border: 1px solid #aaa;
 }
 
@@ -136,7 +141,7 @@ li{
   box-sizing: border-box;
 }
 
-.quantity-field{
+.quantity-field {
   text-align: center;
   background-color: #ccc;
   border: 1px solid #aaa;
@@ -147,21 +152,21 @@ li{
   width: 3rem;
 }
 
-.quantity{
+.quantity {
   width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.subtotal{
+.subtotal {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 25%;
 }
 
-.price{
+.price {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -169,13 +174,13 @@ li{
   padding-left: 3.5%;
 }
 
-.total{
+.total {
   display: flex;
   justify-content: flex-end;
   padding: 20px 0 20px;
 }
 
-.button-compra{
+.button-compra {
   display: flex;
   justify-content: flex-end;
 }
