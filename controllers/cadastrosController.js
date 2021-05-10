@@ -1,5 +1,3 @@
-const { log } = require('debug');
-const { stringify } = require('uuid');
 const { Cadastro } = require('../models');
 
 const cadastrosController = {
@@ -42,7 +40,6 @@ const cadastrosController = {
     console.log(JSON.stringify(registeredUser));
 
     return response.render('confirmacaoEntrega', {
-      dados: userlogged,
       information: registeredUser,
     });
   },
