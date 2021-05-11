@@ -119,23 +119,31 @@
     document.getElementById('carrinho').innerHTML = conteudo;
 
     function finalizar() {
-      fetch('http://localhost:3000/pedidos', {
+      return fetch('http://localhost:3000/pedidos', {
         method: 'POST',
         headers: {
          'Content-Type': 'application/json',
         },
           body: `{\"statusPedido\":1,\"dataVencimento\":\"2021-05-05T16:44:02.561Z\",\"usuarios_id\":\"${produtoCarrinho.usuario_id}\",\"valor\":\"${produtoCarrinho.valorTotal}\"}`,
-        })
-        .then((response) => response.json())
-        .then((data) => {
-          for (let produto of produtoCarrinho.produtos) {
-            console.log(produto);
-            console.log(data.id);
-          }
-        })
-        .catch((err) => {
-           console.error(err);
-        });
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        for(let produtoPedido of produtoCarrinho.produtos){
+          fetch('http://localhost:3000/carrinho', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+              body: `{\"pedidos_id\":${data},\"produtos_id\":\"${produtoPedido.id}\",\"qtdProduto\":\"${produtoPedido.qtd}\"}`,
+          })
+          .then((response) => response.json())
+          .catch((err) => {
+            console.error(err);
+          });
+        }
+        return;
+      })
+      .then(function(){
         produtoCarrinho.produtos.splice(0,produtoCarrinho.produtos.length);
         produtoCarrinho.valorTotal = 0;
         localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
@@ -143,6 +151,10 @@
         alert(`Pedido concluido!`);
 
         window.location.href = "/pedidos/shipping";
+      })
+      .catch((err) => {
+          console.error(err);
+      });
 
     }
 

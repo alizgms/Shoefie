@@ -1,3 +1,11 @@
+:root{
+  --preto: #000000;
+  --branco: #ffffff;
+  --amarelo: #f5ba25;
+  --hover: #696969;
+  --cinza: #f2eeee;
+}
+
 body {
   background-color: #fff;
   color: #666;
@@ -5,8 +13,18 @@ body {
   margin: 0;
 }
 
-button {
-  cursor: pointer;
+button{
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid var(--preto);
+  margin-bottom: 10px;
+  padding: 2px;
+}
+
+button:hover,
+button:focus{
+  background-color: #555;
 }
 
 html,
@@ -15,11 +33,6 @@ body {
 }
 .conteudo {
   min-height: 80%;
-}
-button:hover,
-button:focus {
-  transition: 0.2s ease-out;
-  background-color: #555;
 }
 
 .pedido-box {
@@ -36,20 +49,44 @@ button:focus {
 
 .box-top {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid #111;
+}
+
+.pedido{
+  width: 25%;
+}
+
+.boleto{
+  width: 25%;
+}
+
+.preco{
+  width: 25%;
+}
+
+.botao{
+  width: 25%;
 }
 
 .box-id {
   display: flex;
   border-bottom: #111;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   border-bottom: 1px solid #111;
   margin-top: 10px;
 }
 
 .produto-nome{
-  display: flex;
-  width: 100px;
+  width: 25%;
+}
+
+.boletoCode{
+  width: 25%;
+}
+
+.boleto-valor{
+  width: 25%;
 }

@@ -16,7 +16,7 @@ const pedidosController = {
 
     codigoBoleto = Math.round(codigoBoleto);
 
-    const pedidos = {
+    const pedido = {
       statusPedido,
       codigoBoleto,
       dataVencimento,
@@ -24,9 +24,9 @@ const pedidosController = {
       valor
     };
 
-    await Pedido.create(pedidos);
+    const criado = await Pedido.create(pedido);
 
-    return response.status(201).json(pedidos);
+    return response.json(criado.id);
   },
 
   checkout: async (request, response) => {
