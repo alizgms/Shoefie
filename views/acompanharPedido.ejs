@@ -56,15 +56,16 @@
             <p class="acompanhe">Acompanhe seus pedidos</p>
           </div>
           <div class="box-top">
-            <div>
-              <p class="pedido">Nº do pedido</p>
+            <div class="pedido">
+              <p>Nº do pedido</p>
             </div>
-            <div>
-              <p class="boleto">Boleto</p>
+            <div class="boleto">
+              <p>Boleto</p>
             </div>
-            <div>
-              <p class="preco">Preço</p>
+            <div class="preco">
+              <p>Preço</p>
             </div>
+            <div class="botao"></div>
           </div>
 
           <div id="acompanhe-box">
@@ -80,6 +81,15 @@
 
               <div class="boleto-valor">
                 <p><%= pedidos.valor %></p>
+              </div>
+
+              <div class="botao">
+                <a href="/cadastros/endereco">
+                  <button class="comprar">
+                    Detalhes
+                    <img src="/media/icons/arrow-right.svg" alt="seta para a direita" />
+                  </button>
+                </a>
               </div>
             </div>
             <% } %>
